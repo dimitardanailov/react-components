@@ -6,5 +6,8 @@
   "repository": "git@github.com:dimitardanailov/react-components.git",
   "author": "Dimitar Danailov <dimityr.danailov@gmail.com>",
   "license": "MIT",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "lerna": "^3.18.3"
+  }
 }
