@@ -1,0 +1,16 @@
+{
+  "name": "draft-js-playground",
+  "version": "1.0.0",
+  "description": "Simple draftjs playground component",
+  "keywords": [
+    "draft-js",
+    "draftjs",
+    "react"
+  ],
+  "author": "Dimitar Danailov <dimityr.danailov@gmail.com>",
+  "homepage": "",
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  }
+}
