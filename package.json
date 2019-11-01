@@ -1,0 +1,10 @@
+{
+  "name": "react-components",
+  "version": "1.0.0",
+  "description": "Project contains different implementation of React components",
+  "main": "index.js",
+  "repository": "git@github.com:dimitardanailov/react-components.git",
+  "author": "Dimitar Danailov <dimityr.danailov@gmail.com>",
+  "license": "MIT",
+  "private": true
+}
