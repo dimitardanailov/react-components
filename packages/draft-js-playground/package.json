@@ -12,7 +12,8 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "start": "webpack-dev-server --open"
   },
   "dependencies": {
     "draft-js": "^0.11.1",
