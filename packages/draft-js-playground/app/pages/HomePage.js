@@ -6,7 +6,7 @@ function HomePage() {
   return (
     <div>
       <h2>Hello home page ...</h2>
-      <PlaygroundEditor />
+      <PlaygroundEditor placeholder="Simple placeholder" required />
     </div>
   )
 }
