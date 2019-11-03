@@ -59,6 +59,24 @@ module.exports = {
           },
         },
       },
+
+      // Styles
+      {
+        test: /\.css$/,
+        use: [
+          // css - loader -> translates CSS into CommonJS
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true,
+              url: true,
+              modules: {
+                localIdentName: '[path][name]__[local]--[hash:base64:5]',
+              },
+            },
+          },
+        ],
+      },
     ],
   },
 }
