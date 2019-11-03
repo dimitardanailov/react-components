@@ -2,8 +2,24 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Editor, EditorState, ContentState, convertFromHTML } from 'draft-js'
 
+import styled from 'styled-components'
+
+const Wrapper = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+`
+
+const ErrorText = styled.div`
+  display: block;
+  font-size: 12px;
+  font-weight: 300;
+  color: red;
+`
+
 function RequiredField() {
-  return <div>Required</div>
+  return <ErrorText>Required</ErrorText>
 }
 
 function convertFromHTMLToState(markup) {
@@ -38,7 +54,7 @@ function PlaygroundEditor({ placeholder, fieldValue, required, error }) {
   )
 
   return (
-    <div>
+    <Wrapper>
       <Editor
         placeholder={placeholder}
         editorState={editorState}
@@ -46,7 +62,7 @@ function PlaygroundEditor({ placeholder, fieldValue, required, error }) {
       />
 
       {!requiredFieldIsHidden && <RequiredField />}
-    </div>
+    </Wrapper>
   )
 }
 
