@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Editor, EditorState, ContentState, convertFromHTML } from 'draft-js'
 
+import 'draft-js/dist/Draft.css'
+
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
