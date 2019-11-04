@@ -41,17 +41,19 @@ function PlaygroundEditor({
   required,
   error,
   previousEditorState,
+  parentTypingCallback,
 }) {
   const [editorState, setEditorState] = React.useState(previousEditorState)
 
   React.useEffect(() => {
     const contentState = editorState.getCurrentContent()
+    parentTypingCallback(contentState)
 
     if (required) {
       // eslint-disable-next-line no-use-before-define
       setRequiredFieldIsVisible(contentState.hasText())
     }
-  }, [editorState, required])
+  }, [editorState, parentTypingCallback, required])
 
   const [requiredFieldIsHidden, setRequiredFieldIsVisible] = React.useState(
     !error
@@ -82,6 +84,7 @@ PlaygroundEditor.propTypes = {
   required: PropTypes.bool,
   error: PropTypes.bool,
   previousEditorState: PropTypes.instanceOf(EditorState),
+  parentTypingCallback: PropTypes.func,
 }
 
 export default PlaygroundEditor
