@@ -13,14 +13,21 @@ const sampleMarkup = `
 
 function HomePage() {
   return (
-    <div>
-      <h2>Sample HTML converted into Draft content:</h2>
-      <PlaygroundEditor
-        placeholder="Simple placeholder"
-        required
-        fieldValue={sampleMarkup}
-      />
-    </div>
+    <section>
+      <section>
+        <h2>Field without fieldValue</h2>
+        <PlaygroundEditor placeholder="Simple placeholder" required />
+      </section>
+
+      <section>
+        <h2>Sample HTML converted into Draft content:</h2>
+        <PlaygroundEditor
+          placeholder="Simple placeholder"
+          required
+          fieldValue={sampleMarkup}
+        />
+      </section>
+    </section>
   )
 }
 
