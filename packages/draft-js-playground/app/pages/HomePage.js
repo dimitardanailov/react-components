@@ -22,6 +22,10 @@ const rawState = EditorState.createWithContent(convertFromRaw(rawData))
 const emptyEditorState = convertFromHTMLToState('')
 
 function HomePage() {
+  const playgroundEditorTypingCallback = childContentState => {
+    console.log('contentState:', convertToRaw(childContentState))
+  }
+
   return (
     <section>
       <section>
@@ -29,6 +33,7 @@ function HomePage() {
         <PlaygroundEditor
           placeholder="Simple placeholder"
           required
+          parentTypingCallback={playgroundEditorTypingCallback}
           previousEditorState={emptyEditorState}
         />
       </section>
@@ -41,6 +46,7 @@ function HomePage() {
         <PlaygroundEditor
           placeholder="Simple placeholder"
           required
+          parentTypingCallback={playgroundEditorTypingCallback}
           previousEditorState={rawState}
         />
       </section>
