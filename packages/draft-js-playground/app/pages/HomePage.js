@@ -18,12 +18,18 @@ const editorState = convertFromHTMLToState(sampleMarkup)
 const contentState = editorState.getCurrentContent()
 const rawData = convertToRaw(contentState)
 
+const emptyEditorState = convertFromHTMLToState('')
+
 function HomePage() {
   return (
     <section>
       <section>
         <h2>Field without fieldValue</h2>
-        <PlaygroundEditor placeholder="Simple placeholder" required />
+        <PlaygroundEditor
+          placeholder="Simple placeholder"
+          required
+          previousEditorState={emptyEditorState}
+        />
       </section>
 
       <section>
