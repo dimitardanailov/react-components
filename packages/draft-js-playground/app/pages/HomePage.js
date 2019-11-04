@@ -2,8 +2,8 @@ import React from 'react'
 
 import { convertToRaw, convertFromRaw, EditorState } from 'draft-js'
 
-import PlaygroundEditor from '../components/PlaygroundEditor'
-import convertFromHTMLToState from '../components/convertFromHTMLToState'
+import PlaygroundEditor from '../components/playground-editor/editor'
+import convertFromHTMLToState from '../components/playground-editor/convertFromHTMLToState'
 
 const imageURL =
   'https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png'
