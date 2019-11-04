@@ -1,6 +1,9 @@
 import React from 'react'
 
+import { convertToRaw } from 'draft-js'
+
 import PlaygroundEditor from '../components/PlaygroundEditor'
+import convertFromHTMLToState from '../components/convertFromHTMLToState'
 
 const imageURL =
   'https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png'
@@ -11,6 +14,10 @@ const sampleMarkup = `
 <img src="${imageURL}" height="272" width="92" />
 `
 
+const editorState = convertFromHTMLToState(sampleMarkup)
+const contentState = editorState.getCurrentContent()
+const rawData = convertToRaw(contentState)
+
 function HomePage() {
   return (
     <section>
@@ -20,12 +27,11 @@ function HomePage() {
       </section>
 
       <section>
-        <h2>Sample HTML converted into Draft content:</h2>
-        <PlaygroundEditor
-          placeholder="Simple placeholder"
-          required
-          fieldValue={sampleMarkup}
-        />
+        <h3>HTML content</h3>
+        <code>{sampleMarkup}</code>
+        <h3>Draftjs raw data equalent</h3>
+        <code>{JSON.stringify(rawData)}</code>
+        <PlaygroundEditor placeholder="Simple placeholder" required />
       </section>
     </section>
   )
