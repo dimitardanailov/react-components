@@ -5,6 +5,8 @@ import { convertToRaw, convertFromRaw, EditorState } from 'draft-js'
 import PlaygroundEditor from '../components/playground-editor/Editor'
 import convertFromHTMLToState from '../components/playground-editor/convertFromHTMLToState'
 
+import decorator from '../components/decorator-components/decator'
+
 const imageURL =
   'https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png'
 
@@ -17,7 +19,10 @@ const sampleMarkup = `
 const editorState = convertFromHTMLToState(sampleMarkup)
 const contentState = editorState.getCurrentContent()
 const rawData = convertToRaw(contentState)
-const rawState = EditorState.createWithContent(convertFromRaw(rawData))
+const rawState = EditorState.createWithContent(
+  convertFromRaw(rawData),
+  decorator
+)
 
 const emptyEditorState = convertFromHTMLToState('')
 
