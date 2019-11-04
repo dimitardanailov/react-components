@@ -36,11 +36,13 @@ function convertFromHTMLToState(markup) {
   return state
 }
 
-function PlaygroundEditor({ placeholder, fieldValue, required, error }) {
-  const state = convertFromHTMLToState(fieldValue)
-  const [editorState, setEditorState] = React.useState(
-    EditorState.createWithContent(state)
-  )
+function PlaygroundEditor({
+  placeholder,
+  required,
+  error,
+  previousEditorState,
+}) {
+  const [editorState, setEditorState] = React.useState(previousEditorState)
 
   React.useEffect(() => {
     const contentState = editorState.getCurrentContent()
@@ -70,16 +72,16 @@ function PlaygroundEditor({ placeholder, fieldValue, required, error }) {
 
 PlaygroundEditor.defaultProps = {
   placeholder: '',
-  fieldValue: '',
   required: false,
   error: false,
+  previousEditorState: EditorState.createEmpty(),
 }
 
 PlaygroundEditor.propTypes = {
   placeholder: PropTypes.string,
-  fieldValue: PropTypes.string,
   required: PropTypes.bool,
   error: PropTypes.bool,
+  previousEditorState: PropTypes.instanceOf(EditorState),
 }
 
 export default PlaygroundEditor
