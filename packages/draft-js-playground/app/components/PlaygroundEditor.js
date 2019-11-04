@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Editor, EditorState, ContentState, convertFromHTML } from 'draft-js'
+import { Editor, EditorState } from 'draft-js'
 
 import 'draft-js/dist/Draft.css'
 
@@ -22,18 +22,6 @@ const ErrorText = styled.div`
 
 function RequiredField() {
   return <ErrorText>Required</ErrorText>
-}
-
-function convertFromHTMLToState(markup) {
-  if (markup.length === 0) return ContentState.createFromText(markup)
-
-  const blocksFromHTML = convertFromHTML(markup)
-  const state = ContentState.createFromBlockArray(
-    blocksFromHTML.contentBlocks,
-    blocksFromHTML.entityMap
-  )
-
-  return state
 }
 
 function PlaygroundEditor({
