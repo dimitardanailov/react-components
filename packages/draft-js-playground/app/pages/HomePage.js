@@ -2,7 +2,7 @@ import React from 'react'
 
 import { convertToRaw, convertFromRaw, EditorState } from 'draft-js'
 
-import PlaygroundEditor from '../components/playground-editor/editor'
+import PlaygroundEditor from '../components/playground-editor/Editor'
 import convertFromHTMLToState from '../components/playground-editor/convertFromHTMLToState'
 
 const imageURL =
