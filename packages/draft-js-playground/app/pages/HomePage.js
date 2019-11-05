@@ -44,7 +44,7 @@ const imageURL =
 
 const sampleMarkup = `<b>Bold text</b>, <i>Italic text</i><br/ ><br />
 <a href="https://www.google.com/">Google.com</a><br /><br/ >
-<img src="${imageURL}" height="272" width="92" />
+<img src="${imageURL}" height="92" width="272" />
 `
 
 const decorator = new CompositeDecorator([
