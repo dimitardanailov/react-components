@@ -60,9 +60,13 @@ function HomePage() {
 
       <section>
         <h3>HTML content</h3>
-        <code>{sampleMarkup}</code>
+        <pre>
+          <code>{sampleMarkup}</code>
+        </pre>
         <h3>Draftjs raw data equalent</h3>
-        <code>{JSON.stringify(rawData)}</code>
+        <pre>
+          <code>{JSON.stringify(rawData)}</code>
+        </pre>
         <PlaygroundEditor
           placeholder="Simple placeholder"
           required
