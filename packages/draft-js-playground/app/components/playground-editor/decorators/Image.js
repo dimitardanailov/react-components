@@ -12,6 +12,8 @@ const ImageFrame = styled.div`
 
   border: 2px solid #ccc;
   border-radius: 2px;
+
+  cursor: pointer;
 `
 
 function findImageEntities(contentBlock, callback, contentState) {
@@ -26,9 +28,14 @@ function findImageEntities(contentBlock, callback, contentState) {
 
 function Image({ contentState, entityKey }) {
   const { height, src, width } = contentState.getEntity(entityKey).getData()
+  const onClickListener = e => {
+    e.preventDefault()
+    e.stopPropagation()
+    alert(`src value is: ${src}`)
+  }
 
   return (
-    <ImageFrame>
+    <ImageFrame onClick={onClickListener}>
       <figure>
         <img
           src={src}
