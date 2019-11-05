@@ -1,11 +1,19 @@
 import React from 'react'
 
-import { convertToRaw, convertFromRaw, EditorState } from 'draft-js'
+import {
+  convertToRaw,
+  convertFromRaw,
+  EditorState,
+  CompositeDecorator,
+} from 'draft-js'
 
 import PlaygroundEditor from '../components/playground-editor/Editor'
 import convertFromHTMLToState from '../components/playground-editor/convertFromHTMLToState'
 
-import decorator from '../components/decorator-components/decator'
+import {
+  Link,
+  findLinkEntities,
+} from '../components/playground-editor/decorators/Link'
 
 const imageURL =
   'https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png'
@@ -15,6 +23,13 @@ const sampleMarkup = `
   <a href="https://www.google.com/">Google.com</a><br /><br/ >
   <img src="${imageURL}" height="272" width="92" />
 `
+
+const decorator = new CompositeDecorator([
+  {
+    strategy: findLinkEntities,
+    component: Link,
+  },
+])
 
 const editorState = convertFromHTMLToState(sampleMarkup)
 const contentState = editorState.getCurrentContent()
