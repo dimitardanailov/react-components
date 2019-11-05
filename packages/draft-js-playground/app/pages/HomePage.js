@@ -8,7 +8,9 @@ import {
 } from 'draft-js'
 
 import PlaygroundEditor from '../components/playground-editor/Editor'
-import convertFromHTMLToState from '../components/playground-editor/convertFromHTMLToState'
+import convertFromHTMLToState, {
+  convertFromHTMLToStateDecator,
+} from '../components/playground-editor/convertFromHTMLToState'
 
 import {
   Link,
@@ -39,8 +41,6 @@ const rawState = EditorState.createWithContent(
   decorator
 )
 
-const emptyEditorState = convertFromHTMLToState('')
-
 function HomePage() {
   const playgroundEditorTypingCallback = childContentState => {
     console.log('contentState:', convertToRaw(childContentState))
@@ -54,7 +54,7 @@ function HomePage() {
           placeholder="Simple placeholder"
           required
           parentTypingCallback={playgroundEditorTypingCallback}
-          previousEditorState={emptyEditorState}
+          previousEditorState={convertFromHTMLToState('')}
         />
       </section>
 
@@ -68,6 +68,16 @@ function HomePage() {
           required
           parentTypingCallback={playgroundEditorTypingCallback}
           previousEditorState={rawState}
+        />
+      </section>
+
+      <section>
+        <h2>Field without fieldValue. Decator is enable</h2>
+        <PlaygroundEditor
+          placeholder="Simple placeholder"
+          required
+          parentTypingCallback={playgroundEditorTypingCallback}
+          previousEditorState={convertFromHTMLToStateDecator('', decorator)}
         />
       </section>
     </section>
