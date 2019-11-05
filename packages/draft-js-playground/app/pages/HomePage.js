@@ -19,6 +19,11 @@ import {
   findLinkEntities,
 } from '../components/playground-editor/decorators/Link'
 
+import {
+  Image,
+  findImageEntities,
+} from '../components/playground-editor/decorators/Image'
+
 const Pre = styled.pre`
   position: relative;
 
@@ -46,6 +51,10 @@ const decorator = new CompositeDecorator([
   {
     strategy: findLinkEntities,
     component: Link,
+  },
+  {
+    strategy: findImageEntities,
+    component: Image,
   },
 ])
 
