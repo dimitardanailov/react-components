@@ -19,6 +19,16 @@ import {
   findLinkEntities,
 } from '../components/playground-editor/decorators/Link'
 
+const Pre = styled.pre`
+  position: relative;
+
+  display: block;
+  padding: 10px;
+
+  background: #ccc;
+  border-radius: 5px;
+`
+
 const Code = styled.code`
   display: block;
   white-space: pre-wrap;
@@ -27,8 +37,7 @@ const Code = styled.code`
 const imageURL =
   'https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png'
 
-const sampleMarkup = `
-<b>Bold text</b>, <i>Italic text</i><br/ ><br />
+const sampleMarkup = `<b>Bold text</b>, <i>Italic text</i><br/ ><br />
 <a href="https://www.google.com/">Google.com</a><br /><br/ >
 <img src="${imageURL}" height="272" width="92" />
 `
@@ -67,13 +76,13 @@ function HomePage() {
 
       <section>
         <h3>HTML content</h3>
-        <pre>
+        <Pre>
           <Code>{sampleMarkup}</Code>
-        </pre>
+        </Pre>
         <h3>Draftjs raw data equalent</h3>
-        <pre>
+        <Pre>
           <Code>{JSON.stringify(rawData)}</Code>
-        </pre>
+        </Pre>
         <PlaygroundEditor
           placeholder="Simple placeholder"
           required
