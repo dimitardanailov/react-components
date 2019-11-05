@@ -22,8 +22,18 @@ function findLinkEntities(contentBlock, callback, contentState) {
 
 function Link({ contentState, entityKey, children }) {
   const { url } = contentState.getEntity(entityKey).getData()
+  const onClickListener = e => {
+    e.preventDefault()
+    const { href } = e.currentTarget.dataset
 
-  return <CustomLink href={url}>{children}</CustomLink>
+    alert(`href properties is: ${href}`)
+  }
+
+  return (
+    <CustomLink href={url} onClick={onClickListener} data-href={url}>
+      {children}
+    </CustomLink>
+  )
 }
 
 Link.propTypes = {
