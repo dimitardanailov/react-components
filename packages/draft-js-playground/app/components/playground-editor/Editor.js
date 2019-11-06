@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 import { Editor, EditorState } from 'draft-js'
 
@@ -24,6 +24,21 @@ function RequiredField() {
   return <ErrorText>Required</ErrorText>
 }
 
+function usePrevious(value) {
+  // The ref object is a generic container whose current property is mutable ...
+  // ... and can hold any value, similar to an instance property on a class
+  const ref = useRef()
+
+  // Store current value in ref
+  useEffect(() => {
+    ref.current = value
+    console.log('value', value)
+  }, [value]) // Only re-run if value changes
+
+  // Return previous value (happens before update in useEffect above)
+  return ref.current
+}
+
 function PlaygroundEditor({
   placeholder,
   required,
@@ -33,15 +48,41 @@ function PlaygroundEditor({
 }) {
   const [editorState, setEditorState] = React.useState(previousEditorState)
 
-  React.useEffect(() => {
+  // Get the previous value (was passed into hook on last render)
+  const prevEditorState = usePrevious({ editorState })
+
+  console.log('here ....')
+
+  useEffect(() => {
     const contentState = editorState.getCurrentContent()
     parentTypingCallback(contentState)
+
+    console.log(
+      'plain text',
+      previousEditorState.getCurrentContent().getPlainText()
+    )
+
+    console.log('plain text: current', contentState.getPlainText())
+    contentState.getPlainText()
+
+    /*
+    console.log(
+      'prevEditorState',
+      prevEditorState.getCurrentContent().getPlainText()
+    ) */
 
     if (required) {
       // eslint-disable-next-line no-use-before-define
       setRequiredFieldIsVisible(contentState.hasText())
     }
-  }, [editorState, parentTypingCallback, required])
+  }, [
+    editorState,
+    error,
+    parentTypingCallback,
+    prevEditorState,
+    previousEditorState,
+    required,
+  ])
 
   const [requiredFieldIsHidden, setRequiredFieldIsVisible] = React.useState(
     !error
