@@ -39,6 +39,14 @@ const Code = styled.code`
   white-space: pre-wrap;
 `
 
+const SectionExample = styled.section`
+  position: relative;
+
+  display: block;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed #ccc;
+`
+
 const imageURL =
   'https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png'
 
@@ -73,7 +81,7 @@ function HomePage() {
 
   return (
     <section>
-      <section>
+      <SectionExample>
         <h2>Field without fieldValue</h2>
         <PlaygroundEditor
           placeholder="Simple placeholder"
@@ -81,9 +89,9 @@ function HomePage() {
           parentTypingCallback={playgroundEditorTypingCallback}
           previousEditorState={convertFromHTMLToState('')}
         />
-      </section>
+      </SectionExample>
 
-      <section>
+      <SectionExample>
         <h3>HTML content</h3>
         <Pre>
           <Code>{sampleMarkup}</Code>
@@ -98,9 +106,9 @@ function HomePage() {
           parentTypingCallback={playgroundEditorTypingCallback}
           previousEditorState={rawState}
         />
-      </section>
+      </SectionExample>
 
-      <section>
+      <SectionExample>
         <h2>Field without fieldValue. Decator is enable</h2>
         <PlaygroundEditor
           placeholder="Simple placeholder"
@@ -108,9 +116,9 @@ function HomePage() {
           parentTypingCallback={playgroundEditorTypingCallback}
           previousEditorState={convertFromHTMLToStateDecator('', decorator)}
         />
-      </section>
+      </SectionExample>
 
-      <section>
+      <SectionExample>
         <h2>Field with default error</h2>
         <PlaygroundEditor
           placeholder="Simple placeholder"
@@ -119,7 +127,7 @@ function HomePage() {
           previousEditorState={convertFromHTMLToState('')}
           error
         />
-      </section>
+      </SectionExample>
     </section>
   )
 }
