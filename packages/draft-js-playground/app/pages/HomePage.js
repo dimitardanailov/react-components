@@ -109,6 +109,17 @@ function HomePage() {
           previousEditorState={convertFromHTMLToStateDecator('', decorator)}
         />
       </section>
+
+      <section>
+        <h2>Field with default error</h2>
+        <PlaygroundEditor
+          placeholder="Simple placeholder"
+          required
+          parentTypingCallback={playgroundEditorTypingCallback}
+          previousEditorState={convertFromHTMLToState('')}
+          error
+        />
+      </section>
     </section>
   )
 }
