@@ -32,11 +32,19 @@ function usePrevious(value) {
   // Store current value in ref
   useEffect(() => {
     ref.current = value
-    console.log('value', value)
   }, [value]) // Only re-run if value changes
 
   // Return previous value (happens before update in useEffect above)
   return ref.current
+}
+
+function oldEditorStateIsValid(oldPreviousState) {
+  const isValid =
+    typeof oldPreviousState === 'object' &&
+    'editorState' in oldPreviousState &&
+    oldPreviousState.editorState instanceof EditorState
+
+  return isValid
 }
 
 function PlaygroundEditor({
@@ -49,37 +57,23 @@ function PlaygroundEditor({
   const [editorState, setEditorState] = React.useState(previousEditorState)
 
   // Get the previous value (was passed into hook on last render)
-  const prevEditorState = usePrevious({ editorState })
-
-  console.log('here ....')
+  const oldPreviousState = usePrevious({ editorState })
 
   useEffect(() => {
     const contentState = editorState.getCurrentContent()
     parentTypingCallback(contentState)
 
-    console.log(
-      'plain text',
-      previousEditorState.getCurrentContent().getPlainText()
-    )
+    const isValid = oldEditorStateIsValid(oldPreviousState)
 
-    console.log('plain text: current', contentState.getPlainText())
-    contentState.getPlainText()
-
-    /*
-    console.log(
-      'prevEditorState',
-      prevEditorState.getCurrentContent().getPlainText()
-    ) */
-
-    if (required) {
+    if (required && isValid) {
       // eslint-disable-next-line no-use-before-define
       setRequiredFieldIsVisible(contentState.hasText())
     }
   }, [
     editorState,
     error,
+    oldPreviousState,
     parentTypingCallback,
-    prevEditorState,
     previousEditorState,
     required,
   ])
