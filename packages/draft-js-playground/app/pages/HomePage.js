@@ -82,6 +82,15 @@ function HomePage() {
   return (
     <section>
       <SectionExample>
+        <h2>Field without previousEditorState</h2>
+        <PlaygroundEditor
+          placeholder="Simple placeholder"
+          required
+          parentTypingCallback={playgroundEditorTypingCallback}
+        />
+      </SectionExample>
+
+      <SectionExample>
         <h2>Field without fieldValue</h2>
         <PlaygroundEditor
           placeholder="Simple placeholder"
