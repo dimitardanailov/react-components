@@ -107,7 +107,7 @@ PlaygroundEditor.propTypes = {
   required: PropTypes.bool,
   error: PropTypes.bool,
   previousEditorState: PropTypes.instanceOf(EditorState),
-  parentTypingCallback: PropTypes.func,
+  parentTypingCallback: PropTypes.func.isRequired,
 }
 
 export default PlaygroundEditor
