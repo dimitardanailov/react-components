@@ -76,7 +76,7 @@ const rawState = EditorState.createWithContent(
 
 function HomePage() {
   const playgroundEditorTypingCallback = childContentState => {
-    console.log('contentState:', convertToRaw(childContentState))
+    // console.log('contentState:', convertToRaw(childContentState))
   }
 
   return (
