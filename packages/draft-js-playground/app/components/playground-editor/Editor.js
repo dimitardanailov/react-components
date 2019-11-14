@@ -47,6 +47,15 @@ function oldEditorStateIsValid(oldPreviousState) {
   return isValid
 }
 
+function oldStateShouldBeDifferent(oldPreviousState, editorState) {
+  const oldText = oldPreviousState.editorState
+    .getCurrentContent()
+    .getPlainText()
+  const currentText = editorState.getCurrentContent().getPlainText()
+
+  return currentText !== oldText
+}
+
 function PlaygroundEditor({
   placeholder,
   required,
@@ -64,8 +73,15 @@ function PlaygroundEditor({
     parentTypingCallback(contentState)
 
     const isValid = oldEditorStateIsValid(oldPreviousState)
+    let oldEditorStateTextIsValid = false
+    if (isValid) {
+      oldEditorStateTextIsValid = oldStateShouldBeDifferent(
+        oldPreviousState,
+        editorState
+      )
+    }
 
-    if (required && isValid) {
+    if (required && isValid && oldEditorStateTextIsValid) {
       // eslint-disable-next-line no-use-before-define
       setRequiredFieldIsVisible(contentState.hasText())
     }
