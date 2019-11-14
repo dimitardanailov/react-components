@@ -98,6 +98,10 @@ function PlaygroundEditor({
     !error
   )
 
+  useEffect(() => {
+    setRequiredFieldIsVisible(!error)
+  }, [error])
+
   return (
     <Wrapper>
       <Editor
