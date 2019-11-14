@@ -79,8 +79,29 @@ function HomePage() {
     // console.log('contentState:', convertToRaw(childContentState))
   }
 
+  const [dynamicErrorIsEnable, setDynamicError] = React.useState(false)
+  const toggleError = () => {
+    setDynamicError(!dynamicErrorIsEnable)
+  }
+
   return (
     <section>
+      <SectionExample>
+        <h2>Field with dynamic error</h2>
+        <PlaygroundEditor
+          placeholder="Simple placeholder"
+          required
+          parentTypingCallback={playgroundEditorTypingCallback}
+          error={dynamicErrorIsEnable}
+        />
+        <div>
+          {`Dynamic error: ${dynamicErrorIsEnable}`} <br />
+          <button onClick={toggleError} type="button" tabIndex="-1">
+            Toggle error state
+          </button>
+        </div>
+      </SectionExample>
+
       <SectionExample>
         <h2>Field without previousEditorState</h2>
         <PlaygroundEditor
