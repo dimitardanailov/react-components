@@ -85,14 +85,7 @@ function PlaygroundEditor({
       // eslint-disable-next-line no-use-before-define
       setRequiredFieldIsVisible(contentState.hasText())
     }
-  }, [
-    editorState,
-    error,
-    oldPreviousState,
-    parentTypingCallback,
-    previousEditorState,
-    required,
-  ])
+  }, [editorState, oldPreviousState, parentTypingCallback, required])
 
   const [requiredFieldIsHidden, setRequiredFieldIsVisible] = React.useState(
     !error
