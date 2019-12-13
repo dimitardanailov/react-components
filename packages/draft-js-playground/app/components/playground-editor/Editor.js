@@ -95,15 +95,9 @@ function PlaygroundEditor({
     setRequiredFieldIsVisible(!error)
   }, [error])
 
-  const toggleBulletPoints = () => {
-    updateEditorStateByRichUtilsCommand('unordered-list-item')
-  }
+  const addHtmlElement = e => {
+    const { command } = e.currentTarget.dataset
 
-  const toggleOrderList = () => {
-    updateEditorStateByRichUtilsCommand('ordered-list-item')
-  }
-
-  function updateEditorStateByRichUtilsCommand(command) {
     setEditorState(
       RichUtils.toggleBlockType(
         editorState,
@@ -115,8 +109,12 @@ function PlaygroundEditor({
   return (
     <Wrapper>
       <section>
-        <button onClick={toggleBulletPoints}>Bullet points</button>
-        <button onClick={toggleOrderList}>Order List</button>
+        <button 
+          onClick={addHtmlElement} 
+          data-command="unordered-list-item">Bullet points</button>
+        <button 
+          onClick={addHtmlElement} 
+          data-command="ordered-list-item">Order list</button>
       </section>
       
       <Editor
