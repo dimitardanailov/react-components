@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
-import { Editor, EditorState } from 'draft-js'
+import { Editor, EditorState, RichUtils } from 'draft-js'
 
 import 'draft-js/dist/Draft.css'
 
@@ -95,8 +95,30 @@ function PlaygroundEditor({
     setRequiredFieldIsVisible(!error)
   }, [error])
 
+  const toggleBulletPoints = () => {
+    updateEditorStateByRichUtilsCommand('unordered-list-item')
+  }
+
+  const toggleOrderList = () => {
+    updateEditorStateByRichUtilsCommand('ordered-list-item')
+  }
+
+  function updateEditorStateByRichUtilsCommand(command) {
+    setEditorState(
+      RichUtils.toggleBlockType(
+        editorState,
+        command
+      )
+    )
+  }
+
   return (
     <Wrapper>
+      <section>
+        <button onClick={toggleBulletPoints}>Bullet points</button>
+        <button onClick={toggleOrderList}>Order List</button>
+      </section>
+      
       <Editor
         placeholder={placeholder}
         editorState={editorState}
