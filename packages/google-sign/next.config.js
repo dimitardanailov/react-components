@@ -1,6 +1,6 @@
 require('dotenv').config()
 module.exports = {
   env: {
-    GOOGLE_API_KEY: process.env.GOOGLE_API_KEY,
+    GOOGLE_ClIENT_ID: process.env.GOOGLE_ClIENT_ID,
   },
 }
