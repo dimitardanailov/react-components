@@ -1,8 +1,8 @@
 import Head from 'next/head'
 
 function MainHeader() {
-  const clientId = process.env.GOOGLE_API_KEY
-  console.log('clientId', clientId)
+  const {GOOGLE_ClIENT_ID} = process.env
+  console.log('GOOGLE_ClIENT_ID', GOOGLE_ClIENT_ID)
 
   return (
     <div>
@@ -19,7 +19,7 @@ function MainHeader() {
 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <meta name="google-signin-client_id" content={clientId}></meta>
+        <meta name="google-signin-client_id" content={GOOGLE_ClIENT_ID}></meta>
         <link
           href="https://fonts.googleapis.com/css?family=Roboto"
           rel="stylesheet"
