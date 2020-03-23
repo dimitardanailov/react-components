@@ -14,8 +14,14 @@ class MyDocument extends Document {
           <Main />
           <NextScript />
 
-          {/* https://developers.google.com/api-client-library/javascript/start/start-js */}
-          <script async defer src="https://apis.google.com/js/api.js"></script>
+          {/* https://developers.google.com/identity/sign-in/web/sign-in */}
+          <script
+            async
+            defer
+            src="https://apis.google.com/js/platform.js"
+            async
+            defer
+          ></script>
         </body>
       </Html>
     )
