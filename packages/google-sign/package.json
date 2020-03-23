@@ -15,8 +15,16 @@
     "url": "git+https://github.com/dimitardanailov/react-components.git"
   },
   "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
   },
   "bugs": {
     "url": "https://github.com/dimitardanailov/react-components/issues"
+  },
+  "dependencies": {
+    "next": "^9.3.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   }
 }
