@@ -19,7 +19,7 @@ function setup() {
   window.gapi.load('auth2', () => {
     window.gapi.auth2
       .init({
-        client_id: process.env.GOOGLE_CLIENT_SECRET,
+        client_id: process.env.GOOGLE_ClIENT_ID,
       })
       .then(() => {
         window.gapi.signin2.render('react-google-sign', {
