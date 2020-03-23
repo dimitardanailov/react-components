@@ -1,0 +1,22 @@
+{
+  "name": "react-google-auth",
+  "version": "0.0.1",
+  "description": "Simple react component which helps google sign in",
+  "keywords": [
+    "google",
+    "sign",
+    "in"
+  ],
+  "author": "Dimitar Danailov <dimityr.danailov@gmail.com>",
+  "homepage": "https://github.com/dimitardanailov/react-components#readme",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dimitardanailov/react-components.git"
+  },
+  "scripts": {
+  },
+  "bugs": {
+    "url": "https://github.com/dimitardanailov/react-components/issues"
+  }
+}
