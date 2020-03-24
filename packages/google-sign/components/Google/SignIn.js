@@ -1,12 +1,14 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect} from 'react'
 
 function GoogleSignIn() {
-  const [googleApi, setApi] = useState(null)
-
   useEffect(() => {
-    console.log('promise ....')
-    setup()
-  }, [googleApi])
+    const cb = buttonSetup.bind({
+      onSuccess,
+      onFailure,
+    })
+    const promise = gapiSetup()
+    promise.then(cb)
+  }, [])
 
   return <div id="react-google-sign" />
 }
@@ -15,29 +17,46 @@ function GoogleSignIn() {
  * File follow recomendations from google:
  * https://developers.google.com/identity/sign-in/web/build-button
  */
-function setup() {
-  window.gapi.load('auth2', () => {
-    window.gapi.auth2
-      .init({
+function gapiSetup() {
+  const promise = new Promise(resolve => {
+    window.gapi.load('auth2', () => {
+      const response = window.gapi.auth2.init({
         client_id: process.env.GOOGLE_ClIENT_ID,
       })
-      .then(() => {
-        window.gapi.signin2.render('react-google-sign', {
-          scope: 'profile email',
-          width: 250,
-          height: 50,
-          longtitle: false,
-          theme: 'dark',
-          onsuccess: onSuccess,
-          onfailure: onFailure,
-        })
-      })
+
+      resolve(response)
+    })
   })
+
+  return promise
 }
 
+function buttonSetup() {
+  const setup = window.gapi.signin2.render('react-google-sign', {
+    scope: 'profile email',
+    width: 250,
+    height: 50,
+    longtitle: false,
+    theme: 'dark',
+    onsuccess: this.onSuccess,
+    onfailure: this.onFailure,
+  })
+
+  return setup
+}
+
+/**
+ * Documentation https://developers.google.com/identity/sign-in/web/people
+ * @param {Object} googleUser
+ */
 function onSuccess(googleUser) {
-  console.log('Logged in as: ' + googleUser.getBasicProfile().getName())
-  console.log('Email: ' + googleUser.getBasicProfile().getEmail())
+  var profile = googleUser.getBasicProfile()
+  console.log('ID: ' + profile.getId())
+  console.log('Full Name: ' + profile.getName())
+  console.log('Given Name: ' + profile.getGivenName())
+  console.log('Family Name: ' + profile.getFamilyName())
+  console.log('Image URL: ' + profile.getImageUrl())
+  console.log('Email: ' + profile.getEmail())
 }
 function onFailure(error) {
   console.log(error)
