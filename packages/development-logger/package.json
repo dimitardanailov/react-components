@@ -1,0 +1,21 @@
+{
+  "name": "development-logger",
+  "version": "0.0.1",
+  "description": "The element will allow to create an output with variables details",
+  "keywords": [
+    "development-react"
+  ],
+  "author": "Dimitar Danailov <dimityr.danailov@gmail.com>",
+  "homepage": "https://github.com/dimitardanailov/react-components#readme",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dimitardanailov/react-components.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/dimitardanailov/react-components/issues"
+  }
+}
