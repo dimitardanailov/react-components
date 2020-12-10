@@ -1,6 +1,7 @@
 import React, { useRef } from 'react'
 import styled from 'styled-components'
 import data from './data.json'
+import jsonRecord from './record.json'
 
 const Wrapper = styled.div`
   position: relative;
@@ -29,7 +30,7 @@ class D3Tree extends React.Component {
 
   componentDidMount() {
     const width = 800
-    const node = loadTree(width, data)
+    const node = loadTree(width, data, jsonRecord)
     d3.select(this.div).append(() => node)
   }
 
@@ -42,10 +43,13 @@ class D3Tree extends React.Component {
   }
 }
 
-function loadTree(width, data) {
-  const margin = { top: 10, right: 120, bottom: 10, left: 60 }
+function loadTree(width, data, record) {
+  const margin = { top: 20, right: 120, bottom: 10, left: 120 }
+
   const dy = width / 6
-  const dx = 10
+  const dx = 25
+  const radius = (dx * 0.9) / 2
+
   const tree = d3.tree().nodeSize([dx, dy])
   const diagonal = d3
     .linkHorizontal()
@@ -59,20 +63,24 @@ function loadTree(width, data) {
   root.descendants().forEach((d, i) => {
     d.id = i
     d._children = d.children
-    if (d.depth && d.data.name.length !== 7) d.children = null
+
+    const parents = record.path.split('#')
+    if (!parents.includes(d.data._id)) {
+      d.children = null
+    }
   })
 
   const svg = d3
     .create('svg')
     .attr('viewBox', [-margin.left, -margin.top, width, dx])
-    .style('font', '10px sans-serif')
+    .style('font', '12px sans-serif')
     .style('user-select', 'none')
 
   const gLink = svg
     .append('g')
     .attr('fill', 'none')
-    .attr('stroke', '#555')
-    .attr('stroke-opacity', 0.4)
+    .attr('stroke', '#000')
+    .attr('stroke-opacity', 0.25)
     .attr('stroke-width', 1.5)
 
   const gNode = svg
@@ -81,6 +89,7 @@ function loadTree(width, data) {
     .attr('pointer-events', 'all')
 
   function update(source) {
+    console.log('source', source)
     const duration = d3.event && d3.event.altKey ? 2500 : 250
     const nodes = root.descendants().reverse()
     const links = root.links()
@@ -121,16 +130,34 @@ function loadTree(width, data) {
         update(d)
       })
 
+    const fill = d => {
+      const match = d.data._id === record._id
+      const colors = {
+        hasChildren: '#555',
+        default: '#999',
+      }
+
+      if (match) {
+        colors.hasChildren = '#3288bd'
+        colors.default = '#66c2a5'
+      }
+
+      return d._children ? colors.hasChildren : colors.default
+    }
+
     nodeEnter
       .append('circle')
-      .attr('r', 2.5)
-      .attr('fill', d => (d._children ? '#555' : '#999'))
-      .attr('stroke-width', 10)
+      .attr('r', radius)
+      .attr('fill', fill)
+      .attr('stroke-width', 1)
+
+    const labelX = d => (d._children ? -radius * 1.2 : radius * 1.2)
 
     nodeEnter
       .append('text')
-      .attr('dy', '0.31em')
-      .attr('x', d => (d._children ? -6 : 6))
+      .attr('dy', '-0em')
+      .attr('x', labelX)
+      .attr('fill', fill)
       .attr('text-anchor', d => (d._children ? 'end' : 'start'))
       .text(d => d.data.name)
       .clone(true)
@@ -138,6 +165,22 @@ function loadTree(width, data) {
       .attr('stroke-linejoin', 'round')
       .attr('stroke-width', 3)
       .attr('stroke', 'white')
+
+    nodeEnter
+      .append('text')
+      .attr('dy', '1.1em')
+      .attr('x', labelX)
+      .attr('text-anchor', d => (d._children ? 'end' : 'start'))
+      .attr('fill', fill)
+      .style('font', '10px sans-serif')
+      .text(d => d.data.status)
+      .clone(true)
+      .lower()
+      .attr('stroke-linejoin', 'round')
+      .attr('stroke-width', 3)
+      .attr('stroke', 'white')
+      .append('tspan')
+      .attr('dy', '0.3em')
 
     // Transition nodes to their new position.
     const nodeUpdate = node
