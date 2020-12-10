@@ -44,7 +44,7 @@ class D3Tree extends React.Component {
 }
 
 function loadTree(width, data, record) {
-  const margin = { top: 20, right: 120, bottom: 10, left: 120 }
+  const margin = { top: 20, right: 120, bottom: 20, left: 120 }
 
   const dy = width / 6
   const dx = 25
@@ -79,7 +79,6 @@ function loadTree(width, data, record) {
   const gLink = svg
     .append('g')
     .attr('fill', 'none')
-    .attr('stroke', '#000')
     .attr('stroke-opacity', 0.25)
     .attr('stroke-width', 1.5)
 
@@ -89,7 +88,6 @@ function loadTree(width, data, record) {
     .attr('pointer-events', 'all')
 
   function update(source) {
-    console.log('source', source)
     const duration = d3.event && d3.event.altKey ? 2500 : 250
     const nodes = root.descendants().reverse()
     const links = root.links()
@@ -199,7 +197,6 @@ function loadTree(width, data, record) {
       .attr('fill-opacity', 0)
       .attr('stroke-opacity', 0)
 
-    // Update the links…
     const link = gLink.selectAll('path').data(links, d => d.target.id)
 
     // Enter any new links at the parent's previous position.
@@ -209,6 +206,17 @@ function loadTree(width, data, record) {
       .attr('d', d => {
         const o = { x: source.x0, y: source.y0 }
         return diagonal({ source: o, target: o })
+      })
+      .style('stroke', function(d) {
+        if (d.target.data.parent.includes(record._id)) {
+          return '#3288bd'
+        }
+
+        if (d.target.data._id === record._id) {
+          return d.target.children ? '#3288bd' : '#66c2a5'
+        }
+
+        return '#000'
       })
 
     // Transition links to their new position.
