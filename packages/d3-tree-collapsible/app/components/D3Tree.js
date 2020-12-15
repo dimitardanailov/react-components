@@ -1,93 +1,111 @@
-function paintCircle(_, d) {
-  const circle = d3.select(this)
-  d.childActive = !d.childActive
+import TreeStateMachine from './machines/TreeStateMachine'
+import { useMachine } from '@xstate/react'
 
-  if (d.childActive) {
-    circle.style('fill', 'red')
-  } else {
-    circle.style('fill', d.originalColor)
+function D3Tree({ data, jsonRecord }) {
+  const activeButton = {
+    color: '#fff',
+    backgroundColor: '#000',
   }
+
+  const [state, send, service] = useMachine(TreeStateMachine)
+
+  const d3Container = React.createElement(D3TreeContainer, {
+    data: data,
+    jsonRecord: jsonRecord,
+    state,
+    service,
+  })
+
+  const collapseModeBtnClickHandler = () => {
+    send('COLLAPSE')
+  }
+  const collapseModeBtn = React.createElement(
+    'button',
+    {
+      onClick: collapseModeBtnClickHandler,
+    },
+    'Mode: Review',
+  )
+
+  const selectChildBtnClickHandler = () => {
+    send('SELECT_CHILD')
+  }
+  const selectChildBtn = React.createElement(
+    'button',
+    {
+      onClick: selectChildBtnClickHandler,
+    },
+    'Mode: Select child',
+  )
+
+  const info = React.createElement('div', null, `Active mode: ${state.value}`)
+
+  const Wrapper = React.createElement(
+    'div',
+    null,
+    collapseModeBtn,
+    selectChildBtn,
+    info,
+    d3Container,
+  )
+
+  return Wrapper
 }
 
-class D3Tree extends React.Component {
+D3Tree.defaultProps = {
+  data: null,
+  jsonRecord: null,
+}
+
+D3Tree.propTypes = {}
+
+class D3TreeContainer extends React.Component {
   constructor(props) {
     super(props)
 
     this.data = props.data
-
     this.jsonRecord = props.jsonRecord
+    this.state = props.state
+    this.service = props.service
 
-    this.div = null
+    this.container = null
 
-    this.setDivRef = element => {
-      this.div = element
-    }
-
-    this.btnUpdateTree = null
-    this.setBtnUpdateTreeRef = element => {
-      this.btnUpdateTree = element
-    }
-
-    this.btnExpandTree = null
-    this.setBtnExpandTreeRef = element => {
-      this.btnExpandTree = element
+    this.setContainerRef = element => {
+      this.container = element
     }
   }
 
   componentDidMount() {
     const width = 800
-
-    if (this.data !== null > 0 && this.jsonRecord !== null) {
-      const node = loadTree(width, this.data, this.jsonRecord)
-      d3.select(this.div).append(() => node)
-    }
-
-    d3.select(this.btnUpdateTree).on('click', () => {})
-    // console.log('this.updateTree', this.btnUpdateTree, this.div)
-    // console.log('this.expandTree', this.btnUpdateTree, this.div)
-
-    // d3.select(this.btnExpandTree).on('click', () => {})
+    const node = loadTree(
+      width,
+      this.data,
+      this.jsonRecord,
+      this.state,
+      this.service,
+    )
+    d3.select(this.container).append(() => node)
   }
 
   render() {
-    // const Wrapper =
-    const d3Container = React.createElement('div', {
-      ref: this.setDivRef,
+    return React.createElement('div', {
+      ref: this.setContainerRef,
     })
-
-    const updateTreeBtn = React.createElement(
-      'button',
-      {
-        ref: this.setBtnExpandTreeRef,
-      },
-      'Test',
-    )
-
-    const Wrapper = React.createElement('div', null, updateTreeBtn, d3Container)
-
-    return Wrapper
-
-    /*
-    return (
-      <div>
-        <button ref={this.setBtnExpandTreeRef}>Mode: Update tree</button>
-
-        <button ref={this.setBtnUpdateTreeRef}>Mode: Collapse tree</button>
-
-        <div ref={this.setDivRef}></div>
-      </div>
-    ) */
   }
 }
 
-function loadTree(width, data, record) {
+D3TreeContainer.defaultProps = {
+  data: null,
+  jsonRecord: null,
+}
+
+D3TreeContainer.propTypes = {}
+
+function loadTree(width, data, record, state, service) {
   const margin = { top: 20, right: 120, bottom: 20, left: 120 }
   const dx = 30
   const dy = Math.min(width / (3 + 2), dx * 10)
   const radius = (dx * 0.9) / 2
-
-  const child = null
-  const parent = null
 
   const tree = d3.tree().nodeSize([dx, dy])
   const diagonal = d3
@@ -110,6 +128,11 @@ function loadTree(width, data, record) {
     if (!parents.includes(d.data._id)) {
       d.children = null
     }
+  })
+
+  service.subscribe(newState => {
+    state = newState
+    console.log('newState', newState, state.value)
   })
 
   const svg = d3
@@ -159,16 +182,49 @@ function loadTree(width, data, record) {
     const node = gNode.selectAll('g').data(nodes, d => d.id)
 
     // Enter any new nodes at the parent's previous position.
+    const loadCollapseClickHanlder = d => {
+      d.children = d.children ? null : d._children
+      update(d)
+    }
+
+    const resetColors = () => {
+      svg
+        .selectAll('.node-enter')
+        .select('circle')
+        .style('fill', d => d.originalColor)
+    }
+
+    const loadChildClickHanler = (d, element) => {
+      const circle = d3.select(element).select('circle')
+      d.childActive = true
+      resetColors()
+
+      circle.style('fill', 'red')
+    }
+
+    const nodeEnterOnClickHandler = function(event, d) {
+      if (state.matches('collapse')) {
+        loadCollapseClickHanlder(d)
+      }
+
+      if (state.matches('select_child')) {
+        loadChildClickHanler(d, this)
+      }
+    }
+
     const nodeEnter = node
       .enter()
       .append('g')
       .attr('transform', d => `translate(${source.y0},${source.x0})`)
       .attr('fill-opacity', 0)
       .attr('stroke-opacity', 0)
+      .attr('class', 'node-enter')
+      .on('click', nodeEnterOnClickHandler)
+    /*
       .on('click', (event, d) => {
         // d.children = d.children ? null : d._children
         // update(d)
-      })
+      })*/
 
     const fill = d => {
       const match = d.data._id === record._id
@@ -192,7 +248,7 @@ function loadTree(width, data, record) {
       .attr('r', radius)
       .attr('fill', fill)
       .attr('stroke-width', 1)
-      .on('click', paintCircle)
+    // .on('click', paintCircle)
 
     const labelX = d => (d._children ? -radius * 1.2 : radius * 1.2)
 
@@ -291,12 +347,5 @@ function loadTree(width, data, record) {
 
   return svg.node()
 }
-
-D3Tree.defaultProps = {
-  data: null,
-  jsonRecord: null,
-}
-
-D3Tree.propTypes = {}
 
 export default D3Tree
