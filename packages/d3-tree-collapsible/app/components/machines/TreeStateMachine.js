@@ -7,6 +7,7 @@ const TreeStateMachine = Machine({
     collapse: {
       on: {
         SELECT_CHILD: 'select_child',
+        SELECT_PARENT: 'select_parent',
       },
     },
     select_child: {
@@ -15,7 +16,12 @@ const TreeStateMachine = Machine({
         SELECT_PARENT: 'select_parent',
       },
     },
-    select_parent: {},
+    select_parent: {
+      on: {
+        COLLAPSE: 'collapse',
+        SELECT_CHILD: 'select_child',
+      },
+    },
   },
 })
 
