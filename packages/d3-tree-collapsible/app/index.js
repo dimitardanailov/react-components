@@ -1,7 +1,5 @@
 import 'react-hot-loader'
 
-import React from 'react'
-import ReactDOM from 'react-dom'
 import HomePage from './pages/HomePage'
 
 window.addEventListener('load', async () => {

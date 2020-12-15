@@ -1,14 +1,15 @@
 import { hot } from 'react-hot-loader/root'
 
-import React from 'react'
+import data from './jsons/data.json'
+import jsonRecord from './jsons/record.json'
+
 import D3Tree from '../components/D3Tree'
 
 function HomePage() {
-  return (
-    <section>
-      <D3Tree />
-    </section>
-  )
+  return React.createElement(D3Tree, {
+    data: data,
+    jsonRecord: jsonRecord,
+  })
 }
 
 export default hot(HomePage)
