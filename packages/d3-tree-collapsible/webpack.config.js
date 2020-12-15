@@ -1,8 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { APP_DIR, DIST_DIR } = require('./utils/folders')
 
-console.log('APP_DIR', APP_DIR)
-
 module.exports = {
   entry: {
     entry: `${APP_DIR}/index.js`,
@@ -13,6 +11,9 @@ module.exports = {
   },
   resolve: {
     modules: ['node_modules'],
+  },
+  externals: {
+    react: 'React',
   },
 
   node: {
