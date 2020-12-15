@@ -18,10 +18,12 @@
     "url": "https://github.com/dimitardanailov/react-components/issues"
   },
   "dependencies": {
+    "@xstate/react": "^1.1.0",
     "prop-types": "^15.7.2",
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0",
-    "styled-components": "^5.2.1"
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "styled-components": "^5.2.1",
+    "xstate": "^4.15.1"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",
