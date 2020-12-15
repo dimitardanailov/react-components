@@ -1,12 +1,8 @@
 import TreeStateMachine from './machines/TreeStateMachine'
 import { useMachine } from '@xstate/react'
+import { element } from 'prop-types'
 
 function D3Tree({ data, jsonRecord }) {
-  const activeButton = {
-    color: '#fff',
-    backgroundColor: '#000',
-  }
-
   const [state, send, service] = useMachine(TreeStateMachine)
 
   const d3Container = React.createElement(D3TreeContainer, {
@@ -38,6 +34,17 @@ function D3Tree({ data, jsonRecord }) {
     'Mode: Select child',
   )
 
+  const selectParentBtnClickHandler = () => {
+    send('SELECT_PARENT')
+  }
+  const selectParentBtn = React.createElement(
+    'button',
+    {
+      onClick: selectParentBtnClickHandler,
+    },
+    'Mode: Select parent',
+  )
+
   const info = React.createElement('div', null, `Active mode: ${state.value}`)
 
   const Wrapper = React.createElement(
@@ -45,6 +52,7 @@ function D3Tree({ data, jsonRecord }) {
     null,
     collapseModeBtn,
     selectChildBtn,
+    selectParentBtn,
     info,
     d3Container,
   )
@@ -123,6 +131,8 @@ function loadTree(width, data, record, state, service) {
     d.id = i
     d.originalColor = '#999'
     d._children = d.children
+    d.childActive = false
+    d.parentActive = false
 
     const parents = record.path.split('#')
     if (!parents.includes(d.data._id)) {
@@ -187,28 +197,57 @@ function loadTree(width, data, record, state, service) {
       update(d)
     }
 
-    const resetColors = () => {
+    const loadChildClickHandler = (d, element) => {
+      if (d.parentActive) {
+        alert('The current node is used by another selection')
+        return
+      }
+
+      const circle = d3.select(element).select('circle')
+
       svg
         .selectAll('.node-enter')
         .select('circle')
-        .style('fill', d => d.originalColor)
-    }
+        .style('fill', d => {
+          d.childActive = false
 
-    const loadChildClickHanler = (d, element) => {
-      const circle = d3.select(element).select('circle')
+          return d.parentActive ? 'orange' : d.originalColor
+        })
+
       d.childActive = true
-      resetColors()
-
       circle.style('fill', 'red')
     }
 
-    const nodeEnterOnClickHandler = function(event, d) {
+    const loadParentClickHandler = (d, element) => {
+      if (d.childActive) {
+        alert('The current node is used by another selection')
+        return
+      }
+
+      const circle = d3.select(element).select('circle')
+      svg
+        .selectAll('.node-enter')
+        .select('circle')
+        .style('fill', d => {
+          d.parentActive = false
+          return d.childActive ? 'red' : d.originalColor
+        })
+
+      d.parentActive = true
+      circle.style('fill', 'orange')
+    }
+
+    const nodeEnterOnClickHandler = function(_, d) {
       if (state.matches('collapse')) {
         loadCollapseClickHanlder(d)
       }
 
       if (state.matches('select_child')) {
-        loadChildClickHanler(d, this)
+        loadChildClickHandler(d, this)
+      }
+
+      if (state.matches('select_parent')) {
+        loadParentClickHandler(d, this)
       }
     }
 
