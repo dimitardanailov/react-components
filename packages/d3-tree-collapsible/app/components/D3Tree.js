@@ -236,6 +236,10 @@ function loadTree(width, data, record, state, send, service) {
         return false
       }
 
+      send('SET_PARENT', {
+        parent: d.data,
+      })
+
       const circle = d3.select(element).select('circle')
       svg
         .selectAll('.node-enter')
@@ -247,6 +251,8 @@ function loadTree(width, data, record, state, send, service) {
 
       d.parentActive = true
       circle.style('fill', 'orange')
+
+      send('SELECT_PARENT')
     }
 
     const nodeEnterOnClickHandler = function(event, d) {

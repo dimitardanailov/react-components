@@ -41,6 +41,23 @@ const TreeStateMachine = Machine({
       on: {
         COLLAPSE: 'collapse',
         SELECT_CHILD: 'select_child',
+        SET_PARENT: {
+          target: 'set_parent',
+          actions: assign({
+            parent: (_, event) => {
+              const params = {
+                _id: event.parent._id,
+                name: event.parent.name,
+              }
+              return params
+            },
+          }),
+        },
+      },
+    },
+    set_parent: {
+      on: {
+        SELECT_PARENT: 'select_parent',
       },
     },
   },
