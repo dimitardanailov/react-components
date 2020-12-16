@@ -59,6 +59,19 @@ function D3Tree({ data, jsonRecord }) {
     d3Container,
   )
 
+  service.subscribe(currentState => {
+    const availableEvents = currentState.nextEvents.filter(nextEvent => {
+      return TreeStateMachine.transition(currentState, {
+        type: nextEvent,
+        data: {
+          _id: null,
+          name: null,
+        },
+      }).changed
+    })
+    console.log('state:', availableEvents)
+  })
+
   return Wrapper
 }
 
@@ -209,7 +222,7 @@ function loadTree(width, data, record, state, send, service) {
       }
 
       send('SET_CHILD', {
-        child: d.data,
+        data: d.data,
       })
 
       const circle = d3.select(element).select('circle')
@@ -237,7 +250,7 @@ function loadTree(width, data, record, state, send, service) {
       }
 
       send('SET_PARENT', {
-        parent: d.data,
+        data: d.data,
       })
 
       const circle = d3.select(element).select('circle')

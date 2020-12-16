@@ -8,6 +8,19 @@ const dataIsValid = (context, _) => {
   return false
 }
 
+const setData = (_, event) => {
+  const params = {
+    _id: event.data._id,
+    name: event.data.name,
+  }
+  return params
+}
+
+const sendDataConf = {
+  target: 'send_data',
+  cond: dataIsValid,
+}
+
 const TreeStateMachine = Machine(
   {
     id: 'D3TreeMachine',
@@ -21,6 +34,7 @@ const TreeStateMachine = Machine(
         on: {
           SELECT_CHILD: 'select_child',
           SELECT_PARENT: 'select_parent',
+          SEND_DATA: sendDataConf,
         },
       },
       select_child: {
@@ -30,24 +44,15 @@ const TreeStateMachine = Machine(
           SET_CHILD: {
             target: 'set_child',
             actions: assign({
-              child: (_, event) => {
-                const params = {
-                  _id: event.child._id,
-                  name: event.child.name,
-                }
-                return params
-              },
+              child: setData,
             }),
           },
+          SEND_DATA: sendDataConf,
         },
       },
       set_child: {
         on: {
           SELECT_CHILD: 'select_child',
-          SEND_DATA: {
-            target: 'send_data',
-            cond: dataIsValid,
-          },
         },
       },
       select_parent: {
@@ -57,24 +62,15 @@ const TreeStateMachine = Machine(
           SET_PARENT: {
             target: 'set_parent',
             actions: assign({
-              parent: (_, event) => {
-                const params = {
-                  _id: event.parent._id,
-                  name: event.parent.name,
-                }
-                return params
-              },
+              parent: setData,
             }),
           },
+          SEND_DATA: sendDataConf,
         },
       },
       set_parent: {
         on: {
           SELECT_PARENT: 'select_parent',
-          SEND_DATA: {
-            target: 'send_data',
-            cond: dataIsValid,
-          },
         },
       },
       send_data: {
