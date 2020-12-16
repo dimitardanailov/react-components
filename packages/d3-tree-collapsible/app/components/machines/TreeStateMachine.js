@@ -16,8 +16,8 @@ const setData = (_, event) => {
   return params
 }
 
-const sendDataConf = {
-  target: 'send_data',
+const updateRelationShipConf = {
+  target: 'update_relationship',
   cond: dataIsValid,
 }
 
@@ -34,7 +34,7 @@ const TreeStateMachine = Machine(
         on: {
           SELECT_CHILD: 'select_child',
           SELECT_PARENT: 'select_parent',
-          SEND_DATA: sendDataConf,
+          UPDATE_RELATIONSHIP: updateRelationShipConf,
         },
       },
       select_child: {
@@ -47,7 +47,7 @@ const TreeStateMachine = Machine(
               child: setData,
             }),
           },
-          SEND_DATA: sendDataConf,
+          UPDATE_RELATIONSHIP: updateRelationShipConf,
         },
       },
       set_child: {
@@ -65,7 +65,7 @@ const TreeStateMachine = Machine(
               parent: setData,
             }),
           },
-          SEND_DATA: sendDataConf,
+          UPDATE_RELATIONSHIP: updateRelationShipConf,
         },
       },
       set_parent: {
@@ -73,7 +73,7 @@ const TreeStateMachine = Machine(
           SELECT_PARENT: 'select_parent',
         },
       },
-      send_data: {
+      update_relationship: {
         on: {
           DRAW_TREE: 'draw_tree',
         },

@@ -53,19 +53,19 @@ function D3Tree({ jsonData, jsonRecord, RequestService }) {
     'Mode: Select parent',
   )
 
-  const sendDataBtnClickHandler = () => {
-    send('SEND_DATA')
+  const updateRelationshipBtnClickHandler = () => {
+    send('UPDATE_RELATIONSHIP')
     const response = RequestService.updateParentChildRelationship()
 
     setData(response.jsonData)
     send('DRAW_TREE')
   }
-  const sendDataBtn = React.createElement(
+  const updateRelationshipBtn = React.createElement(
     'button',
     {
-      onClick: sendDataBtnClickHandler,
+      onClick: updateRelationshipBtnClickHandler,
     },
-    'Send Data',
+    'Update Relationship',
   )
 
   const info = React.createElement('div', null, `Active mode: ${state.value}`)
@@ -79,7 +79,7 @@ function D3Tree({ jsonData, jsonRecord, RequestService }) {
     selectParentBtn,
     typeof state.context.child === 'object' &&
       typeof state.context.parent === 'object'
-      ? sendDataBtn
+      ? updateRelationshipBtn
       : null,
     info,
     debug,
