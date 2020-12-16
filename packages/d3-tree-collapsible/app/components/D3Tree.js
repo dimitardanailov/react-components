@@ -302,16 +302,11 @@ function loadTree(width, data, record, state, send, service) {
     const nodeEnter = node
       .enter()
       .append('g')
-      .attr('transform', d => `translate(${source.y0},${source.x0})`)
+      .attr('transform', () => `translate(${source.y0},${source.x0})`)
       .attr('fill-opacity', 0)
       .attr('stroke-opacity', 0)
       .attr('class', 'node-enter')
       .on('click', nodeEnterOnClickHandler)
-    /*
-      .on('click', (event, d) => {
-        // d.children = d.children ? null : d._children
-        // update(d)
-      })*/
 
     const fill = d => {
       const match = d.data._id === record._id
@@ -335,7 +330,6 @@ function loadTree(width, data, record, state, send, service) {
       .attr('r', radius)
       .attr('fill', fill)
       .attr('stroke-width', 1)
-    // .on('click', paintCircle)
 
     const labelX = d => (d._children ? -radius * 1.2 : radius * 1.2)
 
