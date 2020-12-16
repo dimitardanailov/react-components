@@ -45,6 +45,17 @@ function D3Tree({ data, jsonRecord }) {
     'Mode: Select parent',
   )
 
+  const sendDataBtnClickHandler = () => {
+    send('SEND_DATA')
+  }
+  const sendDataBtn = React.createElement(
+    'button',
+    {
+      onClick: sendDataBtnClickHandler,
+    },
+    'Send Data',
+  )
+
   const info = React.createElement('div', null, `Active mode: ${state.value}`)
   const debug = React.createElement('div', null, JSON.stringify(state.context))
 
@@ -54,23 +65,14 @@ function D3Tree({ data, jsonRecord }) {
     collapseModeBtn,
     selectChildBtn,
     selectParentBtn,
+    typeof state.context.child === 'object' &&
+      typeof state.context.parent === 'object'
+      ? sendDataBtn
+      : null,
     info,
     debug,
     d3Container,
   )
-
-  service.subscribe(currentState => {
-    const availableEvents = currentState.nextEvents.filter(nextEvent => {
-      return TreeStateMachine.transition(currentState, {
-        type: nextEvent,
-        data: {
-          _id: null,
-          name: null,
-        },
-      }).changed
-    })
-    console.log('state:', availableEvents)
-  })
 
   return Wrapper
 }
