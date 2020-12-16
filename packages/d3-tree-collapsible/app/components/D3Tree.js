@@ -1,6 +1,5 @@
 import TreeStateMachine from './machines/TreeStateMachine'
 import { useMachine } from '@xstate/react'
-import { element } from 'prop-types'
 
 function D3Tree({ data, jsonRecord }) {
   const [state, send, service] = useMachine(TreeStateMachine)
@@ -9,6 +8,7 @@ function D3Tree({ data, jsonRecord }) {
     data: data,
     jsonRecord: jsonRecord,
     state,
+    send,
     service,
   })
 
@@ -46,6 +46,7 @@ function D3Tree({ data, jsonRecord }) {
   )
 
   const info = React.createElement('div', null, `Active mode: ${state.value}`)
+  const debug = React.createElement('div', null, JSON.stringify(state.context))
 
   const Wrapper = React.createElement(
     'div',
@@ -54,6 +55,7 @@ function D3Tree({ data, jsonRecord }) {
     selectChildBtn,
     selectParentBtn,
     info,
+    debug,
     d3Container,
   )
 
@@ -74,6 +76,7 @@ class D3TreeContainer extends React.Component {
     this.data = props.data
     this.jsonRecord = props.jsonRecord
     this.state = props.state
+    this.send = props.send
     this.service = props.service
 
     this.container = null
@@ -90,6 +93,7 @@ class D3TreeContainer extends React.Component {
       this.data,
       this.jsonRecord,
       this.state,
+      this.send,
       this.service,
     )
     d3.select(this.container).append(() => node)
@@ -109,7 +113,7 @@ D3TreeContainer.defaultProps = {
 
 D3TreeContainer.propTypes = {}
 
-function loadTree(width, data, record, state, service) {
+function loadTree(width, data, record, state, send, service) {
   const margin = { top: 20, right: 120, bottom: 20, left: 120 }
   const dx = 30
   const dy = Math.min(width / (3 + 2), dx * 10)
@@ -142,7 +146,7 @@ function loadTree(width, data, record, state, service) {
 
   service.subscribe(newState => {
     state = newState
-    console.log('newState', newState, state.value)
+    // console.log('newState', newState, state.value)
   })
 
   const svg = d3
@@ -197,11 +201,16 @@ function loadTree(width, data, record, state, service) {
       update(d)
     }
 
-    const loadChildClickHandler = (d, element) => {
+    const loadChildClickHandler = (event, d, element) => {
       if (d.parentActive) {
         alert('The current node is used by another selection')
-        return
+        event.preventDefault()
+        return false
       }
+
+      send('SET_CHILD', {
+        child: d.data,
+      })
 
       const circle = d3.select(element).select('circle')
 
@@ -216,12 +225,15 @@ function loadTree(width, data, record, state, service) {
 
       d.childActive = true
       circle.style('fill', 'red')
+
+      send('SELECT_CHILD')
     }
 
-    const loadParentClickHandler = (d, element) => {
+    const loadParentClickHandler = (event, d, element) => {
       if (d.childActive) {
         alert('The current node is used by another selection')
-        return
+        event.preventDefault()
+        return false
       }
 
       const circle = d3.select(element).select('circle')
@@ -237,17 +249,17 @@ function loadTree(width, data, record, state, service) {
       circle.style('fill', 'orange')
     }
 
-    const nodeEnterOnClickHandler = function(_, d) {
+    const nodeEnterOnClickHandler = function(event, d) {
       if (state.matches('collapse')) {
         loadCollapseClickHanlder(d)
       }
 
-      if (state.matches('select_child')) {
-        loadChildClickHandler(d, this)
+      if (state.matches('select_child') || state.matches('set_child')) {
+        loadChildClickHandler(event, d, this)
       }
 
       if (state.matches('select_parent')) {
-        loadParentClickHandler(d, this)
+        loadParentClickHandler(event, d, this)
       }
     }
 
