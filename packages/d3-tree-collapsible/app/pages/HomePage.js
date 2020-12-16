@@ -8,11 +8,13 @@ import D3Tree from '../components/D3Tree'
 
 function HomePage() {
   const Service = {
-    updateParentChildRelationship: () => {
-      console.log('request', request)
-      return {
-        jsonData: request,
-      }
+    updateParentChildRelationship: context => {
+      const promise = new Promise(resolve => {
+        resolve({
+          jsonData: request,
+        })
+      })
+      return promise
     },
   }
 
