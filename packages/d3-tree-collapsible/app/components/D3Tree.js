@@ -55,10 +55,11 @@ function D3Tree({ jsonData, jsonRecord, RequestService }) {
 
   const updateRelationshipBtnClickHandler = () => {
     send('UPDATE_RELATIONSHIP')
-    const response = RequestService.updateParentChildRelationship()
-
-    setData(response.jsonData)
-    send('DRAW_TREE')
+    const response = RequestService.updateParentChildRelationship(state.context)
+    response.then(response => {
+      setData(response.jsonData)
+      send('DRAW_TREE')
+    })
   }
   const updateRelationshipBtn = React.createElement(
     'button',
