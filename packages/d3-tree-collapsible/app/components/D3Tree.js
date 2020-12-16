@@ -1,16 +1,24 @@
 import TreeStateMachine from './machines/TreeStateMachine'
 import { useMachine } from '@xstate/react'
 
-function D3Tree({ data, jsonRecord }) {
+function D3Tree({ jsonData, jsonRecord, RequestService }) {
   const [state, send, service] = useMachine(TreeStateMachine)
+  const [data, setData] = React.useState(jsonData)
+  const childRef = React.useRef()
 
   const d3Container = React.createElement(D3TreeContainer, {
-    data: data,
-    jsonRecord: jsonRecord,
+    externalData: data,
+    externalRecord: jsonRecord,
     state,
     send,
     service,
+    ref: childRef,
   })
+
+  React.useEffect(() => {
+    send('COLLAPSE')
+    childRef.current.draw(data)
+  }, [data])
 
   const collapseModeBtnClickHandler = () => {
     send('COLLAPSE')
@@ -47,6 +55,10 @@ function D3Tree({ data, jsonRecord }) {
 
   const sendDataBtnClickHandler = () => {
     send('SEND_DATA')
+    const response = RequestService.updateParentChildRelationship()
+
+    setData(response.jsonData)
+    send('DRAW_TREE')
   }
   const sendDataBtn = React.createElement(
     'button',
@@ -78,8 +90,9 @@ function D3Tree({ data, jsonRecord }) {
 }
 
 D3Tree.defaultProps = {
-  data: null,
+  jsonData: null,
   jsonRecord: null,
+  RequestService: null,
 }
 
 D3Tree.propTypes = {}
@@ -88,8 +101,7 @@ class D3TreeContainer extends React.Component {
   constructor(props) {
     super(props)
 
-    this.data = props.data
-    this.jsonRecord = props.jsonRecord
+    this.record = props.externalRecord
     this.state = props.state
     this.send = props.send
     this.service = props.service
@@ -101,16 +113,20 @@ class D3TreeContainer extends React.Component {
     }
   }
 
-  componentDidMount() {
+  draw(data) {
     const width = 800
     const node = loadTree(
       width,
-      this.data,
-      this.jsonRecord,
+      data,
+      this.record,
       this.state,
       this.send,
       this.service,
     )
+
+    d3.select(this.container)
+      .selectAll('*')
+      .remove()
     d3.select(this.container).append(() => node)
   }
 
@@ -161,7 +177,6 @@ function loadTree(width, data, record, state, send, service) {
 
   service.subscribe(newState => {
     state = newState
-    // console.log('newState', newState, state.value)
   })
 
   const svg = d3
