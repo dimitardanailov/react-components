@@ -78,7 +78,19 @@ const TreeStateMachine = Machine(
           DRAW_TREE: 'draw_tree',
         },
       },
-      draw_tree: {},
+      draw_tree: {
+        on: {
+          COLLAPSE: {
+            target: 'collapse',
+            actions: assign(() => {
+              return {
+                child: undefined,
+                parent: undefined,
+              }
+            }),
+          },
+        },
+      },
     },
   },
   {
