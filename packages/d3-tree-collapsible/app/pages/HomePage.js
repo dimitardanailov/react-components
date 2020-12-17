@@ -7,21 +7,19 @@ import request from './jsons/request.json'
 import D3Tree from '../components/D3Tree'
 
 function HomePage() {
-  const Service = {
-    updateParentChildRelationship: context => {
-      const promise = new Promise(resolve => {
-        resolve({
-          jsonData: request,
-        })
+  const updateParentChildRelationship = context => {
+    const promise = new Promise(resolve => {
+      resolve({
+        jsonData: request,
       })
-      return promise
-    },
+    })
+    return promise
   }
 
   return React.createElement(D3Tree, {
     jsonData: data,
     jsonRecord: jsonRecord,
-    RequestService: Service,
+    updateParentChildRelationship: updateParentChildRelationship,
   })
 }
 

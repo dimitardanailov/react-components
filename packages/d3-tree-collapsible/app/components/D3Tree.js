@@ -1,7 +1,7 @@
 import TreeStateMachine from './machines/TreeStateMachine'
 import { useMachine } from '@xstate/react'
 
-function D3Tree({ jsonData, jsonRecord, RequestService }) {
+function D3Tree({ jsonData, jsonRecord, updateParentChildRelationship }) {
   const [state, send, service] = useMachine(TreeStateMachine)
   const [data, setData] = React.useState(jsonData)
   const childRef = React.useRef()
@@ -55,7 +55,8 @@ function D3Tree({ jsonData, jsonRecord, RequestService }) {
 
   const updateRelationshipBtnClickHandler = () => {
     send('UPDATE_RELATIONSHIP')
-    const response = RequestService.updateParentChildRelationship(state.context)
+    const response = updateParentChildRelationship(state.context)
+
     response.then(response => {
       setData(response.jsonData)
       send('DRAW_TREE')
