@@ -20,7 +20,7 @@ function HomePage() {
     jsonData: data,
     jsonRecord: jsonRecord,
     updateParentChildRelationship: updateParentChildRelationship,
-    debug: false,
+    debug: true,
   })
 }
 
