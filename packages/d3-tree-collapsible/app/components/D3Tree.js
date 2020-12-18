@@ -15,7 +15,12 @@ const Button = window.styled.button`
   margin-right: 0.25rem;
 `
 
-function D3Tree({ jsonData, jsonRecord, updateParentChildRelationship }) {
+function D3Tree({
+  jsonData,
+  jsonRecord,
+  updateParentChildRelationship,
+  debug,
+}) {
   const [state, send, service] = useMachine(TreeStateMachine)
   const [data, setData] = React.useState(jsonData)
   const childRef = React.useRef()
@@ -107,15 +112,22 @@ function D3Tree({ jsonData, jsonRecord, updateParentChildRelationship }) {
       : null,
   )
 
-  const info = React.createElement('div', null, `Active mode: ${state.value}`)
-  const debug = React.createElement('div', null, JSON.stringify(state.context))
+  let debugContainer = null
+  if (debug) {
+    const info = React.createElement('div', null, `Active mode: ${state.value}`)
+    const debug = React.createElement(
+      'div',
+      null,
+      JSON.stringify(state.context),
+    )
+    debugContainer = React.createElement('div', null, info, debug)
+  }
 
   const Wrapper = React.createElement(
     'div',
     null,
     ButtonWrapper,
-    info,
-    debug,
+    debugContainer,
     d3Container,
   )
 
