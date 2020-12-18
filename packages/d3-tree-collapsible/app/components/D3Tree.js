@@ -1,6 +1,20 @@
 import TreeStateMachine from './machines/TreeStateMachine'
 import { useMachine } from '@xstate/react'
 
+const ButtonWrapperStyled = window.styled.div`
+  position: relative;
+
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 0.5rem;
+`
+
+const Button = window.styled.button`
+  position: relative;
+
+  margin-right: 0.25rem;
+`
+
 function D3Tree({ jsonData, jsonRecord, updateParentChildRelationship }) {
   const [state, send, service] = useMachine(TreeStateMachine)
   const [data, setData] = React.useState(jsonData)
@@ -20,12 +34,17 @@ function D3Tree({ jsonData, jsonRecord, updateParentChildRelationship }) {
     childRef.current.draw(data)
   }, [data])
 
+  const setButtonClassName = stateLabel => {
+    return state.matches(stateLabel) ? 'btn btn-dark' : 'btn btn-primary'
+  }
+
   const collapseModeBtnClickHandler = () => {
     send('COLLAPSE')
   }
   const collapseModeBtn = React.createElement(
-    'button',
+    Button,
     {
+      className: setButtonClassName('collapse'),
       onClick: collapseModeBtnClickHandler,
     },
     'Mode: Review',
@@ -35,8 +54,9 @@ function D3Tree({ jsonData, jsonRecord, updateParentChildRelationship }) {
     send('SELECT_CHILD')
   }
   const selectChildBtn = React.createElement(
-    'button',
+    Button,
     {
+      className: setButtonClassName('select_child'),
       onClick: selectChildBtnClickHandler,
     },
     'Mode: Select child',
@@ -46,8 +66,9 @@ function D3Tree({ jsonData, jsonRecord, updateParentChildRelationship }) {
     send('SELECT_PARENT')
   }
   const selectParentBtn = React.createElement(
-    'button',
+    Button,
     {
+      className: setButtonClassName('select_parent'),
       onClick: selectParentBtnClickHandler,
     },
     'Mode: Select parent',
@@ -62,19 +83,20 @@ function D3Tree({ jsonData, jsonRecord, updateParentChildRelationship }) {
       send('DRAW_TREE')
     })
   }
+
   const updateRelationshipBtn = React.createElement(
-    'button',
+    Button,
     {
+      className: state.matches('update_relationship')
+        ? 'btn btn-dark'
+        : 'btn btn-success',
       onClick: updateRelationshipBtnClickHandler,
     },
     'Update Relationship',
   )
 
-  const info = React.createElement('div', null, `Active mode: ${state.value}`)
-  const debug = React.createElement('div', null, JSON.stringify(state.context))
-
-  const Wrapper = React.createElement(
-    'div',
+  const ButtonWrapper = React.createElement(
+    ButtonWrapperStyled,
     null,
     collapseModeBtn,
     selectChildBtn,
@@ -83,6 +105,15 @@ function D3Tree({ jsonData, jsonRecord, updateParentChildRelationship }) {
       typeof state.context.parent === 'object'
       ? updateRelationshipBtn
       : null,
+  )
+
+  const info = React.createElement('div', null, `Active mode: ${state.value}`)
+  const debug = React.createElement('div', null, JSON.stringify(state.context))
+
+  const Wrapper = React.createElement(
+    'div',
+    null,
+    ButtonWrapper,
     info,
     debug,
     d3Container,
