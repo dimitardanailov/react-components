@@ -1,5 +1,6 @@
 import TreeStateMachine from './machines/TreeStateMachine'
-import { useMachine } from '@xstate/react'
+const { useMachine } = XStateReact
+// import { useMachine } from '@xstate/react'
 
 const ButtonWrapperStyled = window.styled.div`
   position: relative;
