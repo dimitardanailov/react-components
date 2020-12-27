@@ -84,10 +84,13 @@ function D3Tree({
 
   const updateRelationshipBtnClickHandler = () => {
     send('UPDATE_RELATIONSHIP')
-    const response = updateParentChildRelationship(state.context)
+    const response = updateParentChildRelationship({
+      childId: state.context.child._id,
+      parentId: state.context.parent._id,
+    })
 
     response.then(response => {
-      setData(response.jsonData)
+      setData(response)
       send('DRAW_TREE')
     })
   }
