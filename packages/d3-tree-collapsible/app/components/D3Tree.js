@@ -1,8 +1,5 @@
-import TreeStateMachine from './machines/TreeStateMachine'
+import createTreeStateMachine from './machines/TreeStateMachine'
 const { useMachine } = XStateReact
-// import { useMachine } from '@xstate/react'
-
-// console.log('useMachine', window.XStateReact.useMachine)
 
 const ButtonWrapperStyled = window.styled.div`
   position: relative;
@@ -24,7 +21,13 @@ function D3Tree({
   updateParentChildRelationship,
   debug,
 }) {
-  const [state, send, service] = useMachine(TreeStateMachine)
+  const machine = createTreeStateMachine({
+    child: {
+      _id: jsonRecord._id,
+      name: jsonRecord.name,
+    },
+  })
+  const [state, send, service] = useMachine(machine)
   const [data, setData] = React.useState(jsonData)
   const childRef = React.useRef()
 
