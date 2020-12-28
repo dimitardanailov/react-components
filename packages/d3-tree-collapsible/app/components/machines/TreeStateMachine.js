@@ -85,7 +85,6 @@ function createTreeStateMachine({ child }) {
               target: 'collapse',
               actions: assign(() => {
                 return {
-                  child: undefined,
                   parent: undefined,
                 }
               }),

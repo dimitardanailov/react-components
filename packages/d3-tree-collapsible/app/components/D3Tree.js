@@ -1,6 +1,16 @@
 import createTreeStateMachine from './machines/TreeStateMachine'
 const { useMachine } = XStateReact
 
+const ElementWrapper = window.styled.div`
+  margin: 1rem;
+`
+
+const ListViewWrapper = window.styled.a`
+  color: var(--blue);
+  text-decoration: none;
+  cursor: pointer;
+`
+
 const ButtonWrapperStyled = window.styled.div`
   position: relative;
 
@@ -21,14 +31,13 @@ const FooterWrapper = window.styled.div`
   display: flex;
   justify-content: flex-end;
 
-  margin: 1rem;
+  margin: 1rem 0;
 `
 
 const SVGContainer = window.styled.div`
   position: relative;
 
   border: 2px solid #ccc;
-  margin: 1rem;
 `
 
 function D3Tree({
@@ -48,6 +57,7 @@ function D3Tree({
   })
   const [state, send, service] = useMachine(machine)
   const [data, setData] = React.useState(jsonData)
+  const [record, setRecord] = React.useState(jsonRecord)
   const childRef = React.useRef()
 
   const d3Container = React.createElement(D3TreeContainer, {
@@ -61,7 +71,7 @@ function D3Tree({
 
   React.useEffect(() => {
     send('COLLAPSE')
-    childRef.current.draw(data)
+    childRef.current.draw(data, record)
   }, [data])
 
   const setButtonClassName = stateLabel => {
@@ -118,7 +128,8 @@ function D3Tree({
       if (buttonText === 'Done and exit') {
         navigateToParent()
       } else {
-        setData(response)
+        setRecord(response.jsonRecord)
+        setData(response.jsonData)
         send('DRAW_TREE')
       }
     })
@@ -157,6 +168,16 @@ function D3Tree({
     )
     debugContainer = React.createElement('div', null, info, debug)
   }
+
+  const listView = React.createElement(
+    ListViewWrapper,
+    {
+      onClick: () => {
+        navigateToListView()
+      },
+    },
+    'List view >>',
+  )
 
   const ButtonDismissChanges = React.createElement(
     'button',
@@ -199,10 +220,11 @@ function D3Tree({
   )
 
   const Wrapper = React.createElement(
-    'div',
+    ElementWrapper,
     null,
     ButtonWrapper,
     debugContainer,
+    listView,
     d3Container,
     footer,
   )
@@ -222,7 +244,6 @@ class D3TreeContainer extends React.Component {
   constructor(props) {
     super(props)
 
-    this.record = props.externalRecord
     this.state = props.state
     this.send = props.send
     this.service = props.service
@@ -234,12 +255,12 @@ class D3TreeContainer extends React.Component {
     }
   }
 
-  draw(data) {
+  draw(data, record) {
     const width = 800
     const node = loadTree(
       width,
       data,
-      this.record,
+      record,
       this.state,
       this.send,
       this.service,

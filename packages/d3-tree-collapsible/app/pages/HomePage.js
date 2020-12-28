@@ -9,7 +9,10 @@ import D3Tree from '../components/D3Tree'
 function HomePage() {
   const updateParentChildRelationship = ({ childId, parentId }) => {
     const promise = new Promise(resolve => {
-      resolve(request)
+      resolve({
+        jsonData: request,
+        jsonRecord: jsonRecord,
+      })
     })
     return promise
   }
