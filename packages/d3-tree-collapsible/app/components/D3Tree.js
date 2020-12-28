@@ -15,11 +15,29 @@ const Button = window.styled.button`
   margin-right: 0.25rem;
 `
 
+const FooterWrapper = window.styled.div`
+  position: relative;
+  
+  display: flex;
+  justify-content: flex-end;
+
+  margin: 1rem;
+`
+
+const SVGContainer = window.styled.div`
+  position: relative;
+
+  border: 2px solid #ccc;
+  margin: 1rem;
+`
+
 function D3Tree({
   jsonData,
   jsonRecord,
   updateParentChildRelationship,
   debug,
+  onClickDismissChanges,
+  onClickDoneExit,
 }) {
   const machine = createTreeStateMachine({
     child: {
@@ -85,16 +103,22 @@ function D3Tree({
     'Mode: Select parent',
   )
 
-  const updateRelationshipBtnClickHandler = () => {
+  const updateRelationshipBtnClickHandler = event => {
     send('UPDATE_RELATIONSHIP')
     const response = updateParentChildRelationship({
       childId: state.context.child._id,
       parentId: state.context.parent._id,
     })
 
+    const buttonText = event.target.outerText
+
     response.then(response => {
-      setData(response)
-      send('DRAW_TREE')
+      if (buttonText === 'Done and exit') {
+        onClickDoneExit()
+      } else {
+        setData(response)
+        send('DRAW_TREE')
+      }
     })
   }
 
@@ -132,12 +156,51 @@ function D3Tree({
     debugContainer = React.createElement('div', null, info, debug)
   }
 
+  const ButtonDismissChanges = React.createElement(
+    'button',
+    {
+      onClick: onClickDismissChanges,
+      className: 'btn btn-outline-primary',
+    },
+    'Dismiss changes',
+  )
+  const ButtonSaveAndStay = React.createElement(
+    'button',
+    {
+      onClick: updateRelationshipBtnClickHandler,
+      className: 'btn btn-primary ml-2',
+    },
+    'Save and stay',
+  )
+  const ButtonDoneExit = React.createElement(
+    'button',
+    {
+      onClick: updateRelationshipBtnClickHandler,
+      className: 'btn btn-success ml-2',
+    },
+    'Done and exit',
+  )
+  const footer = React.createElement(
+    FooterWrapper,
+    null,
+    ButtonDismissChanges,
+    typeof state.context.child === 'object' &&
+      typeof state.context.parent === 'object'
+      ? ButtonSaveAndStay
+      : null,
+    typeof state.context.child === 'object' &&
+      typeof state.context.parent === 'object'
+      ? ButtonDoneExit
+      : null,
+  )
+
   const Wrapper = React.createElement(
     'div',
     null,
     ButtonWrapper,
     debugContainer,
     d3Container,
+    footer,
   )
 
   return Wrapper
@@ -185,7 +248,7 @@ class D3TreeContainer extends React.Component {
   }
 
   render() {
-    return React.createElement('div', {
+    return React.createElement(SVGContainer, {
       ref: this.setContainerRef,
     })
   }
