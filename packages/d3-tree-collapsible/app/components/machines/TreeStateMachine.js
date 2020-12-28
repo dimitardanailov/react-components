@@ -21,83 +21,85 @@ const updateRelationShipConf = {
   cond: dataIsValid,
 }
 
-const TreeStateMachine = Machine(
-  {
-    id: 'D3TreeMachine',
-    initial: 'collapse',
-    context: {
-      child: undefined,
-      parent: undefined,
-    },
-    states: {
-      collapse: {
-        on: {
-          SELECT_CHILD: 'select_child',
-          SELECT_PARENT: 'select_parent',
-          UPDATE_RELATIONSHIP: updateRelationShipConf,
-        },
+function createTreeStateMachine({ child }) {
+  return Machine(
+    {
+      id: 'D3TreeMachine',
+      initial: 'collapse',
+      context: {
+        child: child,
+        parent: undefined,
       },
-      select_child: {
-        on: {
-          COLLAPSE: 'collapse',
-          SELECT_PARENT: 'select_parent',
-          SET_CHILD: {
-            target: 'set_child',
-            actions: assign({
-              child: setData,
-            }),
-          },
-          UPDATE_RELATIONSHIP: updateRelationShipConf,
-        },
-      },
-      set_child: {
-        on: {
-          SELECT_CHILD: 'select_child',
-        },
-      },
-      select_parent: {
-        on: {
-          COLLAPSE: 'collapse',
-          SELECT_CHILD: 'select_child',
-          SET_PARENT: {
-            target: 'set_parent',
-            actions: assign({
-              parent: setData,
-            }),
-          },
-          UPDATE_RELATIONSHIP: updateRelationShipConf,
-        },
-      },
-      set_parent: {
-        on: {
-          SELECT_PARENT: 'select_parent',
-        },
-      },
-      update_relationship: {
-        on: {
-          DRAW_TREE: 'draw_tree',
-        },
-      },
-      draw_tree: {
-        on: {
-          COLLAPSE: {
-            target: 'collapse',
-            actions: assign(() => {
-              return {
-                child: undefined,
-                parent: undefined,
-              }
-            }),
+      states: {
+        collapse: {
+          on: {
+            SELECT_CHILD: 'select_child',
+            SELECT_PARENT: 'select_parent',
+            UPDATE_RELATIONSHIP: updateRelationShipConf,
           },
         },
+        select_child: {
+          on: {
+            COLLAPSE: 'collapse',
+            SELECT_PARENT: 'select_parent',
+            SET_CHILD: {
+              target: 'set_child',
+              actions: assign({
+                child: setData,
+              }),
+            },
+            UPDATE_RELATIONSHIP: updateRelationShipConf,
+          },
+        },
+        set_child: {
+          on: {
+            SELECT_CHILD: 'select_child',
+          },
+        },
+        select_parent: {
+          on: {
+            COLLAPSE: 'collapse',
+            SELECT_CHILD: 'select_child',
+            SET_PARENT: {
+              target: 'set_parent',
+              actions: assign({
+                parent: setData,
+              }),
+            },
+            UPDATE_RELATIONSHIP: updateRelationShipConf,
+          },
+        },
+        set_parent: {
+          on: {
+            SELECT_PARENT: 'select_parent',
+          },
+        },
+        update_relationship: {
+          on: {
+            DRAW_TREE: 'draw_tree',
+          },
+        },
+        draw_tree: {
+          on: {
+            COLLAPSE: {
+              target: 'collapse',
+              actions: assign(() => {
+                return {
+                  child: undefined,
+                  parent: undefined,
+                }
+              }),
+            },
+          },
+        },
       },
     },
-  },
-  {
-    guards: {
-      dataIsValid,
+    {
+      guards: {
+        dataIsValid,
+      },
     },
-  },
-)
+  )
+}
 
-export default TreeStateMachine
+export default createTreeStateMachine
