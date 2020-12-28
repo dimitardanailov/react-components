@@ -158,6 +158,19 @@ function D3Tree({
       : null,
   )
 
+  const parentCategoryInfoLabel = React.createElement(
+    'span',
+    null,
+    typeof state.context.parent === 'object'
+      ? `Parent category: ${state.context.parent.name}`
+      : 'Parent category: {name of selected category}',
+  )
+  const parentCategoryInfoContainer = React.createElement(
+    'div',
+    null,
+    parentCategoryInfoLabel,
+  )
+
   let debugContainer = null
   if (debug) {
     const info = React.createElement('div', null, `Active mode: ${state.value}`)
@@ -224,6 +237,7 @@ function D3Tree({
     null,
     ButtonWrapper,
     debugContainer,
+    parentCategoryInfoContainer,
     listView,
     d3Container,
     footer,
