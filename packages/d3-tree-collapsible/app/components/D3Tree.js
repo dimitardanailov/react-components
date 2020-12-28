@@ -36,8 +36,9 @@ function D3Tree({
   jsonRecord,
   updateParentChildRelationship,
   debug,
-  onClickDismissChanges,
-  onClickDoneExit,
+  navigateToListView,
+  navigateToParent,
+  showFormSuccessToast,
 }) {
   const machine = createTreeStateMachine({
     child: {
@@ -113,8 +114,9 @@ function D3Tree({
     const buttonText = event.target.outerText
 
     response.then(response => {
+      showFormSuccessToast()
       if (buttonText === 'Done and exit') {
-        onClickDoneExit()
+        navigateToParent()
       } else {
         setData(response)
         send('DRAW_TREE')
@@ -159,7 +161,9 @@ function D3Tree({
   const ButtonDismissChanges = React.createElement(
     'button',
     {
-      onClick: onClickDismissChanges,
+      onClick: () => {
+        navigateToParent()
+      },
       className: 'btn btn-outline-primary',
     },
     'Dismiss changes',

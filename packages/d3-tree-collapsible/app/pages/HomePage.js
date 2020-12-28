@@ -19,6 +19,15 @@ function HomePage() {
     jsonRecord: jsonRecord,
     updateParentChildRelationship: updateParentChildRelationship,
     debug: true,
+    navigateToListView: () => {
+      console.log('navigateToListView')
+    },
+    navigateToParent: () => {
+      console.log('navigateToParent')
+    },
+    showFormSuccessToast: () => {
+      console.log('showFormSuccessToast')
+    },
   })
 }
 
