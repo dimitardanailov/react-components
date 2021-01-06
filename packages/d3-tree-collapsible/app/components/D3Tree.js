@@ -11,6 +11,15 @@ const ListViewWrapper = window.styled.a`
   cursor: pointer;
 `
 
+const ParentContainer = window.styled.div`
+  position: relative;
+
+  display: flex;
+  flex-direction row;
+  justify-content: flex-start;
+  align-items: center;
+`
+
 const ButtonWrapperStyled = window.styled.div`
   position: relative;
 
@@ -111,7 +120,7 @@ function D3Tree({
       className: setButtonClassName('select_parent'),
       onClick: selectParentBtnClickHandler,
     },
-    'Mode: Select parent',
+    'Select as a Parent',
   )
 
   const updateRelationshipBtnClickHandler = event => {
@@ -146,29 +155,35 @@ function D3Tree({
     'Update Relationship',
   )
 
-  const ButtonWrapper = React.createElement(
-    ButtonWrapperStyled,
-    null,
-    collapseModeBtn,
-    selectChildBtn,
-    selectParentBtn,
-    typeof state.context.child === 'object' &&
-      typeof state.context.parent === 'object'
-      ? updateRelationshipBtn
-      : null,
-  )
+  let ButtonWrapper = null
+  if (debug) {
+    ButtonWrapper = React.createElement(
+      ButtonWrapperStyled,
+      null,
+      collapseModeBtn,
+      selectChildBtn,
+      selectParentBtn,
+      typeof state.context.child === 'object' &&
+        typeof state.context.parent === 'object'
+        ? updateRelationshipBtn
+        : null,
+    )
+  }
 
   const parentCategoryInfoLabel = React.createElement(
     'span',
-    null,
+    {
+      className: 'mr-2',
+    },
     typeof state.context.parent === 'object'
       ? `Parent category: ${state.context.parent.name}`
       : 'Parent category: {name of selected category}',
   )
   const parentCategoryInfoContainer = React.createElement(
-    'div',
+    ParentContainer,
     null,
     parentCategoryInfoLabel,
+    selectParentBtn,
   )
 
   let debugContainer = null
@@ -491,7 +506,13 @@ function loadTree(width, data, record, state, send, service) {
 
     nodeEnter
       .append('text')
-      .attr('dy', '-0em')
+      .attr('dy', d => {
+        if (d.data.status.toLowerCase() !== 'live') {
+          return '-0em'
+        }
+
+        return '0.25em'
+      })
       .attr('x', labelX)
       .attr('fill', fill)
       .attr('text-anchor', d => (d._children ? 'end' : 'start'))
@@ -509,7 +530,13 @@ function loadTree(width, data, record, state, send, service) {
       .attr('text-anchor', d => (d._children ? 'end' : 'start'))
       .attr('fill', fill)
       .style('font', '10px sans-serif')
-      .text(d => d.data.status)
+      .text(d => {
+        if (d.data.status.toLowerCase() !== 'live') {
+          return d.data.status
+        }
+
+        return ''
+      })
       .clone(true)
       .lower()
       .attr('stroke-linejoin', 'round')
