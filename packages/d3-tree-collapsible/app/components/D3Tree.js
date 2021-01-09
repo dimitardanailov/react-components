@@ -46,7 +46,20 @@ const FooterWrapper = window.styled.div`
 const SVGContainer = window.styled.div`
   position: relative;
 
-  border: 2px solid #ccc;
+  border: 2px solid #808080;
+`
+
+const Switcher = window.styled.button`
+  position: relative;
+
+  padding: 0.8rem;
+  border-radius: 12.5%;
+  border: 2px solid ${props => (props.checked ? 'orange' : '#808080')};
+  background: ${props => (props.checked ? 'orange' : '#fff')};
+
+  &:focus {
+    outline: none;
+  }
 `
 
 function D3Tree({
@@ -173,17 +186,31 @@ function D3Tree({
   const parentCategoryInfoLabel = React.createElement(
     'span',
     {
-      className: 'mr-2',
+      className: 'ml-2',
     },
     typeof state.context.parent === 'object'
       ? `Parent category: ${state.context.parent.name}`
       : 'Parent category: {name of selected category}',
   )
+  const switcherNormalModeParentMode = React.createElement(
+    Switcher,
+    {
+      checked: state.matches('select_parent'),
+      onClick: () => {
+        if (state.matches('collapse')) {
+          send('SELECT_PARENT')
+        } else {
+          send('COLLAPSE')
+        }
+      },
+    },
+    '',
+  )
   const parentCategoryInfoContainer = React.createElement(
     ParentContainer,
     null,
+    switcherNormalModeParentMode,
     parentCategoryInfoLabel,
-    selectParentBtn,
   )
 
   let debugContainer = null
