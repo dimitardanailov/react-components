@@ -70,6 +70,7 @@ function D3Tree({
   navigateToListView,
   navigateToParent,
   showFormSuccessToast,
+  entityType
 }) {
   const machine = createTreeStateMachine({
     child: {
@@ -183,14 +184,14 @@ function D3Tree({
     )
   }
 
-  const parentCategoryInfoLabel = React.createElement(
+  const parentEntityInfoLabel = React.createElement(
     'span',
     {
       className: 'ml-2',
     },
     typeof state.context.parent === 'object'
-      ? `Parent category: ${state.context.parent.name}`
-      : 'Parent category: {name of selected category}',
+      ? `Parent ${entityType}: ${state.context.parent.name}`
+      : `Parent ${entityType}: {name of selected ${entityType}}`,
   )
   const switcherNormalModeParentMode = React.createElement(
     Switcher,
@@ -206,11 +207,11 @@ function D3Tree({
     },
     '',
   )
-  const parentCategoryInfoContainer = React.createElement(
+  const parentEntityInfoContainer = React.createElement(
     ParentContainer,
     null,
     switcherNormalModeParentMode,
-    parentCategoryInfoLabel,
+    parentEntityInfoLabel,
   )
 
   let debugContainer = null
@@ -279,7 +280,7 @@ function D3Tree({
     null,
     ButtonWrapper,
     debugContainer,
-    parentCategoryInfoContainer,
+    parentEntityInfoContainer,
     listView,
     d3Container,
     footer,

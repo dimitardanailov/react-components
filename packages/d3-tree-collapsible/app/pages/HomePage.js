@@ -22,6 +22,7 @@ function HomePage() {
     jsonRecord: jsonRecord,
     updateParentChildRelationship: updateParentChildRelationship,
     debug: true,
+    entityType: 'entity',
     navigateToListView: () => {
       console.log('navigateToListView')
     },
