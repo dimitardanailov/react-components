@@ -1,0 +1,17 @@
+[
+  {
+    "_id": "6024d5f38e03631c5f1c6bca",
+    "name": "Main",
+    "identifier": "main"
+  },
+  {
+    "_id": "60250c6f0989d733a92a2eac",
+    "name": "Node 2",
+    "identifier": "node-2"
+  },
+  {
+    "_id": "60250c750989d733a92a2ead",
+    "name": "Node 3",
+    "identifier": "node-3"
+  }
+]
