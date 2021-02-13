@@ -14,7 +14,9 @@ function MainNodeSelector({ nodes, debug }) {
   }
 
   const listItems = nodes.map(node => {
-    return React.createElement('li', null, node.name)
+    return React.createElement(SelectorListItem, {
+      node,
+    })
   })
 
   const Wrapper = React.createElement(
@@ -25,6 +27,10 @@ function MainNodeSelector({ nodes, debug }) {
   )
 
   return Wrapper
+}
+
+function SelectorListItem({ node }) {
+  return React.createElement('li', { key: node._id }, node.name)
 }
 
 MainNodeSelector.defaultProps = {
