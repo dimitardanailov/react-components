@@ -70,7 +70,7 @@ function D3Tree({
   navigateToListView,
   navigateToParent,
   showFormSuccessToast,
-  entityType
+  entityType,
 }) {
   const machine = createTreeStateMachine({
     child: {
