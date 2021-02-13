@@ -4,7 +4,7 @@ import data from './jsons/data.json'
 import jsonRecord from './jsons/record.json'
 import request from './jsons/request.json'
 
-import D3Tree from '../components/D3Tree'
+import D3Tree from '../../components/D3Tree'
 
 function HomePage() {
   const updateParentChildRelationship = ({ childId, parentId }) => {

@@ -2,7 +2,7 @@ import { hot } from 'react-hot-loader/root'
 
 import nodes from './jsons/nodes.json'
 
-import MainNodeSelector from '../components/MainNodeSelector'
+import MainNodeSelector from '../../components/MainNodeSelector'
 
 function MultiSelectorPage() {
   const params = {
