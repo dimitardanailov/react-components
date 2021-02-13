@@ -39,13 +39,20 @@ MainNodeSelector.defaultProps = {
 MainNodeSelector.propTypes = {}
 
 // ============ SelectorListItem ====================
+const StyledSelectorListItem = window.styled.div`
+  position: relative;
+
+  margin: 1rem;
+`
+
 function SelectorListItem({ node }) {
   const clickListener = () => {
-    alert('clicked')
+    const id = node._id
+    console.log('node', node)
   }
 
   return React.createElement(
-    'div',
+    StyledSelectorListItem,
     { key: node._id, onClick: clickListener },
     node.name,
   )
