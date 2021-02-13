@@ -1,4 +1,5 @@
-import { node } from 'prop-types'
+import D3TreeNodeSwitcher from './machines/TreeNodeSwitcher'
+const { useMachine } = XStateReact
 
 const ElementWrapper = window.styled.div`
   margin: 1rem;
@@ -6,17 +7,32 @@ const ElementWrapper = window.styled.div`
 
 // ============ MainNodeSelector ====================
 function MainNodeSelector({ nodes, debug }) {
+  // ============ state switcher ====================
+  const [stateSwitcher, sendSwitcher] = useMachine(D3TreeNodeSwitcher)
+  const stateSwitcherCallback = node => {
+    console.log('stateSwitcherCallback', node)
+  }
+
   // ============ debug ====================
   let debugContainer = null
   if (debug) {
-    const info = React.createElement('div', null, `Mode:`)
-    const debug = React.createElement('div', null)
+    const info = React.createElement(
+      'div',
+      null,
+      `Active mode: ${stateSwitcher.value}`,
+    )
+    const debug = React.createElement(
+      'div',
+      null,
+      JSON.stringify(stateSwitcher.context),
+    )
     debugContainer = React.createElement('div', null, info, debug)
   }
 
   const listItems = nodes.map(node => {
     return React.createElement(SelectorListItem, {
       node,
+      stateSwitcherCallback,
       key: node._id,
     })
   })
@@ -45,10 +61,9 @@ const StyledSelectorListItem = window.styled.div`
   margin: 1rem;
 `
 
-function SelectorListItem({ node }) {
+function SelectorListItem({ node, stateSwitcherCallback }) {
   const clickListener = () => {
-    const id = node._id
-    console.log('node', node)
+    stateSwitcherCallback(node)
   }
 
   return React.createElement(
