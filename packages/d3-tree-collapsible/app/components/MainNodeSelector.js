@@ -1,8 +1,10 @@
+import { node } from 'prop-types'
+
 const ElementWrapper = window.styled.div`
   margin: 1rem;
 `
 
-function MainNodeSelector({ debug }) {
+function MainNodeSelector({ nodes, debug }) {
   // ============ debug ====================
   let debugContainer = null
   if (debug) {
@@ -11,12 +13,22 @@ function MainNodeSelector({ debug }) {
     debugContainer = React.createElement('div', null, info, debug)
   }
 
-  const Wrapper = React.createElement(ElementWrapper, null, debugContainer)
+  const listItems = nodes.map(node => {
+    return React.createElement('li', null, node.name)
+  })
+
+  const Wrapper = React.createElement(
+    ElementWrapper,
+    null,
+    listItems,
+    debugContainer,
+  )
 
   return Wrapper
 }
 
 MainNodeSelector.defaultProps = {
+  nodes: [],
   debug: true,
 }
 

@@ -7,6 +7,7 @@ import MainNodeSelector from '../../components/MainNodeSelector'
 function MultiSelectorPage() {
   const params = {
     debug: true,
+    nodes,
   }
 
   return React.createElement(MainNodeSelector, params)
