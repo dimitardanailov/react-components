@@ -133,6 +133,7 @@ function loadTree(width, data) {
   const margin = { top: 20, right: 120, bottom: 20, left: 120 }
   const dx = 30
   const dy = Math.min(width / (3 + 2), dx * 10)
+  const radius = (dx * 0.9) / 2
 
   const tree = d3.tree().nodeSize([dx, dy])
   const diagonal = d3
@@ -153,14 +154,13 @@ function loadTree(width, data) {
   const svg = d3
     .create('svg')
     .attr('viewBox', [-margin.left, -margin.top, width, dx])
-    .style('font', '10px sans-serif')
+    .style('font', '12px sans-serif')
     .style('user-select', 'none')
 
   const gLink = svg
     .append('g')
     .attr('fill', 'none')
-    .attr('stroke', '#555')
-    .attr('stroke-opacity', 0.4)
+    .attr('stroke-opacity', 0.25)
     .attr('stroke-width', 1.5)
 
   const gNode = svg
@@ -209,16 +209,23 @@ function loadTree(width, data) {
         update(d)
       })
 
+    const fill = d => {
+      return d._children ? '#555' : '#999'
+    }
+
     nodeEnter
       .append('circle')
-      .attr('r', 2.5)
-      .attr('fill', d => (d._children ? '#555' : '#999'))
-      .attr('stroke-width', 10)
+      .attr('r', radius)
+      .attr('fill', fill)
+      .attr('stroke-width', 1)
+
+    const labelX = d => (d._children ? -radius * 1.2 : radius * 1.2)
 
     nodeEnter
       .append('text')
       .attr('dy', '0.31em')
-      .attr('x', d => (d._children ? -6 : 6))
+      .attr('x', labelX)
+      .attr('fill', fill)
       .attr('text-anchor', d => (d._children ? 'end' : 'start'))
       .text(d => d.data.name)
       .clone(true)
