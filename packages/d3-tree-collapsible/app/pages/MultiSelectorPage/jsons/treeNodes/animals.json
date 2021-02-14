@@ -1,0 +1,2055 @@
+{
+  "images": {
+    "primary": { "publicId": "", "url": "" },
+    "secondary": { "publicId": "", "url": "" }
+  },
+  "identifierIsMixed": false,
+  "isPopular": false,
+  "description": "",
+  "guidelines": "",
+  "productDescriptionTemplate": "",
+  "children": [
+    {
+      "_id": "6026e7f9397ee9002f080c3a",
+      "name": "Pets",
+      "status": "Live",
+      "parent": "6026e7b0397ee9002f080c1c",
+      "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3a",
+      "children": [
+        {
+          "_id": "6026e810397ee9002f080cf8",
+          "name": "Dogs",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3a",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3a#6026e810397ee9002f080cf8",
+          "children": [
+            {
+              "_id": "6026e829397ee9002f0810f8",
+              "name": "Terrier",
+              "status": "Live",
+              "parent": "6026e810397ee9002f080cf8",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3a#6026e810397ee9002f080cf8#6026e829397ee9002f0810f8",
+              "children": []
+            },
+            {
+              "_id": "6026e829397ee9002f0810f9",
+              "name": "Bulldogs",
+              "status": "Live",
+              "parent": "6026e810397ee9002f080cf8",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3a#6026e810397ee9002f080cf8#6026e829397ee9002f0810f9",
+              "children": []
+            },
+            {
+              "_id": "6026e829397ee9002f0810fa",
+              "name": "Shepherd Dogs & Collies",
+              "status": "Live",
+              "parent": "6026e810397ee9002f080cf8",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3a#6026e810397ee9002f080cf8#6026e829397ee9002f0810fa",
+              "children": []
+            },
+            {
+              "_id": "6026e829397ee9002f0810fb",
+              "name": "Retriever",
+              "status": "Live",
+              "parent": "6026e810397ee9002f080cf8",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3a#6026e810397ee9002f080cf8#6026e829397ee9002f0810fb",
+              "children": []
+            },
+            {
+              "_id": "6026e829397ee9002f0810fc",
+              "name": "Huskies",
+              "status": "Live",
+              "parent": "6026e810397ee9002f080cf8",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3a#6026e810397ee9002f080cf8#6026e829397ee9002f0810fc",
+              "children": []
+            },
+            {
+              "_id": "6026e829397ee9002f0810fd",
+              "name": "Spaniel",
+              "status": "Live",
+              "parent": "6026e810397ee9002f080cf8",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3a#6026e810397ee9002f080cf8#6026e829397ee9002f0810fd",
+              "children": []
+            },
+            {
+              "_id": "6026e829397ee9002f0810fe",
+              "name": "Setters",
+              "status": "Live",
+              "parent": "6026e810397ee9002f080cf8",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3a#6026e810397ee9002f080cf8#6026e829397ee9002f0810fe",
+              "children": []
+            },
+            {
+              "_id": "6026e829397ee9002f0810ff",
+              "name": "Mastiffs",
+              "status": "Live",
+              "parent": "6026e810397ee9002f080cf8",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3a#6026e810397ee9002f080cf8#6026e829397ee9002f0810ff",
+              "children": []
+            },
+            {
+              "_id": "6026e829397ee9002f081100",
+              "name": "Spitzes",
+              "status": "Live",
+              "parent": "6026e810397ee9002f080cf8",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3a#6026e810397ee9002f080cf8#6026e829397ee9002f081100",
+              "children": []
+            }
+          ]
+        },
+        {
+          "_id": "6026e810397ee9002f080cf9",
+          "name": "Cats",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3a",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3a#6026e810397ee9002f080cf9",
+          "children": []
+        },
+        {
+          "_id": "6026e810397ee9002f080cfa",
+          "name": "Rabbits",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3a",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3a#6026e810397ee9002f080cfa",
+          "children": []
+        },
+        {
+          "_id": "6026e810397ee9002f080cfb",
+          "name": "Parrots",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3a",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3a#6026e810397ee9002f080cfb",
+          "children": [
+            {
+              "_id": "6026e829397ee9002f081101",
+              "name": "Cockatiel",
+              "status": "Live",
+              "parent": "6026e810397ee9002f080cfb",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3a#6026e810397ee9002f080cfb#6026e829397ee9002f081101",
+              "children": []
+            },
+            {
+              "_id": "6026e829397ee9002f081102",
+              "name": "Cockatoo",
+              "status": "Live",
+              "parent": "6026e810397ee9002f080cfb",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3a#6026e810397ee9002f080cfb#6026e829397ee9002f081102",
+              "children": []
+            },
+            {
+              "_id": "6026e829397ee9002f081103",
+              "name": "Lovebird",
+              "status": "Live",
+              "parent": "6026e810397ee9002f080cfb",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3a#6026e810397ee9002f080cfb#6026e829397ee9002f081103",
+              "children": []
+            },
+            {
+              "_id": "6026e829397ee9002f081104",
+              "name": "Rainbow Lorikeet",
+              "status": "Live",
+              "parent": "6026e810397ee9002f080cfb",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3a#6026e810397ee9002f080cfb#6026e829397ee9002f081104",
+              "children": []
+            },
+            {
+              "_id": "6026e829397ee9002f081105",
+              "name": "Budgerigar",
+              "status": "Live",
+              "parent": "6026e810397ee9002f080cfb",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3a#6026e810397ee9002f080cfb#6026e829397ee9002f081105",
+              "children": []
+            },
+            {
+              "_id": "6026e829397ee9002f081106",
+              "name": "Amazon Parrot",
+              "status": "Live",
+              "parent": "6026e810397ee9002f080cfb",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3a#6026e810397ee9002f080cfb#6026e829397ee9002f081106",
+              "children": []
+            },
+            {
+              "_id": "6026e829397ee9002f081107",
+              "name": "Macaw",
+              "status": "Live",
+              "parent": "6026e810397ee9002f080cfb",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3a#6026e810397ee9002f080cfb#6026e829397ee9002f081107",
+              "children": []
+            }
+          ]
+        },
+        {
+          "_id": "6026e810397ee9002f080cfc",
+          "name": "Guinea Pigs",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3a",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3a#6026e810397ee9002f080cfc",
+          "children": []
+        },
+        {
+          "_id": "6026e810397ee9002f080cfd",
+          "name": "Ferrets",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3a",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3a#6026e810397ee9002f080cfd",
+          "children": []
+        },
+        {
+          "_id": "6026e810397ee9002f080cfe",
+          "name": "Aquarium Fish",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3a",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3a#6026e810397ee9002f080cfe",
+          "children": [
+            {
+              "_id": "6026e829397ee9002f081108",
+              "name": "Goldfish",
+              "status": "Live",
+              "parent": "6026e810397ee9002f080cfe",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3a#6026e810397ee9002f080cfe#6026e829397ee9002f081108",
+              "children": []
+            },
+            {
+              "_id": "6026e829397ee9002f081109",
+              "name": "Clown Fish",
+              "status": "Live",
+              "parent": "6026e810397ee9002f080cfe",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3a#6026e810397ee9002f080cfe#6026e829397ee9002f081109",
+              "children": []
+            },
+            {
+              "_id": "6026e829397ee9002f08110a",
+              "name": "Angel Fish",
+              "status": "Live",
+              "parent": "6026e810397ee9002f080cfe",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3a#6026e810397ee9002f080cfe#6026e829397ee9002f08110a",
+              "children": []
+            },
+            {
+              "_id": "6026e829397ee9002f08110b",
+              "name": "Zebrafish",
+              "status": "Live",
+              "parent": "6026e810397ee9002f080cfe",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3a#6026e810397ee9002f080cfe#6026e829397ee9002f08110b",
+              "children": []
+            },
+            {
+              "_id": "6026e829397ee9002f08110c",
+              "name": "Fighting Fish",
+              "status": "Live",
+              "parent": "6026e810397ee9002f080cfe",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3a#6026e810397ee9002f080cfe#6026e829397ee9002f08110c",
+              "children": []
+            },
+            {
+              "_id": "6026e829397ee9002f08110d",
+              "name": "Dragon Fish",
+              "status": "Live",
+              "parent": "6026e810397ee9002f080cfe",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3a#6026e810397ee9002f080cfe#6026e829397ee9002f08110d",
+              "children": []
+            }
+          ]
+        },
+        {
+          "_id": "6026e810397ee9002f080cff",
+          "name": "Hamsters",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3a",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3a#6026e810397ee9002f080cff",
+          "children": []
+        },
+        {
+          "_id": "6026e810397ee9002f080d00",
+          "name": "Tortoises",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3a",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3a#6026e810397ee9002f080d00",
+          "children": []
+        },
+        {
+          "_id": "6026e810397ee9002f080d01",
+          "name": "Canaries",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3a",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3a#6026e810397ee9002f080d01",
+          "children": []
+        },
+        {
+          "_id": "6026e810397ee9002f080d02",
+          "name": "Gerbils",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3a",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3a#6026e810397ee9002f080d02",
+          "children": []
+        }
+      ]
+    },
+    {
+      "_id": "6026e7f9397ee9002f080c3b",
+      "name": "Farm Animals",
+      "status": "Live",
+      "parent": "6026e7b0397ee9002f080c1c",
+      "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3b",
+      "children": [
+        {
+          "_id": "6026e810397ee9002f080d03",
+          "name": "Horses",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3b",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3b#6026e810397ee9002f080d03",
+          "children": [
+            {
+              "_id": "6026e829397ee9002f08110e",
+              "name": "Quarter Horse",
+              "status": "Live",
+              "parent": "6026e810397ee9002f080d03",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3b#6026e810397ee9002f080d03#6026e829397ee9002f08110e",
+              "children": []
+            },
+            {
+              "_id": "6026e829397ee9002f08110f",
+              "name": "Arabian Horse",
+              "status": "Live",
+              "parent": "6026e810397ee9002f080d03",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3b#6026e810397ee9002f080d03#6026e829397ee9002f08110f",
+              "children": []
+            },
+            {
+              "_id": "6026e829397ee9002f081110",
+              "name": "Appaloosa Horse",
+              "status": "Live",
+              "parent": "6026e810397ee9002f080d03",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3b#6026e810397ee9002f080d03#6026e829397ee9002f081110",
+              "children": []
+            },
+            {
+              "_id": "6026e829397ee9002f081111",
+              "name": "Thoroughbred Horse",
+              "status": "Live",
+              "parent": "6026e810397ee9002f080d03",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3b#6026e810397ee9002f080d03#6026e829397ee9002f081111",
+              "children": []
+            },
+            {
+              "_id": "6026e829397ee9002f081112",
+              "name": "Friesian Horse",
+              "status": "Live",
+              "parent": "6026e810397ee9002f080d03",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3b#6026e810397ee9002f080d03#6026e829397ee9002f081112",
+              "children": []
+            },
+            {
+              "_id": "6026e829397ee9002f081113",
+              "name": "Andalusian Horse",
+              "status": "Live",
+              "parent": "6026e810397ee9002f080d03",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3b#6026e810397ee9002f080d03#6026e829397ee9002f081113",
+              "children": []
+            },
+            {
+              "_id": "6026e829397ee9002f081114",
+              "name": "Clydesdale Horse",
+              "status": "Live",
+              "parent": "6026e810397ee9002f080d03",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3b#6026e810397ee9002f080d03#6026e829397ee9002f081114",
+              "children": []
+            },
+            {
+              "_id": "6026e829397ee9002f081115",
+              "name": "Shire Horse",
+              "status": "Live",
+              "parent": "6026e810397ee9002f080d03",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3b#6026e810397ee9002f080d03#6026e829397ee9002f081115",
+              "children": []
+            },
+            {
+              "_id": "6026e829397ee9002f081116",
+              "name": "Miniature Horse",
+              "status": "Live",
+              "parent": "6026e810397ee9002f080d03",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3b#6026e810397ee9002f080d03#6026e829397ee9002f081116",
+              "children": []
+            }
+          ]
+        },
+        {
+          "_id": "6026e810397ee9002f080d04",
+          "name": "Cows",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3b",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3b#6026e810397ee9002f080d04",
+          "children": [
+            {
+              "_id": "6026e829397ee9002f081117",
+              "name": "Highland Cow",
+              "status": "Live",
+              "parent": "6026e810397ee9002f080d04",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3b#6026e810397ee9002f080d04#6026e829397ee9002f081117",
+              "children": []
+            },
+            {
+              "_id": "6026e829397ee9002f081118",
+              "name": "Texas Longhorn",
+              "status": "Live",
+              "parent": "6026e810397ee9002f080d04",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3b#6026e810397ee9002f080d04#6026e829397ee9002f081118",
+              "children": []
+            },
+            {
+              "_id": "6026e829397ee9002f081119",
+              "name": "Jersey Cow",
+              "status": "Live",
+              "parent": "6026e810397ee9002f080d04",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3b#6026e810397ee9002f080d04#6026e829397ee9002f081119",
+              "children": []
+            },
+            {
+              "_id": "6026e829397ee9002f08111a",
+              "name": "Hereford Cow",
+              "status": "Live",
+              "parent": "6026e810397ee9002f080d04",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3b#6026e810397ee9002f080d04#6026e829397ee9002f08111a",
+              "children": []
+            },
+            {
+              "_id": "6026e829397ee9002f08111b",
+              "name": "Angus Cow",
+              "status": "Live",
+              "parent": "6026e810397ee9002f080d04",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3b#6026e810397ee9002f080d04#6026e829397ee9002f08111b",
+              "children": []
+            }
+          ]
+        },
+        {
+          "_id": "6026e810397ee9002f080d05",
+          "name": "Llamas",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3b",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3b#6026e810397ee9002f080d05",
+          "children": []
+        },
+        {
+          "_id": "6026e810397ee9002f080d06",
+          "name": "Pigs",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3b",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3b#6026e810397ee9002f080d06",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d07",
+          "name": "Chickens & Roosters",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3b",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3b#6026e811397ee9002f080d07",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d08",
+          "name": "Goats",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3b",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3b#6026e811397ee9002f080d08",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d09",
+          "name": "Turkeys",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3b",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3b#6026e811397ee9002f080d09",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d0a",
+          "name": "Alpacas",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3b",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3b#6026e811397ee9002f080d0a",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d0b",
+          "name": "Donkeys",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3b",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3b#6026e811397ee9002f080d0b",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d0c",
+          "name": "Camels",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3b",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3b#6026e811397ee9002f080d0c",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d0d",
+          "name": "Geese",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3b",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3b#6026e811397ee9002f080d0d",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d0e",
+          "name": "Mules",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3b",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3b#6026e811397ee9002f080d0e",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d0f",
+          "name": "Yaks",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3b",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3b#6026e811397ee9002f080d0f",
+          "children": []
+        }
+      ]
+    },
+    {
+      "_id": "6026e7f9397ee9002f080c3c",
+      "name": "Forest Animals",
+      "status": "Live",
+      "parent": "6026e7b0397ee9002f080c1c",
+      "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3c",
+      "children": [
+        {
+          "_id": "6026e811397ee9002f080d10",
+          "name": "Wolves",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3c",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3c#6026e811397ee9002f080d10",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d11",
+          "name": "Deers",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3c",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3c#6026e811397ee9002f080d11",
+          "children": [
+            {
+              "_id": "6026e829397ee9002f08111c",
+              "name": "Moose",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d11",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3c#6026e811397ee9002f080d11#6026e829397ee9002f08111c",
+              "children": []
+            },
+            {
+              "_id": "6026e829397ee9002f08111d",
+              "name": "Elk",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d11",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3c#6026e811397ee9002f080d11#6026e829397ee9002f08111d",
+              "children": []
+            },
+            {
+              "_id": "6026e829397ee9002f08111e",
+              "name": "Reindeer",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d11",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3c#6026e811397ee9002f080d11#6026e829397ee9002f08111e",
+              "children": []
+            }
+          ]
+        },
+        {
+          "_id": "6026e811397ee9002f080d12",
+          "name": "Fox",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3c",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3c#6026e811397ee9002f080d12",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d13",
+          "name": "Bears",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3c",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3c#6026e811397ee9002f080d13",
+          "children": [
+            {
+              "_id": "6026e829397ee9002f08111f",
+              "name": "Sloth Bear",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d13",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3c#6026e811397ee9002f080d13#6026e829397ee9002f08111f",
+              "children": []
+            },
+            {
+              "_id": "6026e829397ee9002f081120",
+              "name": "Polar Bear",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d13",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3c#6026e811397ee9002f080d13#6026e829397ee9002f081120",
+              "children": []
+            },
+            {
+              "_id": "6026e829397ee9002f081121",
+              "name": "Grizzly Bear",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d13",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3c#6026e811397ee9002f080d13#6026e829397ee9002f081121",
+              "children": []
+            }
+          ]
+        },
+        {
+          "_id": "6026e811397ee9002f080d14",
+          "name": "Apes & Monkeys",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3c",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3c#6026e811397ee9002f080d14",
+          "children": [
+            {
+              "_id": "6026e829397ee9002f081122",
+              "name": "Monkeys",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d14",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3c#6026e811397ee9002f080d14#6026e829397ee9002f081122",
+              "children": []
+            },
+            {
+              "_id": "6026e829397ee9002f081123",
+              "name": "Gorillas",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d14",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3c#6026e811397ee9002f080d14#6026e829397ee9002f081123",
+              "children": []
+            },
+            {
+              "_id": "6026e829397ee9002f081124",
+              "name": "Apes",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d14",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3c#6026e811397ee9002f080d14#6026e829397ee9002f081124",
+              "children": []
+            },
+            {
+              "_id": "6026e829397ee9002f081125",
+              "name": "Chimpanzees",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d14",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3c#6026e811397ee9002f080d14#6026e829397ee9002f081125",
+              "children": []
+            },
+            {
+              "_id": "6026e829397ee9002f081126",
+              "name": "Orangutans",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d14",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3c#6026e811397ee9002f080d14#6026e829397ee9002f081126",
+              "children": []
+            }
+          ]
+        },
+        {
+          "_id": "6026e811397ee9002f080d15",
+          "name": "Pandas",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3c",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3c#6026e811397ee9002f080d15",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d16",
+          "name": "Sloths",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3c",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3c#6026e811397ee9002f080d16",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d17",
+          "name": "Bats",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3c",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3c#6026e811397ee9002f080d17",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d18",
+          "name": "Mice",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3c",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3c#6026e811397ee9002f080d18",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d19",
+          "name": "Squirrels",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3c",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3c#6026e811397ee9002f080d19",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d1a",
+          "name": "Koalas",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3c",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3c#6026e811397ee9002f080d1a",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d1b",
+          "name": "Raccoons",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3c",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3c#6026e811397ee9002f080d1b",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d1c",
+          "name": "Coyotes",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3c",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3c#6026e811397ee9002f080d1c",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d1d",
+          "name": "Hedgehogs",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3c",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3c#6026e811397ee9002f080d1d",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d1e",
+          "name": "Badgers",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3c",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3c#6026e811397ee9002f080d1e",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d1f",
+          "name": "Opossum",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3c",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3c#6026e811397ee9002f080d1f",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d20",
+          "name": "Moles",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3c",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3c#6026e811397ee9002f080d20",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d21",
+          "name": "Beavers",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3c",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3c#6026e811397ee9002f080d21",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d22",
+          "name": "Skunks",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3c",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3c#6026e811397ee9002f080d22",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d23",
+          "name": "Lemur",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3c",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3c#6026e811397ee9002f080d23",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d24",
+          "name": "Porcupines",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3c",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3c#6026e811397ee9002f080d24",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d25",
+          "name": "Weasels",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3c",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3c#6026e811397ee9002f080d25",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d26",
+          "name": "Wombats",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3c",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3c#6026e811397ee9002f080d26",
+          "children": []
+        }
+      ]
+    },
+    {
+      "_id": "6026e7f9397ee9002f080c3d",
+      "name": "Sea Life",
+      "status": "Live",
+      "parent": "6026e7b0397ee9002f080c1c",
+      "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d",
+      "children": [
+        {
+          "_id": "6026e811397ee9002f080d27",
+          "name": "Dolphins",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3d",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d27",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d28",
+          "name": "Sharks",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3d",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d28",
+          "children": [
+            {
+              "_id": "6026e829397ee9002f081127",
+              "name": "Whale Shark",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d28",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d28#6026e829397ee9002f081127",
+              "children": []
+            },
+            {
+              "_id": "6026e829397ee9002f081128",
+              "name": "Great White Shark",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d28",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d28#6026e829397ee9002f081128",
+              "children": []
+            },
+            {
+              "_id": "6026e829397ee9002f081129",
+              "name": "Hammerhead Shark",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d28",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d28#6026e829397ee9002f081129",
+              "children": []
+            },
+            {
+              "_id": "6026e829397ee9002f08112a",
+              "name": "Sand Tiger Shark",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d28",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d28#6026e829397ee9002f08112a",
+              "children": []
+            },
+            {
+              "_id": "6026e829397ee9002f08112b",
+              "name": "Thresher Shark",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d28",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d28#6026e829397ee9002f08112b",
+              "children": []
+            },
+            {
+              "_id": "6026e829397ee9002f08112c",
+              "name": "Bull Shark",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d28",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d28#6026e829397ee9002f08112c",
+              "children": []
+            },
+            {
+              "_id": "6026e829397ee9002f08112d",
+              "name": "Goblin Shark",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d28",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d28#6026e829397ee9002f08112d",
+              "children": []
+            },
+            {
+              "_id": "6026e829397ee9002f08112e",
+              "name": "Blue Shark",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d28",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d28#6026e829397ee9002f08112e",
+              "children": []
+            },
+            {
+              "_id": "6026e829397ee9002f08112f",
+              "name": "Lemon Shark",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d28",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d28#6026e829397ee9002f08112f",
+              "children": []
+            },
+            {
+              "_id": "6026e829397ee9002f081130",
+              "name": "Basking Shark",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d28",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d28#6026e829397ee9002f081130",
+              "children": []
+            }
+          ]
+        },
+        {
+          "_id": "6026e811397ee9002f080d29",
+          "name": "Whales",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3d",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d29",
+          "children": [
+            {
+              "_id": "6026e829397ee9002f081131",
+              "name": "Narwhal",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d29",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d29#6026e829397ee9002f081131",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081132",
+              "name": "Blue Whale",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d29",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d29#6026e82a397ee9002f081132",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081133",
+              "name": "Humpback Whale",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d29",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d29#6026e82a397ee9002f081133",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081134",
+              "name": "Sperm Whale",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d29",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d29#6026e82a397ee9002f081134",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081135",
+              "name": "Orca Whale",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d29",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d29#6026e82a397ee9002f081135",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081136",
+              "name": "Beluga Whale",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d29",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d29#6026e82a397ee9002f081136",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081137",
+              "name": "Gray Whale",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d29",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d29#6026e82a397ee9002f081137",
+              "children": []
+            }
+          ]
+        },
+        {
+          "_id": "6026e811397ee9002f080d2a",
+          "name": "Turtles",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3d",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d2a",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d2b",
+          "name": "Penguins",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3d",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d2b",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d2c",
+          "name": "Octopus",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3d",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d2c",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d2d",
+          "name": "Jellyfish",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3d",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d2d",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d2e",
+          "name": "Seahorses",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3d",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d2e",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d2f",
+          "name": "Starfish",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3d",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d2f",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d30",
+          "name": "Corals",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3d",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d30",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d31",
+          "name": "Saltwater Fish",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3d",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d31",
+          "children": [
+            {
+              "_id": "6026e82a397ee9002f081138",
+              "name": "Tarpon",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d31",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d31#6026e82a397ee9002f081138",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081139",
+              "name": "Marlin",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d31",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d31#6026e82a397ee9002f081139",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f08113a",
+              "name": "Snook",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d31",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d31#6026e82a397ee9002f08113a",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f08113b",
+              "name": "Sailfish",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d31",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d31#6026e82a397ee9002f08113b",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f08113c",
+              "name": "Tuna",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d31",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d31#6026e82a397ee9002f08113c",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f08113d",
+              "name": "Lionfish",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d31",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d31#6026e82a397ee9002f08113d",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f08113e",
+              "name": "Wahoo",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d31",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d31#6026e82a397ee9002f08113e",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f08113f",
+              "name": "Blue Marlin",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d31",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d31#6026e82a397ee9002f08113f",
+              "children": []
+            }
+          ]
+        },
+        {
+          "_id": "6026e811397ee9002f080d32",
+          "name": "Fresh Water Fish",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3d",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d32",
+          "children": [
+            {
+              "_id": "6026e82a397ee9002f081140",
+              "name": "Koi Fish",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d32",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d32#6026e82a397ee9002f081140",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081141",
+              "name": "Bass",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d32",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d32#6026e82a397ee9002f081141",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081142",
+              "name": "Betta Fish",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d32",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d32#6026e82a397ee9002f081142",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081143",
+              "name": "Puffer Fish",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d32",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d32#6026e82a397ee9002f081143",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081144",
+              "name": "Discus Fish",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d32",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d32#6026e82a397ee9002f081144",
+              "children": []
+            },
+            {
+              "_id": "6026e8c4397ee9002f081757",
+              "name": "Goldfish",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d32",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d32#6026e8c4397ee9002f081757",
+              "children": []
+            }
+          ]
+        },
+        {
+          "_id": "6026e811397ee9002f080d33",
+          "name": "Seals",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3d",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d33",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d34",
+          "name": "Oysters",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3d",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d34",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d35",
+          "name": "Sand Dollars",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3d",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d35",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d36",
+          "name": "Squid",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3d",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d36",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d37",
+          "name": "Lobsters",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3d",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d37",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d38",
+          "name": "Manatees",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3d",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d38",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d39",
+          "name": "Shrimp",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3d",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d39",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d3a",
+          "name": "Nautilus",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3d",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d3a",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d3b",
+          "name": "Crayfish",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3d",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d3b",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d3c",
+          "name": "Sea Urchins",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3d",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d3c",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d3d",
+          "name": "Eels",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3d",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d3d",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d3e",
+          "name": "Walruses",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3d",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d3e",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d3f",
+          "name": "Blobfish",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3d",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d3f",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d40",
+          "name": "Sea Lions",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3d",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d40",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d41",
+          "name": "Sea Anemones",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3d",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d41",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d42",
+          "name": "Nudibranchs",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3d",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3d#6026e811397ee9002f080d42",
+          "children": []
+        }
+      ]
+    },
+    {
+      "_id": "6026e7f9397ee9002f080c3e",
+      "name": "Safari Animals",
+      "status": "Live",
+      "parent": "6026e7b0397ee9002f080c1c",
+      "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3e",
+      "children": [
+        {
+          "_id": "6026e811397ee9002f080d43",
+          "name": "Elephants",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3e",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3e#6026e811397ee9002f080d43",
+          "children": [
+            {
+              "_id": "6026e82a397ee9002f081145",
+              "name": "African Elephant",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d43",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3e#6026e811397ee9002f080d43#6026e82a397ee9002f081145",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081146",
+              "name": "Savanna Elephant",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d43",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3e#6026e811397ee9002f080d43#6026e82a397ee9002f081146",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081147",
+              "name": "Asian Elephant",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d43",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3e#6026e811397ee9002f080d43#6026e82a397ee9002f081147",
+              "children": []
+            }
+          ]
+        },
+        {
+          "_id": "6026e811397ee9002f080d44",
+          "name": "Giraffes",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3e",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3e#6026e811397ee9002f080d44",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d45",
+          "name": "Zebras",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3e",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3e#6026e811397ee9002f080d45",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d46",
+          "name": "Hyena",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3e",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3e#6026e811397ee9002f080d46",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d47",
+          "name": "Wild Cat",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3e",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3e#6026e811397ee9002f080d47",
+          "children": [
+            {
+              "_id": "6026e82a397ee9002f081148",
+              "name": "Panthers",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d47",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3e#6026e811397ee9002f080d47#6026e82a397ee9002f081148",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081149",
+              "name": "Leopards",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d47",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3e#6026e811397ee9002f080d47#6026e82a397ee9002f081149",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f08114a",
+              "name": "Jaguars",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d47",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3e#6026e811397ee9002f080d47#6026e82a397ee9002f08114a",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f08114b",
+              "name": "Tigers",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d47",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3e#6026e811397ee9002f080d47#6026e82a397ee9002f08114b",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f08114c",
+              "name": "Lions",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d47",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3e#6026e811397ee9002f080d47#6026e82a397ee9002f08114c",
+              "children": []
+            }
+          ]
+        },
+        {
+          "_id": "6026e811397ee9002f080d48",
+          "name": "Bulls",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3e",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3e#6026e811397ee9002f080d48",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d49",
+          "name": "Antelope",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3e",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3e#6026e811397ee9002f080d49",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d4a",
+          "name": "Bison & Buffalo",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3e",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3e#6026e811397ee9002f080d4a",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d4b",
+          "name": "Rhinoceroses",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3e",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3e#6026e811397ee9002f080d4b",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d4c",
+          "name": "Aardvarks",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3e",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3e#6026e811397ee9002f080d4c",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d4d",
+          "name": "Hippopotamuses",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3e",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3e#6026e811397ee9002f080d4d",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d4e",
+          "name": "Birds",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3e",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3e#6026e811397ee9002f080d4e",
+          "children": [
+            {
+              "_id": "6026e82a397ee9002f08114d",
+              "name": "Owls",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d4e",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3e#6026e811397ee9002f080d4e#6026e82a397ee9002f08114d",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f08114e",
+              "name": "Peacocks",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d4e",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3e#6026e811397ee9002f080d4e#6026e82a397ee9002f08114e",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f08114f",
+              "name": "Ducks",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d4e",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3e#6026e811397ee9002f080d4e#6026e82a397ee9002f08114f",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081150",
+              "name": "Flamingos",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d4e",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3e#6026e811397ee9002f080d4e#6026e82a397ee9002f081150",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081151",
+              "name": "Hummingbirds",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d4e",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3e#6026e811397ee9002f080d4e#6026e82a397ee9002f081151",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081152",
+              "name": "Songbirds",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d4e",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3e#6026e811397ee9002f080d4e#6026e82a397ee9002f081152",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081153",
+              "name": "Seagulls",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d4e",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3e#6026e811397ee9002f080d4e#6026e82a397ee9002f081153",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081154",
+              "name": "Eagles",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d4e",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3e#6026e811397ee9002f080d4e#6026e82a397ee9002f081154",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081155",
+              "name": "Crows & Ravens",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d4e",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3e#6026e811397ee9002f080d4e#6026e82a397ee9002f081155",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081156",
+              "name": "Cardinals",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d4e",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3e#6026e811397ee9002f080d4e#6026e82a397ee9002f081156",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081157",
+              "name": "Swans",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d4e",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3e#6026e811397ee9002f080d4e#6026e82a397ee9002f081157",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081158",
+              "name": "Pelicans",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d4e",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3e#6026e811397ee9002f080d4e#6026e82a397ee9002f081158",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081159",
+              "name": "Safari Parrots",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d4e",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3e#6026e811397ee9002f080d4e#6026e82a397ee9002f081159",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f08115a",
+              "name": "Doves",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d4e",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3e#6026e811397ee9002f080d4e#6026e82a397ee9002f08115a",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f08115b",
+              "name": "Toucans",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d4e",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3e#6026e811397ee9002f080d4e#6026e82a397ee9002f08115b",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f08115c",
+              "name": "Cranes",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d4e",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3e#6026e811397ee9002f080d4e#6026e82a397ee9002f08115c",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f08115d",
+              "name": "Ostriches",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d4e",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3e#6026e811397ee9002f080d4e#6026e82a397ee9002f08115d",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f08115e",
+              "name": "Kiwi",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d4e",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3e#6026e811397ee9002f080d4e#6026e82a397ee9002f08115e",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f08115f",
+              "name": "Pigeons",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d4e",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3e#6026e811397ee9002f080d4e#6026e82a397ee9002f08115f",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081160",
+              "name": "Herons",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d4e",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3e#6026e811397ee9002f080d4e#6026e82a397ee9002f081160",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081161",
+              "name": "Thrushes",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d4e",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3e#6026e811397ee9002f080d4e#6026e82a397ee9002f081161",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081162",
+              "name": "Finch",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d4e",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3e#6026e811397ee9002f080d4e#6026e82a397ee9002f081162",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_id": "6026e7f9397ee9002f080c3f",
+      "name": "Reptiles & Amphibians",
+      "status": "Live",
+      "parent": "6026e7b0397ee9002f080c1c",
+      "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3f",
+      "children": [
+        {
+          "_id": "6026e811397ee9002f080d4f",
+          "name": "Snakes",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3f",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3f#6026e811397ee9002f080d4f",
+          "children": [
+            {
+              "_id": "6026e82a397ee9002f081163",
+              "name": "Cobra",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d4f",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3f#6026e811397ee9002f080d4f#6026e82a397ee9002f081163",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081164",
+              "name": "Rattlesnake",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d4f",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3f#6026e811397ee9002f080d4f#6026e82a397ee9002f081164",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081165",
+              "name": "Python",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d4f",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3f#6026e811397ee9002f080d4f#6026e82a397ee9002f081165",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081166",
+              "name": "Viper",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d4f",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3f#6026e811397ee9002f080d4f#6026e82a397ee9002f081166",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081167",
+              "name": "Diamondback",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d4f",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3f#6026e811397ee9002f080d4f#6026e82a397ee9002f081167",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081168",
+              "name": "Anaconda",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d4f",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3f#6026e811397ee9002f080d4f#6026e82a397ee9002f081168",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081169",
+              "name": "Boa Constrictor",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d4f",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3f#6026e811397ee9002f080d4f#6026e82a397ee9002f081169",
+              "children": []
+            }
+          ]
+        },
+        {
+          "_id": "6026e811397ee9002f080d50",
+          "name": "Chameleons",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3f",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3f#6026e811397ee9002f080d50",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d51",
+          "name": "Frogs & Toads",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3f",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3f#6026e811397ee9002f080d51",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d52",
+          "name": "Lizards",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3f",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3f#6026e811397ee9002f080d52",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d53",
+          "name": "Alligators & Crocodiles",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c3f",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3f#6026e811397ee9002f080d53",
+          "children": []
+        }
+      ]
+    },
+    {
+      "_id": "6026e7f9397ee9002f080c40",
+      "name": "Insects",
+      "status": "Live",
+      "parent": "6026e7b0397ee9002f080c1c",
+      "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c40",
+      "children": [
+        {
+          "_id": "6026e811397ee9002f080d54",
+          "name": "Butterflies",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c40",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c40#6026e811397ee9002f080d54",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d55",
+          "name": "Dragonflies",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c40",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c40#6026e811397ee9002f080d55",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d56",
+          "name": "Bees",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c40",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c40#6026e811397ee9002f080d56",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d57",
+          "name": "Ladybugs",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c40",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c40#6026e811397ee9002f080d57",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d58",
+          "name": "Fireflies",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c40",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c40#6026e811397ee9002f080d58",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d59",
+          "name": "Spiders",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c40",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c40#6026e811397ee9002f080d59",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d5a",
+          "name": "Moths",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c40",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c40#6026e811397ee9002f080d5a",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d5b",
+          "name": "Snails",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c40",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c40#6026e811397ee9002f080d5b",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d5c",
+          "name": "Ants",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c40",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c40#6026e811397ee9002f080d5c",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d5d",
+          "name": "Scorpions",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c40",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c40#6026e811397ee9002f080d5d",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d5e",
+          "name": "Flies",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c40",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c40#6026e811397ee9002f080d5e",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d5f",
+          "name": "Beetles",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c40",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c40#6026e811397ee9002f080d5f",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d60",
+          "name": "Caterpillars",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c40",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c40#6026e811397ee9002f080d60",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d61",
+          "name": "Wasps",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c40",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c40#6026e811397ee9002f080d61",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d62",
+          "name": "Praying Mantises",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c40",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c40#6026e811397ee9002f080d62",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d63",
+          "name": "Grasshoppers",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c40",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c40#6026e811397ee9002f080d63",
+          "children": []
+        }
+      ]
+    },
+    {
+      "_id": "6026e7f9397ee9002f080c41",
+      "name": "Legendary",
+      "status": "Live",
+      "parent": "6026e7b0397ee9002f080c1c",
+      "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c41",
+      "children": [
+        {
+          "_id": "6026e811397ee9002f080d64",
+          "name": "Dinosaurs",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c41",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c41#6026e811397ee9002f080d64",
+          "children": [
+            {
+              "_id": "6026e82a397ee9002f08116a",
+              "name": "Velociraptor",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d64",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c41#6026e811397ee9002f080d64#6026e82a397ee9002f08116a",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f08116b",
+              "name": "Spinosaurus",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d64",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c41#6026e811397ee9002f080d64#6026e82a397ee9002f08116b",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f08116c",
+              "name": "Tyrannosaurus Rex",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d64",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c41#6026e811397ee9002f080d64#6026e82a397ee9002f08116c",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f08116d",
+              "name": "Triceratops",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d64",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c41#6026e811397ee9002f080d64#6026e82a397ee9002f08116d",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f08116e",
+              "name": "Stegosaurus",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d64",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c41#6026e811397ee9002f080d64#6026e82a397ee9002f08116e",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f08116f",
+              "name": "Dimetrodon",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d64",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c41#6026e811397ee9002f080d64#6026e82a397ee9002f08116f",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081170",
+              "name": "Sauropod",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d64",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c41#6026e811397ee9002f080d64#6026e82a397ee9002f081170",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081171",
+              "name": "Iguanodon",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d64",
+              "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c41#6026e811397ee9002f080d64#6026e82a397ee9002f081171",
+              "children": []
+            }
+          ]
+        },
+        {
+          "_id": "6026e811397ee9002f080d65",
+          "name": "Dragons",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c41",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c41#6026e811397ee9002f080d65",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d66",
+          "name": "Unicorns",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c41",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c41#6026e811397ee9002f080d66",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d67",
+          "name": "Phoenix",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c41",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c41#6026e811397ee9002f080d67",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d68",
+          "name": "Cthulhu",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c41",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c41#6026e811397ee9002f080d68",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d69",
+          "name": "Griffin",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c41",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c41#6026e811397ee9002f080d69",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d6a",
+          "name": "Sphinx",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c41",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c41#6026e811397ee9002f080d6a",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d6b",
+          "name": "Pegasus",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c41",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c41#6026e811397ee9002f080d6b",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d6c",
+          "name": "Yeti",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c41",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c41#6026e811397ee9002f080d6c",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d6d",
+          "name": "Loch Ness Monster",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c41",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c41#6026e811397ee9002f080d6d",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d6e",
+          "name": "Chimera",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c41",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c41#6026e811397ee9002f080d6e",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d6f",
+          "name": "Basilisk",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c41",
+          "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c41#6026e811397ee9002f080d6f",
+          "children": []
+        }
+      ]
+    }
+  ],
+  "_id": "6026e7b0397ee9002f080c1c",
+  "identifier": "animals",
+  "name": "Animals",
+  "status": "Live",
+  "slug": "/animals",
+  "createdAt": "2021-02-12T20:40:16.477Z",
+  "updatedAt": "2021-02-14T04:01:00.064Z",
+  "path": "6026e7b0397ee9002f080c1c",
+  "__v": 0
+}
