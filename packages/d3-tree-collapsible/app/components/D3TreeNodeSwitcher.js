@@ -1,17 +1,35 @@
-import D3TreeNodeSwitcher from './machines/TreeNodeSwitcher'
+import D3TreeNodeSwitcherMachine from './machines/TreeNodeSwitcher'
 const { useMachine } = XStateReact
 
 const ElementWrapper = window.styled.div`
   margin: 1rem;
 `
 
-// ============ MainNodeSelector ====================
-function MainNodeSelector({ nodes, debug }) {
-  // ============ state switcher ====================
-  const [stateSwitcher, sendSwitcher] = useMachine(D3TreeNodeSwitcher)
+const SVGContainer = window.styled.div`
+  position: relative;
+
+  border: 2px solid #808080;
+`
+
+// ============ D3TreeNodeSwitcher ====================
+function D3TreeNodeSwitcher({ nodes, debug, updateParentChildRelationship }) {
+  // ============ referiencies ====================
+  const childRef = React.useRef()
+
+  // ============ hooks ====================
+  const [treeData, setTreeData] = React.useState(1)
+
+  // ============ State machines ====================
+  const [stateSwitcher, sendSwitcher] = useMachine(D3TreeNodeSwitcherMachine)
   const stateSwitcherCallback = node => {
-    console.log('stateSwitcherCallback', node)
+    const _treeData = updateParentChildRelationship(node._id)
+    setTreeData(_treeData)
   }
+
+  // ============ useEffect ====================
+  React.useEffect(() => {
+    childRef.current.draw(treeData)
+  }, [treeData])
 
   // ============ debug ====================
   let debugContainer = null
@@ -29,6 +47,7 @@ function MainNodeSelector({ nodes, debug }) {
     debugContainer = React.createElement('div', null, info, debug)
   }
 
+  // ============ React elements ====================
   const listItems = nodes.map(node => {
     return React.createElement(SelectorListItem, {
       node,
@@ -37,22 +56,28 @@ function MainNodeSelector({ nodes, debug }) {
     })
   })
 
+  const d3Container = React.createElement(D3MultiSelectorTreeContainer, {
+    ref: childRef,
+  })
+
   const Wrapper = React.createElement(
     ElementWrapper,
     null,
     listItems,
     debugContainer,
+    d3Container,
   )
 
   return Wrapper
 }
 
-MainNodeSelector.defaultProps = {
+D3TreeNodeSwitcher.defaultProps = {
   nodes: [],
   debug: true,
+  updateParentChildRelationship: () => {},
 }
 
-MainNodeSelector.propTypes = {}
+D3TreeNodeSwitcher.propTypes = {}
 
 // ============ SelectorListItem ====================
 const StyledSelectorListItem = window.styled.div`
@@ -73,4 +98,27 @@ function SelectorListItem({ node, stateSwitcherCallback }) {
   )
 }
 
-export default MainNodeSelector
+// ============ D3MultiSelectorTreeContainer ====================
+class D3MultiSelectorTreeContainer extends React.Component {
+  constructor(props) {
+    super(props)
+
+    this.container = null
+
+    this.setContainerRef = element => {
+      this.container = element
+    }
+  }
+
+  draw(treeData) {
+    console.log('D3MultiSelectorTreeContainer.treeData', treeData)
+  }
+
+  render() {
+    return React.createElement(SVGContainer, {
+      ref: this.setContainerRef,
+    })
+  }
+}
+
+export default D3TreeNodeSwitcher

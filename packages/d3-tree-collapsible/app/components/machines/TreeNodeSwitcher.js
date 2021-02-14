@@ -1,7 +1,7 @@
 const { Machine, assign } = XState
 
-const D3TreeNodeSwitcher = Machine({
-  id: 'D3TreeNodeSwitcher',
+const D3TreeNodeSwitcherMachine = Machine({
+  id: 'D3TreeNodeSwitcherMachine',
   initial: 'idle',
   states: {
     idle: {
@@ -13,4 +13,4 @@ const D3TreeNodeSwitcher = Machine({
   },
 })
 
-export default D3TreeNodeSwitcher
+export default D3TreeNodeSwitcherMachine
