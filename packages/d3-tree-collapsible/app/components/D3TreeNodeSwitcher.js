@@ -1,4 +1,5 @@
 import D3TreeNodeSwitcherMachine from './machines/TreeNodeSwitcher'
+import createTreeMultiSelectorStateMachine from './machines/TreeMultiSelectorStateMachine'
 const { useMachine } = XStateReact
 
 const ElementWrapper = window.styled.div`
@@ -20,10 +21,25 @@ function D3TreeNodeSwitcher({ nodes, debug, updateParentChildRelationship }) {
   const [treeData, setTreeData] = React.useState(1)
 
   // ============ State machines ====================
+  const machine = createTreeMultiSelectorStateMachine({
+    child: {
+      _id: '1',
+      name: 'Test',
+    },
+  })
+  const [
+    stateMultiSelector,
+    sendMultiSelector,
+    serviceMultiSelector,
+  ] = useMachine(machine)
+  console.log('machine', stateMultiSelector)
+
   const [stateSwitcher, sendSwitcher] = useMachine(D3TreeNodeSwitcherMachine)
   const stateSwitcherCallback = node => {
     const _treeData = updateParentChildRelationship(node._id)
     setTreeData(_treeData)
+    sendSwitcher('MAIN_NODE_IS_SELECTED')
+    sendMultiSelector('COLLAPSE')
   }
 
   // ============ useEffect ====================
@@ -34,17 +50,46 @@ function D3TreeNodeSwitcher({ nodes, debug, updateParentChildRelationship }) {
   // ============ debug ====================
   let debugContainer = null
   if (debug) {
-    const info = React.createElement(
+    const generateTreeNodeSwitcherDebugData = () => {
+      const info = React.createElement(
+        'div',
+        null,
+        `D3TreeNodeSwitcherMachine: ${stateSwitcher.value}`,
+      )
+
+      const debug = React.createElement(
+        'div',
+        null,
+        JSON.stringify(stateSwitcher.context),
+      )
+
+      return React.createElement('div', null, info, debug)
+    }
+    const debugTreeNodeSwitcher = generateTreeNodeSwitcherDebugData()
+
+    const generateTreeMultiSelectorDebugData = () => {
+      const info = React.createElement(
+        'div',
+        null,
+        `D3TreeMultiSelectorStateMachine: ${stateMultiSelector.value}`,
+      )
+
+      const debug = React.createElement(
+        'div',
+        null,
+        JSON.stringify(stateMultiSelector.context),
+      )
+
+      return React.createElement('div', null, info, debug)
+    }
+    const debugTreeMultiSelectorDebugData = generateTreeMultiSelectorDebugData()
+
+    debugContainer = React.createElement(
       'div',
       null,
-      `Active mode: ${stateSwitcher.value}`,
+      debugTreeNodeSwitcher,
+      debugTreeMultiSelectorDebugData,
     )
-    const debug = React.createElement(
-      'div',
-      null,
-      JSON.stringify(stateSwitcher.context),
-    )
-    debugContainer = React.createElement('div', null, info, debug)
   }
 
   // ============ React elements ====================
