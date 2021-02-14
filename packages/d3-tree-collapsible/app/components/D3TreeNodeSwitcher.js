@@ -148,7 +148,9 @@ function loadTree(width, data) {
   root.descendants().forEach((d, i) => {
     d.id = i
     d._children = d.children
-    if (d.depth && d.data.name.length !== 7) d.children = null
+
+    // if (d.depth && d.data.name.length !== 7) d.children = null
+    if (d.depth && d.depth >= 1) d.children = null
   })
 
   const svg = d3
@@ -261,6 +263,9 @@ function loadTree(width, data) {
       .attr('d', d => {
         const o = { x: source.x0, y: source.y0 }
         return diagonal({ source: o, target: o })
+      })
+      .style('stroke', function(d) {
+        return '#000'
       })
 
     // Transition links to their new position.
