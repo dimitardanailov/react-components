@@ -12,8 +12,35 @@ const SVGContainer = window.styled.div`
   border: 2px solid #808080;
 `
 
+const Switcher = window.styled.button`
+  position: relative;
+
+  padding: 0.8rem;
+  border-radius: 12.5%;
+  border: 2px solid ${props => (props.checked ? 'purple' : '#808080')};
+  background: ${props => (props.checked ? 'purple' : '#fff')};
+
+  &:focus {
+    outline: none;
+  }
+`
+
+const ParentContainer = window.styled.div`
+  position: relative;
+
+  display: flex;
+  flex-direction row;
+  justify-content: flex-start;
+  align-items: center;
+`
+
 // ============ D3TreeNodeSwitcher ====================
-function D3TreeNodeSwitcher({ dbNodes, debug, updateParentChildRelationship }) {
+function D3TreeNodeSwitcher({
+  dbNodes,
+  entityType,
+  debug,
+  updateParentChildRelationship,
+}) {
   // ============ referiencies ====================
   const childRef = React.useRef()
 
@@ -101,6 +128,22 @@ function D3TreeNodeSwitcher({ dbNodes, debug, updateParentChildRelationship }) {
     })
   })
 
+  // ============ Entity Switcher ====================
+  const entityInfoSwitcherLabel = React.createElement(
+    'span',
+    {
+      className: 'ml-2',
+    },
+    typeof stateMultiSelector.context.parent === 'object'
+      ? `Entity ${entityType}: ${state.context.entity.name}`
+      : `Entity ${entityType}: {name of selected ${entityType}}`,
+  )
+  const entitySwitcherContainer = React.createElement(
+    ParentContainer,
+    null,
+    entityInfoSwitcherLabel,
+  )
+
   const d3Container = React.createElement(D3MultiSelectorTreeContainer, {
     ref: childRef,
   })
@@ -110,6 +153,7 @@ function D3TreeNodeSwitcher({ dbNodes, debug, updateParentChildRelationship }) {
     null,
     listItems,
     debugContainer,
+    entitySwitcherContainer,
     d3Container,
   )
 
@@ -119,6 +163,7 @@ function D3TreeNodeSwitcher({ dbNodes, debug, updateParentChildRelationship }) {
 D3TreeNodeSwitcher.defaultProps = {
   dbNodes: [],
   debug: true,
+  entityType: 'entity',
   updateParentChildRelationship: () => {},
 }
 
