@@ -12,13 +12,16 @@ const SVGContainer = window.styled.div`
   border: 2px solid #808080;
 `
 
+const entityActiveColour = 'purple'
+
 const Switcher = window.styled.button`
   position: relative;
 
   padding: 0.8rem;
   border-radius: 12.5%;
-  border: 2px solid ${props => (props.checked ? 'purple' : '#808080')};
-  background: ${props => (props.checked ? 'purple' : '#fff')};
+  border: 2px solid ${props =>
+    props.checked ? entityActiveColour : '#808080'};
+  background: ${props => (props.checked ? entityActiveColour : '#fff')};
 
   &:focus {
     outline: none;
