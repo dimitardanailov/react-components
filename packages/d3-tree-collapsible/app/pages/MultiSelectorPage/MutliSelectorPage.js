@@ -26,8 +26,9 @@ function MultiSelectorPage() {
   }
 
   const params = {
-    debug: true,
     dbNodes,
+    entityType: 'entity',
+    debug: true,
     updateParentChildRelationship,
   }
 
