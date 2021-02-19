@@ -44,17 +44,6 @@ function D3TreeNodeSwitcher({
   debug,
   updateParentChildRelationship,
 }) {
-  // ============ referiencies ====================
-  const childRef = React.useRef()
-
-  // ============ hooks ====================
-  const [treeData, setTreeData] = React.useState(1)
-  React.useEffect(() => {
-    childRef.current.draw(treeData)
-  }, [treeData])
-
-  const [nodes, setNodes] = React.useState(dbNodes)
-
   // ============ State machines ====================
   const machine = createTreeMultiSelectorStateMachine({
     entity: {
@@ -76,6 +65,21 @@ function D3TreeNodeSwitcher({
     sendSwitcher('MAIN_NODE_IS_SELECTED')
     sendMultiSelector('COLLAPSE')
   }
+
+  // ============ referiencies ====================
+  const childRef = React.useRef()
+
+  // ============ hooks ====================
+  const [treeData, setTreeData] = React.useState(1)
+  React.useEffect(() => {
+    const machine = {
+      state: stateMultiSelector,
+      send: sendMultiSelector,
+    }
+    childRef.current.draw(treeData, machine)
+  }, [treeData])
+
+  const [nodes, setNodes] = React.useState(dbNodes)
 
   // ============ debug ====================
   let debugContainer = null
@@ -218,11 +222,11 @@ class D3MultiSelectorTreeContainer extends React.Component {
     }
   }
 
-  draw(treeData) {
+  draw(treeData, machine) {
     console.log('D3MultiSelectorTreeContainer.treeData', treeData)
 
     const width = 800
-    const node = loadTree(width, treeData)
+    const node = loadTree(width, treeData, machine)
 
     d3.select(this.container)
       .selectAll('*')
@@ -237,7 +241,7 @@ class D3MultiSelectorTreeContainer extends React.Component {
   }
 }
 
-function loadTree(width, data) {
+function loadTree(width, data, machine) {
   const margin = { top: 20, right: 120, bottom: 20, left: 120 }
   const dx = 30
   const dy = Math.min(width / (3 + 2), dx * 10)
