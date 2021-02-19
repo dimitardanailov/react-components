@@ -210,7 +210,7 @@ function D3Tree({
   const parentEntityInfoContainer = React.createElement(
     ParentContainer,
     null,
-    switcherNormalModeParentMode,
+    switcherCollapseModeSelectEntityMode,
     parentEntityInfoLabel,
   )
 

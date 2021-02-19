@@ -141,7 +141,7 @@ function D3TreeNodeSwitcher({
       ? `Entity ${entityType}: ${state.context.entity.name}`
       : `Entity ${entityType}: {name of selected ${entityType}}`,
   )
-  const switcherNormalModeParentMode = React.createElement(
+  const switcherCollapseModeSelectEntityMode = React.createElement(
     Switcher,
     {
       checked: stateMultiSelector.matches('select_entity'),
@@ -158,7 +158,7 @@ function D3TreeNodeSwitcher({
   const entitySwitcherContainer = React.createElement(
     ParentContainer,
     null,
-    switcherNormalModeParentMode,
+    switcherCollapseModeSelectEntityMode,
     entityInfoSwitcherLabel,
   )
 
