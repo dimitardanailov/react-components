@@ -27,7 +27,7 @@ function D3TreeNodeSwitcher({ dbNodes, debug, updateParentChildRelationship }) {
 
   // ============ State machines ====================
   const machine = createTreeMultiSelectorStateMachine({
-    child: {
+    entity: {
       _id: '1',
       name: 'Test',
     },

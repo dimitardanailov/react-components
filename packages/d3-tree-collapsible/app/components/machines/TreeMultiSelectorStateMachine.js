@@ -1,20 +1,19 @@
 const { Machine, assign } = XState
 
-function createTreeMultiSelectorStateMachine({ child }) {
+function createTreeMultiSelectorStateMachine({ entity }) {
   return Machine({
     id: 'D3TreeMultiSelectorStateMachine',
     initial: 'collapse',
     context: {
-      child: child,
-      parent: undefined,
+      entity: entity,
     },
     states: {
       collapse: {
         on: {
-          SELECT_CHILD: 'select_child',
+          SELECT_ENTITY: 'select_entity',
         },
       },
-      select_child: {
+      select_entity: {
         on: {
           COLLAPSE: 'collapse',
         },
