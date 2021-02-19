@@ -1,6 +1,6 @@
 import { hot } from 'react-hot-loader/root'
 
-import nodes from './jsons/nodes.json'
+import dbNodes from './jsons/nodes.json'
 
 import foods from './jsons/treeNodes/food-and-drink.json'
 import animals from './jsons/treeNodes/animals.json'
@@ -27,7 +27,7 @@ function MultiSelectorPage() {
 
   const params = {
     debug: true,
-    nodes,
+    dbNodes,
     updateParentChildRelationship,
   }
 

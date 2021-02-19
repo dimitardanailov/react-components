@@ -13,12 +13,17 @@ const SVGContainer = window.styled.div`
 `
 
 // ============ D3TreeNodeSwitcher ====================
-function D3TreeNodeSwitcher({ nodes, debug, updateParentChildRelationship }) {
+function D3TreeNodeSwitcher({ dbNodes, debug, updateParentChildRelationship }) {
   // ============ referiencies ====================
   const childRef = React.useRef()
 
   // ============ hooks ====================
   const [treeData, setTreeData] = React.useState(1)
+  React.useEffect(() => {
+    childRef.current.draw(treeData)
+  }, [treeData])
+
+  const [nodes, setNodes] = React.useState(dbNodes)
 
   // ============ State machines ====================
   const machine = createTreeMultiSelectorStateMachine({
@@ -41,11 +46,6 @@ function D3TreeNodeSwitcher({ nodes, debug, updateParentChildRelationship }) {
     sendSwitcher('MAIN_NODE_IS_SELECTED')
     sendMultiSelector('COLLAPSE')
   }
-
-  // ============ useEffect ====================
-  React.useEffect(() => {
-    childRef.current.draw(treeData)
-  }, [treeData])
 
   // ============ debug ====================
   let debugContainer = null
@@ -117,7 +117,7 @@ function D3TreeNodeSwitcher({ nodes, debug, updateParentChildRelationship }) {
 }
 
 D3TreeNodeSwitcher.defaultProps = {
-  nodes: [],
+  dbNodes: [],
   debug: true,
   updateParentChildRelationship: () => {},
 }
