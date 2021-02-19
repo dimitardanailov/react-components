@@ -290,16 +290,27 @@ function loadTree(width, data) {
     const node = gNode.selectAll('g').data(nodes, d => d.id)
 
     // Enter any new nodes at the parent's previous position.
+    const loadCollapseClickHanlder = d => {
+      console.log('d', d)
+    }
+
+    const nodeEnterOnClickHandler = function(event, d) {
+      loadCollapseClickHanlder(d)
+    }
+
+    // Enter any new nodes at the parent's previous position.
     const nodeEnter = node
       .enter()
       .append('g')
       .attr('transform', d => `translate(${source.y0},${source.x0})`)
       .attr('fill-opacity', 0)
       .attr('stroke-opacity', 0)
+      .on('click', nodeEnterOnClickHandler)
+    /*
       .on('click', (event, d) => {
         d.children = d.children ? null : d._children
         update(d)
-      })
+      }) */
 
     const fill = d => {
       return d._children ? '#555' : '#999'
