@@ -193,7 +193,7 @@ function D3Tree({
       ? `Parent ${entityType}: ${state.context.parent.name}`
       : `Parent ${entityType}: {name of selected ${entityType}}`,
   )
-  const switcherNormalModeParentMode = React.createElement(
+  const switcherCollapseModeSelectEntityMode = React.createElement(
     Switcher,
     {
       checked: state.matches('select_parent'),
