@@ -1,6 +1,7 @@
 import { hot } from 'react-hot-loader/root'
 
 import dbNodes from './jsons/nodes.json'
+import dbSelectedEntities from './jsons/selected-entities.json'
 
 import foods from './jsons/treeNodes/food-and-drink.json'
 import animals from './jsons/treeNodes/animals.json'
@@ -27,6 +28,7 @@ function MultiSelectorPage() {
 
   const params = {
     dbNodes,
+    dbSelectedEntities,
     entityType: 'entity',
     debug: true,
     updateParentChildRelationship,
