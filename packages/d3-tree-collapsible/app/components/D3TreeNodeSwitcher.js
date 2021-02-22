@@ -359,20 +359,27 @@ function loadTree(width, data, selectedEntities, machine, state) {
       update(d)
     }
 
-    const loadEntityClickHandler = (event, d, element) => {
-      event.preventDefault()
-
+    const fill = d => {
       const colors = {
         hasChildren: '#555',
         default: '#999',
       }
 
-      const originalColor = d._children ? colors.hasChildren : colors.default
+      if (d.entityActive) {
+        colors.hasChildren = entityActiveColour
+        colors.default = '#66c2a5'
+      }
 
-      const circle = d3.select(element).select('circle')
-      const fill = d.entityActive ? originalColor : entityActiveColour
+      return d._children ? colors.hasChildren : colors.default
+    }
+
+    const loadEntityClickHandler = (event, d, element) => {
+      event.preventDefault()
+
       d.entityActive = !d.entityActive
-      circle.style('fill', fill)
+      const colour = fill(d)
+      const circle = d3.select(element).select('circle')
+      circle.style('fill', colour)
     }
 
     const nodeEnterOnClickHandler = function(event, d) {
@@ -396,20 +403,6 @@ function loadTree(width, data, selectedEntities, machine, state) {
       .attr('stroke-opacity', 0)
       .attr('class', 'node-enter')
       .on('click', nodeEnterOnClickHandler)
-
-    const fill = d => {
-      const colors = {
-        hasChildren: '#555',
-        default: '#999',
-      }
-
-      if (d.entityActive) {
-        colors.hasChildren = entityActiveColour
-        colors.default = '#66c2a5'
-      }
-
-      return d._children ? colors.hasChildren : colors.default
-    }
 
     nodeEnter
       .append('circle')
