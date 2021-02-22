@@ -1,5 +1,6 @@
 import D3TreeNodeSwitcherMachine from './machines/TreeNodeSwitcher'
 import createTreeMultiSelectorStateMachine from './machines/TreeMultiSelectorStateMachine'
+import createTreeStateMachine from './machines/TreeStateMachine'
 const { useMachine } = XStateReact
 
 const ElementWrapper = window.styled.div`
@@ -56,7 +57,6 @@ function D3TreeNodeSwitcher({
     sendMultiSelector,
     serviceMultiSelector,
   ] = useMachine(machine)
-  console.log('machine', stateMultiSelector)
 
   const [stateSwitcher, sendSwitcher] = useMachine(D3TreeNodeSwitcherMachine)
   const stateSwitcherCallback = node => {
@@ -70,18 +70,21 @@ function D3TreeNodeSwitcher({
   const childRef = React.useRef()
 
   // ============ hooks ====================
-  const [treeData, setTreeData] = React.useState(1)
+  const [treeData, setTreeData] = React.useState({})
   React.useEffect(() => {
-    const machine = {
-      state: stateMultiSelector,
-      send: sendMultiSelector,
-    }
-    childRef.current.draw(treeData, machine)
+    childRef.current.draw(treeData)
   }, [treeData])
 
   const [nodes, setNodes] = React.useState(dbNodes)
 
   // ============ debug ====================
+  const _machine = createTreeStateMachine({
+    child: {
+      _id: '1',
+      name: 'Test',
+    },
+  })
+  const [state, send, service] = useMachine(_machine)
   let debugContainer = null
   if (debug) {
     const generateTreeNodeSwitcherDebugData = () => {
@@ -105,7 +108,7 @@ function D3TreeNodeSwitcher({
       const info = React.createElement(
         'div',
         null,
-        `D3TreeMultiSelectorStateMachine: ${stateMultiSelector.value}`,
+        `D3TreeMultiSelectorStateMachine: ${stateMultiSelector.value} | ${state.value}`,
       )
 
       const debug = React.createElement(
@@ -150,10 +153,13 @@ function D3TreeNodeSwitcher({
     {
       checked: stateMultiSelector.matches('select_entity'),
       onClick: () => {
+        console.log('state', state)
         if (stateMultiSelector.matches('collapse')) {
           sendMultiSelector('SELECT_ENTITY')
+          send('SELECT_PARENT')
         } else {
           sendMultiSelector('COLLAPSE')
+          send('COLLAPSE')
         }
       },
     },
@@ -168,6 +174,11 @@ function D3TreeNodeSwitcher({
 
   const d3Container = React.createElement(D3MultiSelectorTreeContainer, {
     ref: childRef,
+    state: state,
+    machine: {
+      state,
+      send,
+    },
   })
 
   const Wrapper = React.createElement(
@@ -217,16 +228,17 @@ class D3MultiSelectorTreeContainer extends React.Component {
 
     this.container = null
 
+    this.machine = props.machine
+    this.state = props.state
+
     this.setContainerRef = element => {
       this.container = element
     }
   }
 
-  draw(treeData, machine) {
-    console.log('D3MultiSelectorTreeContainer.treeData', treeData)
-
+  draw(treeData) {
     const width = 800
-    const node = loadTree(width, treeData, machine)
+    const node = loadTree(width, treeData, this.machine, this.state)
 
     d3.select(this.container)
       .selectAll('*')
@@ -241,7 +253,7 @@ class D3MultiSelectorTreeContainer extends React.Component {
   }
 }
 
-function loadTree(width, data, machine) {
+function loadTree(width, data, machine, state) {
   const margin = { top: 20, right: 120, bottom: 20, left: 120 }
   const dx = 30
   const dy = Math.min(width / (3 + 2), dx * 10)
@@ -259,7 +271,9 @@ function loadTree(width, data, machine) {
   root.y0 = 0
   root.descendants().forEach((d, i) => {
     d.id = i
+    d.originalColor = '#999'
     d._children = d.children
+    d.entityActive = false
 
     // if (d.depth && d.data.name.length !== 7) d.children = null
     if (d.depth && d.depth >= 1) d.children = null
@@ -317,8 +331,32 @@ function loadTree(width, data, machine) {
       update(d)
     }
 
+    const loadEntityClickHandler = (event, d, element) => {
+      event.preventDefault()
+
+      const colors = {
+        hasChildren: '#555',
+        default: '#999',
+      }
+
+      const originalColor = d._children ? colors.hasChildren : colors.default
+
+      const circle = d3.select(element).select('circle')
+      const fill = d.entityActive ? originalColor : entityActiveColour
+      d.entityActive = !d.entityActive
+      circle.style('fill', fill)
+    }
+
     const nodeEnterOnClickHandler = function(event, d) {
-      loadCollapseClickHanlder(d)
+      loadEntityClickHandler(event, d, this)
+      /*
+      if (machine.state.matches('collapse')) {
+        loadCollapseClickHanlder(d)
+      }
+
+      if (machine.state.matches('select_entity')) {
+        loadEntityClickHandler(event, d, this)
+      }*/
     }
 
     // Enter any new nodes at the parent's previous position.
@@ -328,6 +366,7 @@ function loadTree(width, data, machine) {
       .attr('transform', d => `translate(${source.y0},${source.x0})`)
       .attr('fill-opacity', 0)
       .attr('stroke-opacity', 0)
+      .attr('class', 'node-enter')
       .on('click', nodeEnterOnClickHandler)
 
     const fill = d => {
