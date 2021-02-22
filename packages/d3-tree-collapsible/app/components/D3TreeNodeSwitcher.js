@@ -378,8 +378,9 @@ function loadTree(width, data, selectedEntities, machine, state) {
 
       d.entityActive = !d.entityActive
       const colour = fill(d)
-      const circle = d3.select(element).select('circle')
-      circle.style('fill', colour)
+      const parent = d3.select(element)
+      parent.select('circle').style('fill', colour)
+      parent.selectAll('text').attr('fill', colour)
     }
 
     const nodeEnterOnClickHandler = function(event, d) {
