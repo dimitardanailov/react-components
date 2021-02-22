@@ -398,7 +398,17 @@ function loadTree(width, data, selectedEntities, machine, state) {
       .on('click', nodeEnterOnClickHandler)
 
     const fill = d => {
-      return d._children ? '#555' : '#999'
+      const colors = {
+        hasChildren: '#555',
+        default: '#999',
+      }
+
+      if (d.entityActive) {
+        colors.hasChildren = entityActiveColour
+        colors.default = '#66c2a5'
+      }
+
+      return d._children ? colors.hasChildren : colors.default
     }
 
     nodeEnter
