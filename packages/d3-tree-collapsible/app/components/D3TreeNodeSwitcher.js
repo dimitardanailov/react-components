@@ -41,6 +41,7 @@ const ParentContainer = window.styled.div`
 // ============ D3TreeNodeSwitcher ====================
 function D3TreeNodeSwitcher({
   dbNodes,
+  dbSelectedEntities,
   entityType,
   debug,
   updateParentChildRelationship,
@@ -70,10 +71,15 @@ function D3TreeNodeSwitcher({
   const childRef = React.useRef()
 
   // ============ hooks ====================
-  const [treeData, setTreeData] = React.useState({})
+  const [selectedEntities, setSelectedEntities] = React.useState(
+    dbSelectedEntities,
+  )
+  const [treeData, setTreeData] = React.useState(null)
   React.useEffect(() => {
-    childRef.current.draw(treeData)
-  }, [treeData])
+    if (treeData !== null) {
+      childRef.current.draw(treeData, selectedEntities)
+    }
+  }, [treeData, selectedEntities])
 
   const [nodes, setNodes] = React.useState(dbNodes)
 
@@ -236,9 +242,15 @@ class D3MultiSelectorTreeContainer extends React.Component {
     }
   }
 
-  draw(treeData) {
+  draw(treeData, selectedEntities) {
     const width = 800
-    const node = loadTree(width, treeData, this.machine, this.state)
+    const node = loadTree(
+      width,
+      treeData,
+      selectedEntities,
+      this.machine,
+      this.state,
+    )
 
     d3.select(this.container)
       .selectAll('*')
@@ -253,7 +265,7 @@ class D3MultiSelectorTreeContainer extends React.Component {
   }
 }
 
-function loadTree(width, data, machine, state) {
+function loadTree(width, data, selectedEntities, machine, state) {
   const margin = { top: 20, right: 120, bottom: 20, left: 120 }
   const dx = 30
   const dy = Math.min(width / (3 + 2), dx * 10)
@@ -269,13 +281,29 @@ function loadTree(width, data, machine, state) {
 
   root.x0 = dy / 2
   root.y0 = 0
+
+  const entityIsActive = (d, selectedEntities) => {
+    let entityActive = false
+
+    for (let i = 0; i < selectedEntities.length; i++) {
+      const entitityId = d.data._id
+      const selectedEntityId = selectedEntities[i]._id
+      entityActive = entitityId === selectedEntityId
+
+      if (entityActive) {
+        console.log('name', d.data.name)
+        break
+      }
+    }
+
+    return entityActive
+  }
+
   root.descendants().forEach((d, i) => {
     d.id = i
     d.originalColor = '#999'
     d._children = d.children
-    d.entityActive = false
-
-    // if (d.depth && d.data.name.length !== 7) d.children = null
+    d.entityActive = entityIsActive(d, selectedEntities)
     if (d.depth && d.depth >= 1) d.children = null
   })
 
