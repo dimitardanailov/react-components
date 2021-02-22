@@ -1,0 +1,66 @@
+[
+  {
+    "_id": "6026e7f9397ee9002f080c3a",
+    "name": "Pets",
+    "parent": {
+      "images": {
+        "primary": {
+          "publicId": "",
+          "url": ""
+        },
+        "secondary": {
+          "publicId": "",
+          "url": ""
+        }
+      },
+      "identifierIsMixed": false,
+      "isPopular": false,
+      "description": "",
+      "guidelines": "",
+      "productDescriptionTemplate": "",
+      "children": [],
+      "_id": "6026e7b0397ee9002f080c1c",
+      "identifier": "animal",
+      "name": "Animal",
+      "status": "Live",
+      "slug": "/animal",
+      "parent": "6026e7fb397ee9002f080c7d",
+      "createdAt": "2021-02-12T20:41:56.316Z",
+      "updatedAt": "2021-02-12T20:41:56.316Z",
+      "path": "6026e7b0397ee9002f080c27#6026e7fb397ee9002f080c7d#6026e814397ee9002f080ee2",
+      "__v": 0
+    }
+  },
+  {
+    "_id": "6026e7f9397ee9002f080c3b",
+    "name": "Farm Animals",
+    "parent": {
+      "images": {
+        "primary": {
+          "publicId": "",
+          "url": ""
+        },
+        "secondary": {
+          "publicId": "",
+          "url": ""
+        }
+      },
+      "identifierIsMixed": false,
+      "isPopular": false,
+      "description": "",
+      "guidelines": "",
+      "productDescriptionTemplate": "",
+      "children": [],
+      "_id": "6026e7b0397ee9002f080c1c",
+      "identifier": "animal",
+      "name": "Animal",
+      "status": "Live",
+      "slug": "/animal",
+      "parent": "6026e7b0397ee9002f080c29",
+      "createdAt": "2021-02-12T20:41:31.707Z",
+      "updatedAt": "2021-02-12T20:41:31.707Z",
+      "path": "6026e7b0397ee9002f080c29#6026e7fb397ee9002f080c88",
+      "__v": 0
+    }
+  }
+]
