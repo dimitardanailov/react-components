@@ -1,6 +1,5 @@
 import D3TreeNodeSwitcherMachine from './machines/TreeNodeSwitcher'
 import createTreeMultiSelectorStateMachine from './machines/TreeMultiSelectorStateMachine'
-import createTreeStateMachine from './machines/TreeStateMachine'
 const { useMachine } = XStateReact
 
 const ElementWrapper = window.styled.div`
@@ -84,13 +83,6 @@ function D3TreeNodeSwitcher({
   const [nodes, setNodes] = React.useState(dbNodes)
 
   // ============ debug ====================
-  const _machine = createTreeStateMachine({
-    child: {
-      _id: '1',
-      name: 'Test',
-    },
-  })
-  const [state, send, service] = useMachine(_machine)
   let debugContainer = null
   if (debug) {
     const generateTreeNodeSwitcherDebugData = () => {
@@ -114,7 +106,7 @@ function D3TreeNodeSwitcher({
       const info = React.createElement(
         'div',
         null,
-        `D3TreeMultiSelectorStateMachine: ${stateMultiSelector.value} | ${state.value}`,
+        `D3TreeMultiSelectorStateMachine: ${stateMultiSelector.value}`,
       )
 
       const debug = React.createElement(
@@ -159,13 +151,10 @@ function D3TreeNodeSwitcher({
     {
       checked: stateMultiSelector.matches('select_entity'),
       onClick: () => {
-        console.log('state', state)
         if (stateMultiSelector.matches('collapse')) {
           sendMultiSelector('SELECT_ENTITY')
-          send('SELECT_PARENT')
         } else {
           sendMultiSelector('COLLAPSE')
-          send('COLLAPSE')
         }
       },
     },
@@ -180,10 +169,10 @@ function D3TreeNodeSwitcher({
 
   const d3Container = React.createElement(D3MultiSelectorTreeContainer, {
     ref: childRef,
-    state: state,
     machine: {
-      state,
-      send,
+      state: stateMultiSelector,
+      send: sendMultiSelector,
+      service: serviceMultiSelector,
     },
   })
 
@@ -233,9 +222,7 @@ class D3MultiSelectorTreeContainer extends React.Component {
     super(props)
 
     this.container = null
-
     this.machine = props.machine
-    this.state = props.state
 
     this.setContainerRef = element => {
       this.container = element
@@ -244,13 +231,7 @@ class D3MultiSelectorTreeContainer extends React.Component {
 
   draw(treeData, selectedEntities) {
     const width = 800
-    const node = loadTree(
-      width,
-      treeData,
-      selectedEntities,
-      this.machine,
-      this.state,
-    )
+    const node = loadTree(width, treeData, selectedEntities, this.machine)
 
     d3.select(this.container)
       .selectAll('*')
@@ -265,7 +246,12 @@ class D3MultiSelectorTreeContainer extends React.Component {
   }
 }
 
-function loadTree(width, data, selectedEntities, machine, state) {
+function loadTree(width, data, selectedEntities, machine) {
+  /*** Required source code: if you want d3 to be able to receive machine state updates ***/
+  machine.service.subscribe(newState => {
+    machine.state = newState
+  })
+
   const margin = { top: 20, right: 120, bottom: 20, left: 120 }
   const dx = 30
   const dy = Math.min(width / (3 + 2), dx * 10)
@@ -385,14 +371,14 @@ function loadTree(width, data, selectedEntities, machine, state) {
 
     const nodeEnterOnClickHandler = function(event, d) {
       loadEntityClickHandler(event, d, this)
-      /*
+
       if (machine.state.matches('collapse')) {
         loadCollapseClickHanlder(d)
       }
 
       if (machine.state.matches('select_entity')) {
         loadEntityClickHandler(event, d, this)
-      }*/
+      }
     }
 
     // Enter any new nodes at the parent's previous position.
