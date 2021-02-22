@@ -370,8 +370,6 @@ function loadTree(width, data, selectedEntities, machine) {
     }
 
     const nodeEnterOnClickHandler = function(event, d) {
-      loadEntityClickHandler(event, d, this)
-
       if (machine.state.matches('collapse')) {
         loadCollapseClickHanlder(d)
       }
