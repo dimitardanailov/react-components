@@ -1,6 +1,7 @@
 import D3TreeNodeSwitcherMachine from './machines/TreeNodeSwitcher'
 import createTreeMultiSelectorStateMachine from './machines/TreeMultiSelectorStateMachine'
-const { useMachine } = XStateReact
+// const { useMachine } = XStateReact
+import { useMachine } from '@xstate/react'
 
 const ElementWrapper = window.styled.div`
   margin: 1rem;
@@ -394,12 +395,20 @@ function loadTree(width, data, selectedEntities, machine) {
 
       d.entityActive = !d.entityActive
 
+      // Update selected entities
       const entity = extractNodeData(d)
+      if (d.entityActive) {
+        machine.send('ADD_ENTITY', { data: entity })
+      } else {
+        machine.send('REMOVE_ENTITY', { data: entity })
+      }
 
       const colour = fill(d)
       const parent = d3.select(element)
       parent.select('circle').style('fill', colour)
       parent.selectAll('text').attr('fill', colour)
+
+      machine.send('SELECT_ENTITY')
     }
 
     const nodeEnterOnClickHandler = function(event, d) {

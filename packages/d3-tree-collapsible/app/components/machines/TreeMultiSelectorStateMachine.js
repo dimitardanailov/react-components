@@ -2,15 +2,12 @@ const { Machine, assign } = XState
 
 const setData = (_, event) => {
   const entity = event.data
-  console.log('entity', entity)
-
-  // const params = {}
-  // return params
+  console.log('setData -> entity', entity)
 }
 
 const removeData = (_, event) => {
   const entity = event.data
-  console.log('entity', entity)
+  console.log('removeData -> entity', entity)
 }
 
 function createTreeMultiSelectorStateMachine({ dbSelectedEntities }) {
