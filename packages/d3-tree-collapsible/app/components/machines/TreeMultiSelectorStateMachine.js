@@ -1,15 +1,5 @@
 const { Machine, assign } = XState
 
-const setData = (_, event) => {
-  const entity = event.data
-  console.log('setData -> entity', entity)
-}
-
-const removeData = (_, event) => {
-  const entity = event.data
-  console.log('removeData -> entity', entity)
-}
-
 function createTreeMultiSelectorStateMachine({ dbSelectedEntities }) {
   return Machine({
     id: 'D3TreeMultiSelectorStateMachine',
@@ -28,14 +18,18 @@ function createTreeMultiSelectorStateMachine({ dbSelectedEntities }) {
           COLLAPSE: 'collapse',
           ADD_ENTITY: {
             target: 'add_entity',
-            actions: assign({
-              entity: setData,
+            actions: assign((context, event) => {
+              const entity = event.data
+              context.dbSelectedEntities.push(entity)
             }),
           },
           REMOVE_ENTITY: {
             target: 'remove_entity',
             actions: assign({
-              entity: removeData,
+              value: assign((context, event) => {
+                const entity = event.data
+                console.log('removeData -> entity', entity)
+              }),
             }),
           },
         },
