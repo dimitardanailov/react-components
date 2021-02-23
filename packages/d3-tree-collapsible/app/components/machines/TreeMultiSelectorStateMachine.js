@@ -25,11 +25,17 @@ function createTreeMultiSelectorStateMachine({ dbSelectedEntities }) {
           },
           REMOVE_ENTITY: {
             target: 'remove_entity',
-            actions: assign({
-              value: assign((context, event) => {
-                const entity = event.data
-                console.log('removeData -> entity', entity)
-              }),
+            actions: assign((context, event) => {
+              const entity = event.data
+              const id = entity._id
+              const index = context.dbSelectedEntities.findIndex(
+                dbSelectedEntity => {
+                  return id === dbSelectedEntity._id
+                },
+              )
+              if (index > -1) {
+                context.dbSelectedEntities.splice(index, 1)
+              }
             }),
           },
         },
