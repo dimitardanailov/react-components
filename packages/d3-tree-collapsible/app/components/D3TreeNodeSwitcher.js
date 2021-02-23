@@ -366,6 +366,13 @@ function loadTree(width, data, selectedEntities, machine) {
       update(d)
     }
 
+    const extractNodeData = d => {
+      const entity = d.data
+      entity.parent = d.parent.data
+
+      return entity
+    }
+
     const fill = d => {
       const colors = {
         hasChildren: '#555',
@@ -384,6 +391,9 @@ function loadTree(width, data, selectedEntities, machine) {
       event.preventDefault()
 
       d.entityActive = !d.entityActive
+
+      const entity = extractNodeData(d)
+
       const colour = fill(d)
       const parent = d3.select(element)
       parent.select('circle').style('fill', colour)
