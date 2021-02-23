@@ -106,11 +106,13 @@ function D3TreeNodeSwitcher({
         `D3TreeMultiSelectorStateMachine: ${stateMultiSelector.value}`,
       )
 
-      const debug = React.createElement(
-        'div',
-        null,
-        JSON.stringify(stateMultiSelector.context),
+      const _entities = stateMultiSelector.context.dbSelectedEntities.map(
+        entity => {
+          return `${entity.name} -> ${entity.parent.name}`
+        },
       )
+
+      const debug = React.createElement('div', null, _entities.join(' | '))
 
       return React.createElement('div', null, info, debug)
     }
