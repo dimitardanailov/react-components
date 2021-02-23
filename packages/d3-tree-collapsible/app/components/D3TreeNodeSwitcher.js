@@ -285,27 +285,16 @@ function loadTree(width, data, selectedEntities, machine) {
     return entityActive
   }
 
-  const childNodeIsVisible = (d, selectedEntities) => {
-    let childNodeisVisible = false
+  const childNodeIsEmpty = (d, selectedEntities) => {
+    if (d.depth && d.depth >= 1) {
+      const index = selectedEntities.findIndex(entity => {
+        return entity.path.includes(d.data.path)
+      })
 
-    for (let i = 0; i < selectedEntities.length; i++) {
-      const _id = selectedEntities[i]._id
-      const path = d.data.path
-      const parents = path.split('#')
-
-      if (parents.includes(_id)) {
-        return true
-      }
-
-      /*
-      if (path.includes(selectedEntityId)) {
-        console.log('path --->', d.data.name)
-        childNodeisVisible = true
-        break
-      } */
+      return index === -1
     }
 
-    return childNodeisVisible
+    return false
   }
 
   root.descendants().forEach((d, i) => {
@@ -313,8 +302,8 @@ function loadTree(width, data, selectedEntities, machine) {
     d.originalColor = '#999'
     d._children = d.children
     d.entityActive = entityIsActive(d, selectedEntities)
-    const nodeVisibility = childNodeIsVisible(d, selectedEntities)
-    if (d.depth && d.depth >= 1) d.children = null
+    const nodeIsEmpty = childNodeIsEmpty(d, selectedEntities)
+    if (nodeIsEmpty) d.children = null
   })
 
   const svg = d3
