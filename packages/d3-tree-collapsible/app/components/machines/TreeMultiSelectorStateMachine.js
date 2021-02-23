@@ -16,6 +16,20 @@ function createTreeMultiSelectorStateMachine({ dbSelectedEntities }) {
       select_entity: {
         on: {
           COLLAPSE: 'collapse',
+          ADD_ENTITY: 'add_entity',
+          REMOVE_ENTITY: 'remove_entity',
+        },
+      },
+      add_entity: {
+        on: {
+          SELECT_ENTITY: 'select_entity',
+          REMOVE_ENTITY: 'remove_entity',
+        },
+      },
+      remove_entity: {
+        on: {
+          SELECT_ENTITY: 'select_entity',
+          ADD_ENTITY: 'add_entity',
         },
       },
     },
