@@ -47,10 +47,7 @@ function D3TreeNodeSwitcher({
 }) {
   // ============ State machines ====================
   const machine = createTreeMultiSelectorStateMachine({
-    entity: {
-      _id: '1',
-      name: 'Test',
-    },
+    dbSelectedEntities,
   })
   const [
     stateMultiSelector,
@@ -285,11 +282,35 @@ function loadTree(width, data, selectedEntities, machine) {
     return entityActive
   }
 
+  const childNodeIsVisible = (d, selectedEntities) => {
+    let childNodeisVisible = false
+
+    for (let i = 0; i < selectedEntities.length; i++) {
+      const _id = selectedEntities[i]._id
+      const path = d.data.path
+      const parents = path.split('#')
+
+      if (parents.includes(_id)) {
+        return true
+      }
+
+      /*
+      if (path.includes(selectedEntityId)) {
+        console.log('path --->', d.data.name)
+        childNodeisVisible = true
+        break
+      } */
+    }
+
+    return childNodeisVisible
+  }
+
   root.descendants().forEach((d, i) => {
     d.id = i
     d.originalColor = '#999'
     d._children = d.children
     d.entityActive = entityIsActive(d, selectedEntities)
+    const nodeVisibility = childNodeIsVisible(d, selectedEntities)
     if (d.depth && d.depth >= 1) d.children = null
   })
 
@@ -353,7 +374,7 @@ function loadTree(width, data, selectedEntities, machine) {
 
       if (d.entityActive) {
         colors.hasChildren = entityActiveColour
-        colors.default = '#66c2a5'
+        colors.default = '#d500f9'
       }
 
       return d._children ? colors.hasChildren : colors.default
