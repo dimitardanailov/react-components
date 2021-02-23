@@ -231,7 +231,12 @@ class D3MultiSelectorTreeContainer extends React.Component {
 
   draw(treeData, selectedEntities) {
     const width = 800
-    const node = loadTree(width, treeData, selectedEntities, this.machine)
+    const node = loadMultiSelectTree(
+      width,
+      treeData,
+      selectedEntities,
+      this.machine,
+    )
 
     d3.select(this.container)
       .selectAll('*')
@@ -246,7 +251,7 @@ class D3MultiSelectorTreeContainer extends React.Component {
   }
 }
 
-function loadTree(width, data, selectedEntities, machine) {
+function loadMultiSelectTree(width, data, selectedEntities, machine) {
   /*** Required source code: if you want d3 to be able to receive machine state updates ***/
   machine.service.subscribe(newState => {
     machine.state = newState
