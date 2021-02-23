@@ -2,20 +2,15 @@ import D3TreeNodeSwitcherMachine from './machines/TreeNodeSwitcher'
 import createTreeMultiSelectorStateMachine from './machines/TreeMultiSelectorStateMachine'
 // const { useMachine } = XStateReact
 import { useMachine } from '@xstate/react'
-
-const ElementWrapper = window.styled.div`
-  margin: 1rem;
-`
-
-const SVGContainer = window.styled.div`
-  position: relative;
-
-  border: 2px solid #808080;
-`
+import {
+  ElementWrapper,
+  SVGContainer,
+  ParentContainer,
+} from './styled-components/sharable'
 
 const entityActiveColour = 'purple'
 
-const Switcher = window.styled.button`
+const EntitySwitcher = window.styled.button`
   position: relative;
 
   padding: 0.8rem;
@@ -27,15 +22,6 @@ const Switcher = window.styled.button`
   &:focus {
     outline: none;
   }
-`
-
-const ParentContainer = window.styled.div`
-  position: relative;
-
-  display: flex;
-  flex-direction row;
-  justify-content: flex-start;
-  align-items: center;
 `
 
 // ============ D3TreeNodeSwitcher ====================
@@ -147,7 +133,7 @@ function D3TreeNodeSwitcher({
       : `Entity ${entityType}: {name of selected ${entityType}}`,
   )
   const switcherCollapseModeSelectEntityMode = React.createElement(
-    Switcher,
+    EntitySwitcher,
     {
       checked: stateMultiSelector.matches('select_entity'),
       onClick: () => {
