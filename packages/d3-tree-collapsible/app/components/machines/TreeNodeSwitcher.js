@@ -12,8 +12,8 @@ function createTreeNodeSwitcher() {
         on: {
           MAIN_NODE_IS_SELECTED: {
             on: 'main_node_is_selected',
-            actions: assign((context, id) => {
-              context.activeNodeId = id
+            actions: assign((context, data) => {
+              context.activeNodeId = data.id
             }),
           },
         },

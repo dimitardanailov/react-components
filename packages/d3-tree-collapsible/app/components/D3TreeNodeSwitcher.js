@@ -224,7 +224,11 @@ function SelectorListItem({ node, stateSwitcherCallback, machine }) {
 
   return React.createElement(
     StyledSelectorListItem,
-    { key: node._id, onClick: clickListener },
+    {
+      key: node._id,
+      onClick: clickListener,
+      checked: machine.state.context.activeNodeId === node._id,
+    },
     node.name,
   )
 }
