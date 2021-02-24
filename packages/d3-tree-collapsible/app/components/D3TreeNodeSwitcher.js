@@ -23,6 +23,13 @@ const EntitySwitcher = window.styled.button`
     outline: none;
   }
 `
+const StyledNodeContainer = window.styled.div`
+  position: relative;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+`
 
 // ============ D3TreeNodeSwitcher ====================
 function D3TreeNodeSwitcher({
@@ -114,13 +121,18 @@ function D3TreeNodeSwitcher({
   }
 
   // ============ React elements ====================
-  const listItems = nodes.map(node => {
+  const nodeElements = nodes.map(node => {
     return React.createElement(SelectorListItem, {
       node,
       stateSwitcherCallback,
       key: node._id,
     })
   })
+  const nodeContainer = React.createElement(
+    StyledNodeContainer,
+    {},
+    nodeElements,
+  )
 
   // ============ Entity Switcher ====================
   const entityInfoSwitcherLabel = React.createElement(
@@ -165,7 +177,7 @@ function D3TreeNodeSwitcher({
   const Wrapper = React.createElement(
     ElementWrapper,
     null,
-    listItems,
+    nodeContainer,
     debugContainer,
     entitySwitcherContainer,
     d3Container,
@@ -189,7 +201,7 @@ D3TreeNodeSwitcher.propTypes = {}
 const StyledSelectorListItem = window.styled.div`
   position: relative;
 
-  margin: 1rem;
+  padding: 0.5rem;
 `
 
 function SelectorListItem({ node, stateSwitcherCallback }) {
