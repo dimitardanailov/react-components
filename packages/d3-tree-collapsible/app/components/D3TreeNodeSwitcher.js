@@ -1,6 +1,5 @@
-import D3TreeNodeSwitcherMachine from './machines/TreeNodeSwitcher'
 import createTreeMultiSelectorStateMachine from './machines/TreeMultiSelectorStateMachine'
-// const { useMachine } = XStateReact
+import createTreeNodeSwitcher from './machines/TreeNodeSwitcher'
 import { useMachine } from '@xstate/react'
 import {
   ElementWrapper,
@@ -49,7 +48,7 @@ function D3TreeNodeSwitcher({
     serviceMultiSelector,
   ] = useMachine(machine)
 
-  const [stateSwitcher, sendSwitcher] = useMachine(D3TreeNodeSwitcherMachine)
+  const [stateSwitcher, sendSwitcher] = useMachine(createTreeNodeSwitcher())
   const stateSwitcherCallback = async node => {
     const _treeData = await updateParentChildRelationship(node._id)
     setTreeData(_treeData)
