@@ -54,7 +54,7 @@ function D3TreeNodeSwitcher({
   const stateSwitcherCallback = async node => {
     const _treeData = await updateParentChildRelationship(node._id)
     setTreeData(_treeData)
-    sendSwitcher('MAIN_NODE_IS_SELECTED')
+    sendSwitcher('MAIN_NODE_IS_SELECTED', { id: node._id })
     sendMultiSelector('COLLAPSE')
   }
 
