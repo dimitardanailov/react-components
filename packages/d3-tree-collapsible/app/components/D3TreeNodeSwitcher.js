@@ -43,8 +43,8 @@ function D3TreeNodeSwitcher({
   ] = useMachine(machine)
 
   const [stateSwitcher, sendSwitcher] = useMachine(D3TreeNodeSwitcherMachine)
-  const stateSwitcherCallback = node => {
-    const _treeData = updateParentChildRelationship(node._id)
+  const stateSwitcherCallback = async node => {
+    const _treeData = await updateParentChildRelationship(node._id)
     setTreeData(_treeData)
     sendSwitcher('MAIN_NODE_IS_SELECTED')
     sendMultiSelector('COLLAPSE')
@@ -178,7 +178,9 @@ D3TreeNodeSwitcher.defaultProps = {
   dbNodes: [],
   debug: true,
   entityType: 'entity',
-  updateParentChildRelationship: () => {},
+  updateParentChildRelationship: async () => {
+    console.log('D3TreeNodeSwitcher.updateParentChildRelationship')
+  },
 }
 
 D3TreeNodeSwitcher.propTypes = {}

@@ -19,9 +19,14 @@ function MultiSelectorPage() {
     animals: animals,
   }
 
-  const updateParentChildRelationship = id => {
-    const identifier = identifiers[id]
-    const treeData = treeNodes[identifier]
+  const updateParentChildRelationship = async id => {
+    const _promise = new Promise(resolve => {
+      const identifier = identifiers[id]
+      const _treeData = treeNodes[identifier]
+
+      resolve(_treeData)
+    })
+    const treeData = await _promise.then()
 
     return treeData
   }
