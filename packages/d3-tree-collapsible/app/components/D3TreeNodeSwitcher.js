@@ -48,7 +48,9 @@ function D3TreeNodeSwitcher({
     serviceMultiSelector,
   ] = useMachine(machine)
 
-  const [stateSwitcher, sendSwitcher] = useMachine(createTreeNodeSwitcher())
+  const [stateSwitcher, sendSwitcher, serviceSwitcher] = useMachine(
+    createTreeNodeSwitcher(),
+  )
   const stateSwitcherCallback = async node => {
     const _treeData = await updateParentChildRelationship(node._id)
     setTreeData(_treeData)
@@ -125,6 +127,11 @@ function D3TreeNodeSwitcher({
       node,
       stateSwitcherCallback,
       key: node._id,
+      machine: {
+        state: stateSwitcher,
+        send: sendSwitcher,
+        service: serviceSwitcher,
+      },
     })
   })
   const nodeContainer = React.createElement(
@@ -201,9 +208,16 @@ const StyledSelectorListItem = window.styled.div`
   position: relative;
 
   padding: 0.5rem;
+  cursor: pointer;
+
+  color: ${props => (props.checked ? 'red' : 'black')};
 `
 
-function SelectorListItem({ node, stateSwitcherCallback }) {
+function SelectorListItem({ node, stateSwitcherCallback, machine }) {
+  machine.service.subscribe(newState => {
+    machine.state = newState
+  })
+
   const clickListener = () => {
     stateSwitcherCallback(node)
   }
