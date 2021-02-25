@@ -37,6 +37,7 @@ function D3TreeNodeSwitcher({
   entityType,
   debug,
   updateParentChildRelationship,
+  updateDatabaseMetaData,
 }) {
   // ============ State machines ====================
   const machine = createTreeMultiSelectorStateMachine({
@@ -171,6 +172,7 @@ function D3TreeNodeSwitcher({
 
   const d3Container = React.createElement(D3MultiSelectorTreeContainer, {
     ref: childRef,
+    updateDatabaseMetaData,
     machine: {
       state: stateMultiSelector,
       send: sendMultiSelector,
@@ -196,6 +198,9 @@ D3TreeNodeSwitcher.defaultProps = {
   entityType: 'entity',
   updateParentChildRelationship: async () => {
     console.log('D3TreeNodeSwitcher.updateParentChildRelationship')
+  },
+  updateDatabaseMetaData: () => {
+    console.log('D3TreeNodeSwitcher.updateDatabaseMetaData')
   },
 }
 
@@ -238,6 +243,7 @@ class D3MultiSelectorTreeContainer extends React.Component {
 
     this.container = null
     this.machine = props.machine
+    this.updateDatabaseMetaData = props.updateDatabaseMetaData
 
     this.setContainerRef = element => {
       this.container = element
@@ -251,6 +257,7 @@ class D3MultiSelectorTreeContainer extends React.Component {
       treeData,
       selectedEntities,
       this.machine,
+      this.updateDatabaseMetaData,
     )
 
     d3.select(this.container)
@@ -266,7 +273,13 @@ class D3MultiSelectorTreeContainer extends React.Component {
   }
 }
 
-function loadMultiSelectTree(width, data, selectedEntities, machine) {
+function loadMultiSelectTree(
+  width,
+  data,
+  selectedEntities,
+  machine,
+  updateDatabaseMetaData,
+) {
   /*** Required source code: if you want d3 to be able to receive machine state updates ***/
   machine.service.subscribe(newState => {
     machine.state = newState
@@ -411,6 +424,8 @@ function loadMultiSelectTree(width, data, selectedEntities, machine) {
       } else {
         machine.send('REMOVE_ENTITY', { data: entity })
       }
+
+      updateDatabaseMetaData(machine.state.context.dbSelectedEntities)
 
       const colour = fill(d)
       const parent = d3.select(element)

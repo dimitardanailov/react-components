@@ -7,6 +7,7 @@ import foods from './jsons/treeNodes/food-and-drink.json'
 import animals from './jsons/treeNodes/animals.json'
 
 import D3TreeNodeSwitcher from '../../components/D3TreeNodeSwitcher'
+import { update } from 'xstate/lib/actionTypes'
 
 function MultiSelectorPage() {
   const identifiers = {
@@ -31,12 +32,21 @@ function MultiSelectorPage() {
     return treeData
   }
 
+  const updateDatabaseMetaData = dbSelectedEntities => {
+    const ids = dbSelectedEntities.map(entity => {
+      return entity._id
+    })
+    console.log('ids .......', ids.join('#'))
+  }
+
   const params = {
     dbNodes,
     dbSelectedEntities,
     entityType: 'entity',
     debug: true,
+    update: update,
     updateParentChildRelationship,
+    updateDatabaseMetaData,
   }
 
   return React.createElement(D3TreeNodeSwitcher, params)
