@@ -104,7 +104,11 @@ function D3TreeNodeSwitcher({
 
       const _entities = stateMultiSelector.context.dbSelectedEntities.map(
         entity => {
-          return `${entity.name} -> ${entity.parent.name}`
+          const response = entity.name
+
+          return entity.parent !== null
+            ? `${response} -> ${entity.parent.name}`
+            : response
         },
       )
 
@@ -393,7 +397,10 @@ function loadMultiSelectTree(
 
     const extractNodeData = d => {
       const entity = d.data
-      entity.parent = d.parent.data
+      entity.parent = null
+      if (entity.parent !== null) {
+        entity.parent = d.parent.data
+      }
 
       return entity
     }
