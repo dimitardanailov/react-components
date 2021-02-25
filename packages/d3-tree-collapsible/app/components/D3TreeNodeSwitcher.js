@@ -73,7 +73,15 @@ function D3TreeNodeSwitcher({
     }
   }, [treeData, selectedEntities])
 
+  let welcomeScreen = true
   const [nodes, setNodes] = React.useState(dbNodes)
+  React.useEffect(() => {
+    if (welcomeScreen && nodes.length > 0) {
+      welcomeScreen = false
+      const node = nodes[0]
+      stateSwitcherCallback(node)
+    }
+  }, [nodes])
 
   // ============ debug ====================
   let debugContainer = null
