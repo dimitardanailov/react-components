@@ -146,9 +146,7 @@ function D3TreeNodeSwitcher({
     {
       className: 'ml-2',
     },
-    typeof stateMultiSelector.context.parent === 'object'
-      ? `Entity ${entityType}: ${state.context.entity.name}`
-      : `Entity ${entityType}: {name of selected ${entityType}}`,
+    `Entity ${entityType}: add or remove relationship`,
   )
   const switcherCollapseModeSelectEntityMode = React.createElement(
     EntitySwitcher,
