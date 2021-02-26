@@ -22,12 +22,14 @@ const EntitySwitcher = window.styled.button`
     outline: none;
   }
 `
+
 const StyledNodeContainer = window.styled.div`
   position: relative;
+  box-sizing: border-box;
 
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
 `
 
 // ============ D3TreeNodeSwitcher ====================
@@ -225,7 +227,24 @@ const StyledSelectorListItem = window.styled.div`
   padding: 0.5rem;
   cursor: pointer;
 
-  color: ${props => (props.checked ? 'red' : 'black')};
+  width: 25%;
+  text-align: center;
+  flex-grow: 1;
+
+  &:nth-child(7n + 5) {
+    width: calc(100% / 3);
+    flex-grow: 0;
+  }
+`
+
+const StyledSelectorListTextItem = window.styled.div`
+  background: #808080;
+  padding: 0.5rem;
+
+  color: ${props => (props.checked ? '#f5f5f5' : '#000')}; 
+  background-color: ${props => (props.checked ? '#9ea7aa' : '#cfd8dc')}; 
+
+  border-radius: 5px;
 `
 
 function SelectorListItem({ node, stateSwitcherCallback, machine }) {
@@ -237,14 +256,21 @@ function SelectorListItem({ node, stateSwitcherCallback, machine }) {
     stateSwitcherCallback(node)
   }
 
+  const TextItem = React.createElement(
+    StyledSelectorListTextItem,
+    {
+      checked: machine.state.context.activeNodeId === node._id,
+    },
+    node.name,
+  )
+
   return React.createElement(
     StyledSelectorListItem,
     {
       key: node._id,
       onClick: clickListener,
-      checked: machine.state.context.activeNodeId === node._id,
     },
-    node.name,
+    TextItem,
   )
 }
 
