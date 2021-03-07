@@ -29,7 +29,7 @@ const StyledNodeContainer = window.styled.div`
 
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
 `
 
 // ============ D3TreeNodeSwitcher ====================
@@ -224,27 +224,27 @@ D3TreeNodeSwitcher.propTypes = {}
 const StyledSelectorListItem = window.styled.div`
   position: relative;
 
-  padding: 0.5rem;
+  padding: 0 0.35rem;
   cursor: pointer;
 
-  width: 25%;
   text-align: center;
-  flex-grow: 1;
-
-  &:nth-child(7n + 5) {
-    width: calc(100% / 3);
-    flex-grow: 0;
-  }
 `
 
 const StyledSelectorListTextItem = window.styled.div`
-  background: #808080;
-  padding: 0.5rem;
+  background: #fff;
 
-  color: ${props => (props.checked ? '#f5f5f5' : '#000')}; 
-  background-color: ${props => (props.checked ? '#9ea7aa' : '#cfd8dc')}; 
+  padding: 9px 16px;
+  color: rgba(0, 0, 0, 0.8); 
+  background-color: ${props => (props.checked ? '#d9ddf5' : '#fff')}; 
 
-  border-radius: 5px;
+  border-radius: 2px;
+  border: solid 1px #b5b5b5;
+
+  box-shadow: ${props =>
+    props.checked ? '3px 3px 10px 0 rgba(0, 0, 0, 0.3)' : 'none'}; ;
+
+  font-family: Roboto;
+  font-size: 14px;
 `
 
 function SelectorListItem({ node, stateSwitcherCallback, machine }) {
