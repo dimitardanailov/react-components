@@ -233,18 +233,20 @@ const StyledSelectorListItem = window.styled.div`
 const StyledSelectorListTextItem = window.styled.div`
   background: #fff;
 
-  padding: 9px 16px;
+  padding: 4px 12px;
   color: rgba(0, 0, 0, 0.8); 
   background-color: ${props => (props.checked ? '#d9ddf5' : '#fff')}; 
 
-  border-radius: 2px;
+  margin-bottom: 0.4rem;
+
+  border-radius: 4px;
   border: solid 1px #b5b5b5;
 
   box-shadow: ${props =>
     props.checked ? '3px 3px 10px 0 rgba(0, 0, 0, 0.3)' : 'none'}; ;
 
   font-family: Roboto;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
