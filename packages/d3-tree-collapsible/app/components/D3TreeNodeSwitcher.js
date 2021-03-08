@@ -7,7 +7,7 @@ import {
   ParentContainer,
 } from './styled-components/sharable'
 
-const entityActiveColour = 'purple'
+const entityActiveColour = '#ab56af'
 
 const EntitySwitcher = window.styled.button`
   position: relative;
@@ -245,6 +245,11 @@ const StyledSelectorListTextItem = window.styled.div`
 
   font-family: Roboto;
   font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+
+  text-transform: uppercase;
 `
 
 function SelectorListItem({ node, stateSwitcherCallback, machine }) {
