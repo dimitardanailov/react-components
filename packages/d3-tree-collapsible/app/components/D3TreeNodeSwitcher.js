@@ -12,6 +12,7 @@ const entityActiveColour = '#ab56af'
 const EntitySwitcher = window.styled.button`
   position: relative;
 
+  margin-left: 0.4rem;
   padding: 0.2rem;
   border-radius: 12.5%;
   border: 2px solid ${props =>
