@@ -12,7 +12,7 @@ const entityActiveColour = '#ab56af'
 const EntitySwitcher = window.styled.button`
   position: relative;
 
-  padding: 0.8rem;
+  padding: 0.2rem;
   border-radius: 12.5%;
   border: 2px solid ${props =>
     props.checked ? entityActiveColour : '#808080'};
@@ -30,6 +30,14 @@ const StyledNodeContainer = window.styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+`
+
+const IconChecked = window.styled.svg`
+  fill: none;
+  stroke: white;
+  stroke-width: 2px;
+  width: 24px;
+  height: 24px;
 `
 
 // ============ D3TreeNodeSwitcher ====================
@@ -163,6 +171,17 @@ function D3TreeNodeSwitcher({
     },
     `Entity ${entityType}: add or remove relationship`,
   )
+
+  const polyline = React.createElement('polyline', {
+    points: '20 6 9 17 4 12',
+  })
+  const checkedIcon = React.createElement(
+    IconChecked,
+    {
+      viewBox: '0 0 24 24',
+    },
+    polyline,
+  )
   const switcherCollapseModeSelectEntityMode = React.createElement(
     EntitySwitcher,
     {
@@ -175,7 +194,7 @@ function D3TreeNodeSwitcher({
         }
       },
     },
-    '',
+    checkedIcon,
   )
   const entitySwitcherContainer = React.createElement(
     ParentContainer,
