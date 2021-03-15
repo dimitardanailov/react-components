@@ -26,7 +26,11 @@ function D3TreeRadioButton({ dbNodes }) {
       node,
       stateSwitcherCallback,
       key: node._id,
-      machine: null,
+      machine: {
+        state: stateSwitcher,
+        send: sendSwitcher,
+        service: serviceSwitcher,
+      },
     })
   })
 

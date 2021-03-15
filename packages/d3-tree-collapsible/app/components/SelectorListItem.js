@@ -11,7 +11,7 @@ function SelectorListItem({ node, stateSwitcherCallback, machine }) {
   const TextItem = React.createElement(
     StyledSelectorListTextItem,
     {
-      // checked: machine.state.context.activeNodeId === node._id,
+      checked: machine.state.context.activeNodeId === node._id,
     },
     node.name,
   )
