@@ -13,14 +13,36 @@ import {
 
 // ============ D3TreeRadioButton ====================
 function D3TreeRadioButton({ dbNodes }) {
-  const [nodes, setNodes] = React.useState(dbNodes)
-
+  // ============ State machines ====================
   const [stateSwitcher, sendSwitcher, serviceSwitcher] = useMachine(
     createTreeNodeSwitcher(),
   )
 
+  // ============ referiencies ====================
+  const childRef = React.useRef()
+
+  // Callbacks
   const stateSwitcherCallback = async node => {}
 
+  // ============ hooks ====================
+  const [treeData, setTreeData] = React.useState(null)
+  React.useEffect(() => {
+    if (treeData !== null) {
+      childRef.current.draw(treeData)
+    }
+  }, [treeData])
+
+  let welcomeScreen = true
+  const [nodes, setNodes] = React.useState(dbNodes)
+  React.useEffect(() => {
+    if (welcomeScreen && nodes.length > 0) {
+      welcomeScreen = false
+      const node = nodes[0]
+      stateSwitcherCallback(node)
+    }
+  }, [nodes])
+
+  // ============ React elements ====================
   const nodeElements = nodes.map(node => {
     return React.createElement(SelectorListItem, {
       node,
@@ -33,8 +55,6 @@ function D3TreeRadioButton({ dbNodes }) {
       },
     })
   })
-
-  console.log('stateSwitcher', nodeElements)
 
   const Wrapper = React.createElement(ElementWrapper, null, nodeElements)
 
