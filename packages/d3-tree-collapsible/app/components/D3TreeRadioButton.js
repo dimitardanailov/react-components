@@ -56,9 +56,40 @@ function D3TreeRadioButton({ dbNodes }) {
     })
   })
 
-  const Wrapper = React.createElement(ElementWrapper, null, nodeElements)
+  const d3Container = React.createElement(D3RadioSelectorTreeContainer, {
+    ref: childRef,
+  })
+
+  const Wrapper = React.createElement(
+    ElementWrapper,
+    null,
+    nodeElements,
+    d3Container,
+  )
 
   return Wrapper
+}
+
+// ============ D3RadioSelectorTreeContainer ====================
+class D3RadioSelectorTreeContainer extends React.Component {
+  constructor(props) {
+    super(props)
+
+    this.container = null
+    this.setContainerRef = element => {
+      this.container = element
+    }
+  }
+
+  draw(treeData) {
+    const width = 800
+  }
+
+  render() {
+    return React.createElement(SVGContainer, {
+      ref: this.setContainerRef,
+    })
+  }
 }
 
 export default D3TreeRadioButton
