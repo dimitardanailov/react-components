@@ -12,7 +12,7 @@ import {
 } from './styled-components/sharable'
 
 // ============ D3TreeRadioButton ====================
-function D3TreeRadioButton({ dbNodes }) {
+function D3TreeRadioButton({ dbNodes, debug }) {
   // ============ State machines ====================
   const [stateSwitcher, sendSwitcher, serviceSwitcher] = useMachine(
     createTreeNodeSwitcher(),
@@ -60,15 +60,36 @@ function D3TreeRadioButton({ dbNodes }) {
     ref: childRef,
   })
 
+  // ============ debug ====================
+  let debugContainer = null
+  if (debug) {
+    debugContainer = generateDebugContainer()
+  }
+
   const Wrapper = React.createElement(
     ElementWrapper,
     null,
     nodeElements,
     d3Container,
+    debugContainer,
   )
 
   return Wrapper
 }
+
+function generateDebugContainer() {
+  const info = React.createElement('div', null, `D3TreeRadioButton:`)
+  const debug = React.createElement('div', null)
+
+  return React.createElement('div', null, info, debug)
+}
+
+D3TreeRadioButton.defaultProps = {
+  dbNodes: [],
+  debug: false,
+}
+
+D3TreeRadioButton.propTypes = {}
 
 // ============ D3RadioSelectorTreeContainer ====================
 class D3RadioSelectorTreeContainer extends React.Component {
