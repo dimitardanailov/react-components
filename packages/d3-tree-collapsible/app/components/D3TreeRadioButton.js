@@ -12,10 +12,12 @@ import {
   ParentContainer,
   StyledNodeContainer,
 } from './styled-components/sharable'
+import React from 'react'
 
 // ============ D3TreeRadioButton ====================
 function D3TreeRadioButton({
   dbNodes,
+  dbSelectedEntity,
   dbSelectedEntities,
   debug,
   updateDatabaseMetaData,
@@ -47,15 +49,16 @@ function D3TreeRadioButton({
   }
 
   // ============ hooks ====================
+  const [selectedEntity, setSelectedEntity] = React.useState(dbSelectedEntity)
   const [selectedEntities, setSelectedEntities] = React.useState(
     dbSelectedEntities,
   )
   const [treeData, setTreeData] = React.useState(null)
   React.useEffect(() => {
     if (treeData !== null) {
-      childRef.current.draw(treeData, selectedEntities)
+      childRef.current.draw(treeData, selectedEntities, selectedEntity)
     }
-  }, [treeData, selectedEntities])
+  }, [treeData, selectedEntities, selectedEntity])
 
   let welcomeScreen = true
   const [nodes, setNodes] = React.useState(dbNodes)
@@ -142,12 +145,13 @@ class D3RadioSelectorTreeContainer extends React.Component {
     }
   }
 
-  draw(treeData, selectedEntities) {
+  draw(treeData, selectedEntities, selectedEntity) {
     const width = 800
 
     const node = loadRadioButtonTree(
       width,
       treeData,
+      selectedEntity,
       selectedEntities,
       this.machine,
       this.updateDatabaseMetaData,
@@ -168,10 +172,13 @@ class D3RadioSelectorTreeContainer extends React.Component {
 function loadRadioButtonTree(
   width,
   data,
+  selectedEntity,
   selectedEntities,
   machine,
   updateDatabaseMetaData,
 ) {
+  console.log('selectedEntity', selectedEntity)
+
   /*** Required source code: if you want d3 to be able to receive machine state updates ***/
   machine.service.subscribe(newState => {
     machine.state = newState
