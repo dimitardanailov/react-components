@@ -307,23 +307,23 @@ function loadRadioButtonTree(
     const loadEntityClickHandler = (event, d, element) => {
       event.preventDefault()
 
+      svg.selectAll('.node-enter').each(d => {
+        d.entityActive = false
+
+        return d
+      })
+
+      d.entityActive = true
+
       svg
         .selectAll('.node-enter')
         .select('circle')
-        .style('fill', d => {
-          d.entityActive = false
-
-          return d.originalColor
-        })
+        .style('fill', fill)
 
       svg
         .selectAll('.node-enter')
-        .select('text')
-        .style('fill', d => {
-          return d.originalColor
-        })
-
-      d.entityActive = !d.entityActive
+        .selectAll('text')
+        .style('fill', fill)
 
       // Update selected entities
       const entity = extractNodeData(d)
