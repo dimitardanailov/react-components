@@ -1,0 +1,43 @@
+{
+  "images": {
+    "primary": { "publicId": "", "url": "" },
+    "secondary": { "publicId": "", "url": "" }
+  },
+  "identifierIsMixed": false,
+  "isPopular": false,
+  "description": "",
+  "guidelines": "",
+  "productDescriptionTemplate": "",
+  "children": [],
+  "_id": "6026e83d397ee9002f081538",
+  "identifier": "pie",
+  "name": "Pie",
+  "status": "Live",
+  "slug": "/pie",
+  "parent": {
+    "images": {
+      "primary": { "publicId": "", "url": "" },
+      "secondary": { "publicId": "", "url": "" }
+    },
+    "identifierIsMixed": false,
+    "isPopular": false,
+    "description": "",
+    "guidelines": "",
+    "productDescriptionTemplate": "",
+    "children": [],
+    "_id": "6026e82a397ee9002f081179",
+    "identifier": "dessert",
+    "name": "Dessert",
+    "status": "Live",
+    "slug": "/dessert",
+    "parent": "6026e811397ee9002f080d7d",
+    "createdAt": "2021-02-12T20:42:18.468Z",
+    "updatedAt": "2021-02-12T20:42:18.468Z",
+    "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d7d#6026e82a397ee9002f081179",
+    "__v": 0
+  },
+  "createdAt": "2021-02-12T20:42:37.251Z",
+  "updatedAt": "2021-02-12T20:42:37.251Z",
+  "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d7d#6026e82a397ee9002f081179#6026e83d397ee9002f081538",
+  "__v": 0
+}

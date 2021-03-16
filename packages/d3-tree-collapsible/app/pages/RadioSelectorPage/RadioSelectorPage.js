@@ -4,6 +4,7 @@ import D3TreeRadioButton from '../../components/D3TreeRadioButton'
 
 import dbNodes from './jsons/nodes.json'
 import dbSelectedEntities from './jsons/selected-entities.json'
+import dbSelectedEntity from './jsons/selected-entity.json'
 
 import foods from './jsons/treeNodes/food-and-drink.json'
 import animals from './jsons/treeNodes/animals.json'
@@ -37,6 +38,7 @@ function RadioSelectorPage() {
 
   const params = {
     dbNodes,
+    dbSelectedEntity,
     dbSelectedEntities,
     debug: true,
     updateDatabaseMetaData,
