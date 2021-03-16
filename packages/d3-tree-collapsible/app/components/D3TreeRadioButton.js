@@ -5,6 +5,7 @@ import { useMachine } from '@xstate/react'
 import createTreeNodeSwitcher from './machines/TreeNodeSwitcher'
 
 import SelectorListItem from './SelectorListItem'
+import D3TreeModeSwitcher from './D3TreeModeSwitcher'
 
 import {
   ElementWrapper,
@@ -101,11 +102,20 @@ function D3TreeRadioButton({
     debugContainer = generateDebugContainer()
   }
 
+  const treeModeSwitcher = React.createElement(D3TreeModeSwitcher, {
+    machine: {
+      state: stateRadioButton,
+      send: sendRadioButton,
+      service: serviceRadioButton,
+    },
+  })
+
   const Wrapper = React.createElement(
     ElementWrapper,
     null,
     nodeContainer,
     debugContainer,
+    treeModeSwitcher,
     d3Container,
   )
 

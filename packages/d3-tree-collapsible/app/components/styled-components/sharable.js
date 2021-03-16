@@ -81,6 +81,14 @@ const EntitySwitcher = window.styled.button`
   }
 `
 
+const IconChecked = window.styled.svg`
+  fill: none;
+  stroke: white;
+  stroke-width: 2px;
+  width: 24px;
+  height: 24px;
+`
+
 export {
   ElementWrapper,
   SVGContainer,
@@ -89,4 +97,5 @@ export {
   StyledSelectorListTextItem,
   StyledNodeContainer,
   EntitySwitcher,
+  IconChecked,
 }
