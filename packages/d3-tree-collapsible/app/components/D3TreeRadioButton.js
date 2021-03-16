@@ -1,4 +1,4 @@
-import createTreeRadioButtonSelectorStateMachine from './machines/TreeRadioButtonStateMachine'
+import createTreeRadioButtonStateMachine from './machines/TreeRadioButtonStateMachine'
 
 import { useMachine } from '@xstate/react'
 
@@ -28,14 +28,12 @@ function D3TreeRadioButton({
     createTreeNodeSwitcher(),
   )
 
-  const machine = createTreeRadioButtonSelectorStateMachine({
+  const machine = createTreeRadioButtonStateMachine({
     dbSelectedEntity,
   })
-  const [
-    stateMultiSelector,
-    sendMultiSelector,
-    serviceMultiSelector,
-  ] = useMachine(machine)
+  const [stateRadioButton, sendRadioButton, serviceRadioButton] = useMachine(
+    machine,
+  )
 
   // ============ referiencies ====================
   const childRef = React.useRef()
@@ -45,7 +43,7 @@ function D3TreeRadioButton({
     const _treeData = await updateParentChildRelationship(node._id)
     setTreeData(_treeData)
     sendSwitcher('MAIN_NODE_IS_SELECTED', { id: node._id })
-    sendMultiSelector('COLLAPSE')
+    sendRadioButton('COLLAPSE')
   }
 
   // ============ hooks ====================
@@ -91,9 +89,9 @@ function D3TreeRadioButton({
     ref: childRef,
     updateDatabaseMetaData,
     machine: {
-      state: stateMultiSelector,
-      send: sendMultiSelector,
-      service: serviceMultiSelector,
+      state: stateRadioButton,
+      send: sendRadioButton,
+      service: serviceRadioButton,
     },
   })
 
