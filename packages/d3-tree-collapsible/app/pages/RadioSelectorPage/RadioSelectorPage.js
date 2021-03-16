@@ -31,8 +31,8 @@ function RadioSelectorPage() {
     return treeData
   }
 
-  const updateDatabaseMetaData = () => {
-    console.log('updateDatabaseMetaData', 'updateDatabaseMetaData')
+  const updateDatabaseMetaData = entity => {
+    console.log('updateDatabaseMetaData', entity)
   }
 
   const params = {

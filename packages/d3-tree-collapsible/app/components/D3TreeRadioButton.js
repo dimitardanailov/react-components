@@ -305,7 +305,7 @@ function loadRadioButtonTree(
         machine.send('REMOVE_ENTITY', { data: entity })
       }
 
-      updateDatabaseMetaData(machine.state.context.dbSelectedEntities)
+      updateDatabaseMetaData(machine.state.context.dbSelectedEntity)
 
       const colour = fill(d)
       const parent = d3.select(element)
