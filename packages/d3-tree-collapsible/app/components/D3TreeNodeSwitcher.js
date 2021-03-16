@@ -1,6 +1,9 @@
 import createTreeMultiSelectorStateMachine from './machines/TreeMultiSelectorStateMachine'
 import createTreeNodeSwitcher from './machines/TreeNodeSwitcher'
 import { useMachine } from '@xstate/react'
+
+import SelectorListItem from './SelectorListItem'
+
 import {
   ElementWrapper,
   SVGContainer,
@@ -9,6 +12,8 @@ import {
   EntitySwitcher,
   StyledNodeContainer,
   IconChecked,
+  StyledSelectorListItem,
+  StyledSelectorListTextItem,
 } from './styled-components/sharable'
 
 // ============ D3TreeNodeSwitcher ====================
@@ -209,67 +214,6 @@ D3TreeNodeSwitcher.defaultProps = {
 }
 
 D3TreeNodeSwitcher.propTypes = {}
-
-// ============ SelectorListItem ====================
-const StyledSelectorListItem = window.styled.div`
-  position: relative;
-
-  padding: 0 0.35rem;
-  cursor: pointer;
-
-  text-align: center;
-`
-
-const StyledSelectorListTextItem = window.styled.div`
-  background: #fff;
-
-  padding: 4px 12px;
-  color: rgba(0, 0, 0, 0.8); 
-  background-color: ${props => (props.checked ? '#d9ddf5' : '#fff')}; 
-
-  margin-bottom: 0.4rem;
-
-  border-radius: 4px;
-  border: solid 1px #b5b5b5;
-
-  box-shadow: ${props =>
-    props.checked ? '3px 3px 10px 0 rgba(0, 0, 0, 0.3)' : 'none'}; ;
-
-  font-family: Roboto;
-  font-size: 12px;
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-
-  text-transform: uppercase;
-`
-
-function SelectorListItem({ node, stateSwitcherCallback, machine }) {
-  machine.service.subscribe(newState => {
-    machine.state = newState
-  })
-
-  const clickListener = () => {
-    stateSwitcherCallback(node)
-  }
-
-  const TextItem = React.createElement(
-    StyledSelectorListTextItem,
-    {
-      checked: machine.state.context.activeNodeId === node._id,
-    },
-    node.name,
-  )
-
-  return React.createElement(
-    StyledSelectorListItem,
-    {
-      key: node._id,
-      onClick: clickListener,
-    },
-    TextItem,
-  )
-}
 
 // ============ D3MultiSelectorTreeContainer ====================
 class D3MultiSelectorTreeContainer extends React.Component {
