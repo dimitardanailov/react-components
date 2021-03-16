@@ -81,6 +81,12 @@ function D3TreeRadioButton({
     })
   })
 
+  const nodeContainer = React.createElement(
+    StyledNodeContainer,
+    {},
+    nodeElements,
+  )
+
   const d3Container = React.createElement(D3RadioSelectorTreeContainer, {
     ref: childRef,
     updateDatabaseMetaData,
@@ -100,7 +106,7 @@ function D3TreeRadioButton({
   const Wrapper = React.createElement(
     ElementWrapper,
     null,
-    nodeElements,
+    nodeContainer,
     d3Container,
     debugContainer,
   )

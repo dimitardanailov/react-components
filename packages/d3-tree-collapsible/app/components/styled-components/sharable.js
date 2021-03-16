@@ -56,10 +56,20 @@ const StyledSelectorListTextItem = window.styled.div`
   text-transform: uppercase;
 `
 
+const StyledNodeContainer = window.styled.div`
+  position: relative;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+`
+
 export {
   ElementWrapper,
   SVGContainer,
   ParentContainer,
   StyledSelectorListItem,
   StyledSelectorListTextItem,
+  StyledNodeContainer,
 }
