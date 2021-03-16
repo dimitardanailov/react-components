@@ -19,7 +19,6 @@ const entityActiveColour = '#ab56af'
 function D3TreeRadioButton({
   dbNodes,
   dbSelectedEntity,
-  dbSelectedEntities,
   debug,
   updateDatabaseMetaData,
   updateParentChildRelationship,
@@ -51,9 +50,6 @@ function D3TreeRadioButton({
 
   // ============ hooks ====================
   const [selectedEntity, setSelectedEntity] = React.useState(dbSelectedEntity)
-  const [selectedEntities, setSelectedEntities] = React.useState(
-    dbSelectedEntities,
-  )
   const [treeData, setTreeData] = React.useState(null)
   React.useEffect(() => {
     if (treeData !== null) {
