@@ -1,4 +1,4 @@
-import createTreeMultiSelectorStateMachine from './machines/TreeMultiSelectorStateMachine'
+import createTreeRadioButtonSelectorStateMachine from './machines/TreeRadioButtonStateMachine'
 
 import { useMachine } from '@xstate/react'
 
@@ -28,8 +28,8 @@ function D3TreeRadioButton({
     createTreeNodeSwitcher(),
   )
 
-  const machine = createTreeMultiSelectorStateMachine({
-    dbSelectedEntities: [],
+  const machine = createTreeRadioButtonSelectorStateMachine({
+    dbSelectedEntity,
   })
   const [
     stateMultiSelector,
