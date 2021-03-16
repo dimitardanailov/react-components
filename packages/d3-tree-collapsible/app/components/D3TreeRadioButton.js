@@ -56,9 +56,9 @@ function D3TreeRadioButton({
   const [treeData, setTreeData] = React.useState(null)
   React.useEffect(() => {
     if (treeData !== null) {
-      childRef.current.draw(treeData, selectedEntities, selectedEntity)
+      childRef.current.draw(treeData, selectedEntity)
     }
-  }, [treeData, selectedEntities, selectedEntity])
+  }, [treeData, selectedEntity])
 
   let welcomeScreen = true
   const [nodes, setNodes] = React.useState(dbNodes)
@@ -145,14 +145,13 @@ class D3RadioSelectorTreeContainer extends React.Component {
     }
   }
 
-  draw(treeData, selectedEntities, selectedEntity) {
+  draw(treeData, selectedEntity) {
     const width = 800
 
     const node = loadRadioButtonTree(
       width,
       treeData,
       selectedEntity,
-      selectedEntities,
       this.machine,
       this.updateDatabaseMetaData,
     )
@@ -173,12 +172,9 @@ function loadRadioButtonTree(
   width,
   data,
   selectedEntity,
-  selectedEntities,
   machine,
   updateDatabaseMetaData,
 ) {
-  console.log('selectedEntity', selectedEntity)
-
   /*** Required source code: if you want d3 to be able to receive machine state updates ***/
   machine.service.subscribe(newState => {
     machine.state = newState
@@ -200,10 +196,22 @@ function loadRadioButtonTree(
   root.x0 = dy / 2
   root.y0 = 0
 
+  const childNodeIsEmpty = (d, selectedEntity) => {
+    if (d.depth && d.depth >= 1) {
+      if (selectedEntity == null) return true
+
+      return !selectedEntity.path.includes(d.data.path)
+    }
+
+    return false
+  }
+
   root.descendants().forEach((d, i) => {
     d.id = i
     d._children = d.children
-    if (d.depth && d.data.name.length !== 7) d.children = null
+
+    const nodeIsEmpty = childNodeIsEmpty(d, selectedEntity)
+    if (nodeIsEmpty) d.children = null
   })
 
   const svg = d3
