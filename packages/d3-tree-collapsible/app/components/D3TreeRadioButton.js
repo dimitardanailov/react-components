@@ -12,7 +12,8 @@ import {
   ParentContainer,
   StyledNodeContainer,
 } from './styled-components/sharable'
-import React from 'react'
+
+const entityActiveColour = '#ab56af'
 
 // ============ D3TreeRadioButton ====================
 function D3TreeRadioButton({
@@ -196,6 +197,12 @@ function loadRadioButtonTree(
   root.x0 = dy / 2
   root.y0 = 0
 
+  const entityIsActive = (d, selectedEntity) => {
+    if (selectedEntity == null) return false
+
+    return selectedEntity._id === d.data._id
+  }
+
   const childNodeIsEmpty = (d, selectedEntity) => {
     if (d.depth && d.depth >= 1) {
       if (selectedEntity == null) return true
@@ -208,8 +215,9 @@ function loadRadioButtonTree(
 
   root.descendants().forEach((d, i) => {
     d.id = i
+    d.originalColor = '#999'
     d._children = d.children
-
+    d.entityActive = entityIsActive(d, selectedEntity)
     const nodeIsEmpty = childNodeIsEmpty(d, selectedEntity)
     if (nodeIsEmpty) d.children = null
   })
