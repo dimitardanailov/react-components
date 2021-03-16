@@ -65,6 +65,22 @@ const StyledNodeContainer = window.styled.div`
   justify-content: flex-start;
 `
 
+const entityActiveColour = '#ab56af'
+const EntitySwitcher = window.styled.button`
+  position: relative;
+
+  margin-left: 0.4rem;
+  padding: 0.2rem;
+  border-radius: 12.5%;
+  border: 2px solid ${props =>
+    props.checked ? entityActiveColour : '#808080'};
+  background: ${props => (props.checked ? entityActiveColour : '#fff')};
+
+  &:focus {
+    outline: none;
+  }
+`
+
 export {
   ElementWrapper,
   SVGContainer,
@@ -72,4 +88,5 @@ export {
   StyledSelectorListItem,
   StyledSelectorListTextItem,
   StyledNodeContainer,
+  EntitySwitcher,
 }
