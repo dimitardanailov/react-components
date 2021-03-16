@@ -1,0 +1,816 @@
+{
+  "images": {
+    "primary": { "publicId": "", "url": "" },
+    "secondary": { "publicId": "", "url": "" }
+  },
+  "identifierIsMixed": false,
+  "isPopular": false,
+  "description": "",
+  "guidelines": "",
+  "productDescriptionTemplate": "",
+  "children": [
+    {
+      "_id": "6026e7f9397ee9002f080c42",
+      "name": "Drinks",
+      "status": "Live",
+      "parent": "6026e7b0397ee9002f080c1b",
+      "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c42",
+      "children": [
+        {
+          "_id": "6026e811397ee9002f080d70",
+          "name": "Wine",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c42",
+          "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c42#6026e811397ee9002f080d70",
+          "children": [
+            {
+              "_id": "6026e82a397ee9002f081172",
+              "name": "Champagne",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d70",
+              "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c42#6026e811397ee9002f080d70#6026e82a397ee9002f081172",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081173",
+              "name": "Red Wine",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d70",
+              "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c42#6026e811397ee9002f080d70#6026e82a397ee9002f081173",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081174",
+              "name": "Vineyard",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d70",
+              "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c42#6026e811397ee9002f080d70#6026e82a397ee9002f081174",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081175",
+              "name": "Vintage Wine",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d70",
+              "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c42#6026e811397ee9002f080d70#6026e82a397ee9002f081175",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081176",
+              "name": "White Wine",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d70",
+              "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c42#6026e811397ee9002f080d70#6026e82a397ee9002f081176",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081177",
+              "name": "Rose Wine",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d70",
+              "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c42#6026e811397ee9002f080d70#6026e82a397ee9002f081177",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081178",
+              "name": "Wine Barrels",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d70",
+              "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c42#6026e811397ee9002f080d70#6026e82a397ee9002f081178",
+              "children": []
+            }
+          ]
+        },
+        {
+          "_id": "6026e811397ee9002f080d71",
+          "name": "Beer",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c42",
+          "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c42#6026e811397ee9002f080d71",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d72",
+          "name": "Cocktail",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c42",
+          "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c42#6026e811397ee9002f080d72",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d73",
+          "name": "Whiskey",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c42",
+          "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c42#6026e811397ee9002f080d73",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d74",
+          "name": "Juice",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c42",
+          "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c42#6026e811397ee9002f080d74",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d75",
+          "name": "Lemonade",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c42",
+          "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c42#6026e811397ee9002f080d75",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d76",
+          "name": "Smoothie",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c42",
+          "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c42#6026e811397ee9002f080d76",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d77",
+          "name": "Apple Cider",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c42",
+          "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c42#6026e811397ee9002f080d77",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d78",
+          "name": "Hot Chocolate",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c42",
+          "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c42#6026e811397ee9002f080d78",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d79",
+          "name": "Soda",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c42",
+          "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c42#6026e811397ee9002f080d79",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d7a",
+          "name": "Iced Tea",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c42",
+          "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c42#6026e811397ee9002f080d7a",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d7b",
+          "name": "Milkshake",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c42",
+          "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c42#6026e811397ee9002f080d7b",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d7c",
+          "name": "Milk",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c42",
+          "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c42#6026e811397ee9002f080d7c",
+          "children": []
+        }
+      ]
+    },
+    {
+      "_id": "6026e7f9397ee9002f080c43",
+      "name": "Food",
+      "status": "Live",
+      "parent": "6026e7b0397ee9002f080c1b",
+      "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43",
+      "children": [
+        {
+          "_id": "6026e811397ee9002f080d7d",
+          "name": "Sweets",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c43",
+          "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d7d",
+          "children": [
+            {
+              "_id": "6026e82a397ee9002f081179",
+              "name": "Dessert",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d7d",
+              "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d7d#6026e82a397ee9002f081179",
+              "children": [
+                {
+                  "_id": "6026e83d397ee9002f081535",
+                  "name": "Cake",
+                  "status": "Live",
+                  "parent": "6026e82a397ee9002f081179",
+                  "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d7d#6026e82a397ee9002f081179#6026e83d397ee9002f081535",
+                  "children": []
+                },
+                {
+                  "_id": "6026e83d397ee9002f081536",
+                  "name": "Cupcake",
+                  "status": "Live",
+                  "parent": "6026e82a397ee9002f081179",
+                  "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d7d#6026e82a397ee9002f081179#6026e83d397ee9002f081536",
+                  "children": []
+                },
+                {
+                  "_id": "6026e83d397ee9002f081537",
+                  "name": "Jelly",
+                  "status": "Live",
+                  "parent": "6026e82a397ee9002f081179",
+                  "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d7d#6026e82a397ee9002f081179#6026e83d397ee9002f081537",
+                  "children": []
+                },
+                {
+                  "_id": "6026e83d397ee9002f081538",
+                  "name": "Pie",
+                  "status": "Live",
+                  "parent": "6026e82a397ee9002f081179",
+                  "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d7d#6026e82a397ee9002f081179#6026e83d397ee9002f081538",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "_id": "6026e82a397ee9002f08117a",
+              "name": "Doughnut",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d7d",
+              "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d7d#6026e82a397ee9002f08117a",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f08117b",
+              "name": "Ice Cream",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d7d",
+              "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d7d#6026e82a397ee9002f08117b",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f08117c",
+              "name": "Macaron",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d7d",
+              "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d7d#6026e82a397ee9002f08117c",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f08117d",
+              "name": "Chocolate",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d7d",
+              "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d7d#6026e82a397ee9002f08117d",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f08117e",
+              "name": "Lollipop",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d7d",
+              "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d7d#6026e82a397ee9002f08117e",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f08117f",
+              "name": "Pancake",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d7d",
+              "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d7d#6026e82a397ee9002f08117f",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081180",
+              "name": "Cookies",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d7d",
+              "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d7d#6026e82a397ee9002f081180",
+              "children": []
+            }
+          ]
+        },
+        {
+          "_id": "6026e811397ee9002f080d7e",
+          "name": "Fruits",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c43",
+          "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d7e",
+          "children": [
+            {
+              "_id": "6026e82a397ee9002f081181",
+              "name": "Pineapple",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d7e",
+              "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d7e#6026e82a397ee9002f081181",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081182",
+              "name": "Orange",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d7e",
+              "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d7e#6026e82a397ee9002f081182",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081183",
+              "name": "Lemon",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d7e",
+              "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d7e#6026e82a397ee9002f081183",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081184",
+              "name": "Peach",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d7e",
+              "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d7e#6026e82a397ee9002f081184",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081185",
+              "name": "Watermelon",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d7e",
+              "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d7e#6026e82a397ee9002f081185",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081186",
+              "name": "Avocado",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d7e",
+              "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d7e#6026e82a397ee9002f081186",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081187",
+              "name": "Banana",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d7e",
+              "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d7e#6026e82a397ee9002f081187",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081188",
+              "name": "Strawberry",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d7e",
+              "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d7e#6026e82a397ee9002f081188",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081189",
+              "name": "Cherry",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d7e",
+              "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d7e#6026e82a397ee9002f081189",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f08118a",
+              "name": "Grape",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d7e",
+              "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d7e#6026e82a397ee9002f08118a",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f08118b",
+              "name": "Lime",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d7e",
+              "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d7e#6026e82a397ee9002f08118b",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f08118c",
+              "name": "Pomegranate",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d7e",
+              "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d7e#6026e82a397ee9002f08118c",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f08118d",
+              "name": "Tomato",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d7e",
+              "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d7e#6026e82a397ee9002f08118d",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f08118e",
+              "name": "Mango",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d7e",
+              "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d7e#6026e82a397ee9002f08118e",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f08118f",
+              "name": "Kiwifruit",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d7e",
+              "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d7e#6026e82a397ee9002f08118f",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081190",
+              "name": "Berry",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d7e",
+              "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d7e#6026e82a397ee9002f081190",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081191",
+              "name": "Papaya",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d7e",
+              "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d7e#6026e82a397ee9002f081191",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081192",
+              "name": "Tangerine",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d7e",
+              "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d7e#6026e82a397ee9002f081192",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081193",
+              "name": "Grapefruit",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d7e",
+              "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d7e#6026e82a397ee9002f081193",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081194",
+              "name": "Apricot",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d7e",
+              "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d7e#6026e82a397ee9002f081194",
+              "children": []
+            }
+          ]
+        },
+        {
+          "_id": "6026e811397ee9002f080d7f",
+          "name": "Vegetables",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c43",
+          "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d7f",
+          "children": [
+            {
+              "_id": "6026e82a397ee9002f081195",
+              "name": "Mushroom",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d7f",
+              "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d7f#6026e82a397ee9002f081195",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081196",
+              "name": "Carrot",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d7f",
+              "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d7f#6026e82a397ee9002f081196",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081197",
+              "name": "Potato",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d7f",
+              "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d7f#6026e82a397ee9002f081197",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081198",
+              "name": "Eggplant",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d7f",
+              "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d7f#6026e82a397ee9002f081198",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f081199",
+              "name": "Onion",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d7f",
+              "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d7f#6026e82a397ee9002f081199",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f08119a",
+              "name": "Artichoke",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d7f",
+              "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d7f#6026e82a397ee9002f08119a",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f08119b",
+              "name": "Garlic",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d7f",
+              "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d7f#6026e82a397ee9002f08119b",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f08119c",
+              "name": "Pea",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d7f",
+              "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d7f#6026e82a397ee9002f08119c",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f08119d",
+              "name": "Bean",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d7f",
+              "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d7f#6026e82a397ee9002f08119d",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f08119e",
+              "name": "Broccoli",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d7f",
+              "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d7f#6026e82a397ee9002f08119e",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f08119f",
+              "name": "Pumpkin",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d7f",
+              "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d7f#6026e82a397ee9002f08119f",
+              "children": []
+            }
+          ]
+        },
+        {
+          "_id": "6026e811397ee9002f080d80",
+          "name": "Fast Food",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c43",
+          "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d80",
+          "children": [
+            {
+              "_id": "6026e82a397ee9002f0811a0",
+              "name": "Pizza",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d80",
+              "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d80#6026e82a397ee9002f0811a0",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f0811a1",
+              "name": "Taco",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d80",
+              "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d80#6026e82a397ee9002f0811a1",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f0811a2",
+              "name": "French Fries",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d80",
+              "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d80#6026e82a397ee9002f0811a2",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f0811a3",
+              "name": "Burger",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d80",
+              "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d80#6026e82a397ee9002f0811a3",
+              "children": []
+            },
+            {
+              "_id": "6026e82a397ee9002f0811a4",
+              "name": "Sandwich",
+              "status": "Live",
+              "parent": "6026e811397ee9002f080d80",
+              "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d80#6026e82a397ee9002f0811a4",
+              "children": []
+            }
+          ]
+        },
+        {
+          "_id": "6026e811397ee9002f080d81",
+          "name": "Popcorn",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c43",
+          "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d81",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d82",
+          "name": "Cheese",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c43",
+          "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d82",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d83",
+          "name": "Breakfast",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c43",
+          "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d83",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d84",
+          "name": "Meat",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c43",
+          "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d84",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d85",
+          "name": "Pasta",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c43",
+          "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d85",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d86",
+          "name": "Soup",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c43",
+          "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d86",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d87",
+          "name": "Seafood",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c43",
+          "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d87",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d88",
+          "name": "Salad",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c43",
+          "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d88",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d89",
+          "name": "Herbs And Spices",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c43",
+          "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d89",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d8a",
+          "name": "Poultry",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c43",
+          "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d8a",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d8b",
+          "name": "Condiments",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c43",
+          "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d8b",
+          "children": []
+        }
+      ]
+    },
+    {
+      "_id": "6026e7f9397ee9002f080c44",
+      "name": "Cafe",
+      "status": "Live",
+      "parent": "6026e7b0397ee9002f080c1b",
+      "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c44",
+      "children": [
+        {
+          "_id": "6026e811397ee9002f080d8c",
+          "name": "Coffee",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c44",
+          "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c44#6026e811397ee9002f080d8c",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d8d",
+          "name": "Tea",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c44",
+          "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c44#6026e811397ee9002f080d8d",
+          "children": []
+        }
+      ]
+    },
+    {
+      "_id": "6026e7f9397ee9002f080c45",
+      "name": "International Cuisine",
+      "status": "Live",
+      "parent": "6026e7b0397ee9002f080c1b",
+      "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c45",
+      "children": [
+        {
+          "_id": "6026e811397ee9002f080d8e",
+          "name": "Asian Cuisine",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c45",
+          "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c45#6026e811397ee9002f080d8e",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d8f",
+          "name": "European Cuisine",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c45",
+          "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c45#6026e811397ee9002f080d8f",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d90",
+          "name": "Middle Eastern Cuisine",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c45",
+          "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c45#6026e811397ee9002f080d90",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d91",
+          "name": "African Cuisine",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c45",
+          "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c45#6026e811397ee9002f080d91",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d92",
+          "name": "Central American Cuisine",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c45",
+          "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c45#6026e811397ee9002f080d92",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d93",
+          "name": "South American Cuisine",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c45",
+          "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c45#6026e811397ee9002f080d93",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d94",
+          "name": "Caribbean Cuisine",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c45",
+          "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c45#6026e811397ee9002f080d94",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d95",
+          "name": "Oceania Cuisine",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c45",
+          "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c45#6026e811397ee9002f080d95",
+          "children": []
+        },
+        {
+          "_id": "6026e811397ee9002f080d96",
+          "name": "North American Cuisine",
+          "status": "Live",
+          "parent": "6026e7f9397ee9002f080c45",
+          "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c45#6026e811397ee9002f080d96",
+          "children": []
+        }
+      ]
+    }
+  ],
+  "_id": "6026e7b0397ee9002f080c1b",
+  "identifier": "food-and-drink",
+  "name": "Food & Drink",
+  "status": "Live",
+  "slug": "/food-and-drink",
+  "createdAt": "2021-02-12T20:40:16.476Z",
+  "updatedAt": "2021-02-14T04:01:00.063Z",
+  "path": "6026e7b0397ee9002f080c1b",
+  "__v": 0
+}

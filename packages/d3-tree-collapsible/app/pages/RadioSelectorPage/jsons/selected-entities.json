@@ -1,0 +1,217 @@
+[
+  {
+    "images": {
+      "primary": { "publicId": "", "url": "" },
+      "secondary": { "publicId": "", "url": "" }
+    },
+    "identifierIsMixed": false,
+    "isPopular": false,
+    "description": "",
+    "guidelines": "",
+    "productDescriptionTemplate": "",
+    "children": [],
+    "_id": "6026e7f9397ee9002f080c3a",
+    "identifier": "pets",
+    "name": "Pets",
+    "status": "Live",
+    "slug": "/pets",
+    "parent": {
+      "images": {
+        "primary": { "publicId": "", "url": "" },
+        "secondary": { "publicId": "", "url": "" }
+      },
+      "identifierIsMixed": false,
+      "isPopular": false,
+      "description": "",
+      "guidelines": "",
+      "productDescriptionTemplate": "",
+      "children": [],
+      "_id": "6026e7b0397ee9002f080c1c",
+      "identifier": "animals",
+      "name": "Animals",
+      "status": "Live",
+      "slug": "/animals",
+      "createdAt": "2021-02-12T20:40:16.477Z",
+      "updatedAt": "2021-02-22T04:01:00.068Z",
+      "path": "6026e7b0397ee9002f080c1c",
+      "__v": 0,
+      "keyword_arsenal_crawler_file_name": "Animals - KW Arsenal Dev"
+    },
+    "createdAt": "2021-02-12T20:41:29.186Z",
+    "updatedAt": "2021-02-12T20:41:29.186Z",
+    "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3a",
+    "__v": 0
+  },
+  {
+    "images": {
+      "primary": { "publicId": "", "url": "" },
+      "secondary": { "publicId": "", "url": "" }
+    },
+    "identifierIsMixed": false,
+    "isPopular": false,
+    "description": "",
+    "guidelines": "",
+    "productDescriptionTemplate": "",
+    "children": [],
+    "_id": "6026e811397ee9002f080d7d",
+    "identifier": "sweets",
+    "name": "Sweets",
+    "status": "Live",
+    "slug": "/sweets",
+    "parent": {
+      "images": {
+        "primary": { "publicId": "", "url": "" },
+        "secondary": { "publicId": "", "url": "" }
+      },
+      "identifierIsMixed": false,
+      "isPopular": false,
+      "description": "",
+      "guidelines": "",
+      "productDescriptionTemplate": "",
+      "children": [],
+      "_id": "6026e7f9397ee9002f080c43",
+      "identifier": "food",
+      "name": "Food",
+      "status": "Live",
+      "slug": "/food",
+      "parent": "6026e7b0397ee9002f080c1b",
+      "createdAt": "2021-02-12T20:41:29.650Z",
+      "updatedAt": "2021-02-12T20:41:29.650Z",
+      "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43",
+      "__v": 0
+    },
+    "createdAt": "2021-02-12T20:41:53.745Z",
+    "updatedAt": "2021-02-12T20:41:53.745Z",
+    "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d7d",
+    "__v": 0
+  },
+  {
+    "images": {
+      "primary": { "publicId": "", "url": "" },
+      "secondary": { "publicId": "", "url": "" }
+    },
+    "identifierIsMixed": false,
+    "isPopular": false,
+    "description": "",
+    "guidelines": "",
+    "productDescriptionTemplate": "",
+    "children": [],
+    "_id": "6026e83d397ee9002f081538",
+    "identifier": "pie",
+    "name": "Pie",
+    "status": "Live",
+    "slug": "/pie",
+    "parent": {
+      "images": {
+        "primary": { "publicId": "", "url": "" },
+        "secondary": { "publicId": "", "url": "" }
+      },
+      "identifierIsMixed": false,
+      "isPopular": false,
+      "description": "",
+      "guidelines": "",
+      "productDescriptionTemplate": "",
+      "children": [],
+      "_id": "6026e82a397ee9002f081179",
+      "identifier": "dessert",
+      "name": "Dessert",
+      "status": "Live",
+      "slug": "/dessert",
+      "parent": "6026e811397ee9002f080d7d",
+      "createdAt": "2021-02-12T20:42:18.468Z",
+      "updatedAt": "2021-02-12T20:42:18.468Z",
+      "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d7d#6026e82a397ee9002f081179",
+      "__v": 0
+    },
+    "createdAt": "2021-02-12T20:42:37.251Z",
+    "updatedAt": "2021-02-12T20:42:37.251Z",
+    "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c43#6026e811397ee9002f080d7d#6026e82a397ee9002f081179#6026e83d397ee9002f081538",
+    "__v": 0
+  },
+  {
+    "images": {
+      "primary": { "publicId": "", "url": "" },
+      "secondary": { "publicId": "", "url": "" }
+    },
+    "identifierIsMixed": false,
+    "isPopular": false,
+    "description": "",
+    "guidelines": "",
+    "productDescriptionTemplate": "",
+    "children": [],
+    "_id": "6026e7f9397ee9002f080c3b",
+    "identifier": "farm-animals",
+    "name": "Farm Animals",
+    "status": "Live",
+    "slug": "/farm-animals",
+    "parent": {
+      "images": {
+        "primary": { "publicId": "", "url": "" },
+        "secondary": { "publicId": "", "url": "" }
+      },
+      "identifierIsMixed": false,
+      "isPopular": false,
+      "description": "",
+      "guidelines": "",
+      "productDescriptionTemplate": "",
+      "children": [],
+      "_id": "6026e7b0397ee9002f080c1c",
+      "identifier": "animals",
+      "name": "Animals",
+      "status": "Live",
+      "slug": "/animals",
+      "createdAt": "2021-02-12T20:40:16.477Z",
+      "updatedAt": "2021-02-23T04:01:00.069Z",
+      "path": "6026e7b0397ee9002f080c1c",
+      "__v": 0,
+      "keyword_arsenal_crawler_file_name": "Animals - KW Arsenal Dev"
+    },
+    "createdAt": "2021-02-12T20:41:29.247Z",
+    "updatedAt": "2021-02-12T20:41:29.247Z",
+    "path": "6026e7b0397ee9002f080c1c#6026e7f9397ee9002f080c3b",
+    "__v": 0
+  },
+  {
+    "images": {
+      "primary": { "publicId": "", "url": "" },
+      "secondary": { "publicId": "", "url": "" }
+    },
+    "identifierIsMixed": false,
+    "isPopular": false,
+    "description": "",
+    "guidelines": "",
+    "productDescriptionTemplate": "",
+    "children": [],
+    "_id": "6026e7f9397ee9002f080c42",
+    "identifier": "drinks",
+    "name": "Drinks",
+    "status": "Live",
+    "slug": "/drinks",
+    "parent": {
+      "images": {
+        "primary": { "publicId": "", "url": "" },
+        "secondary": { "publicId": "", "url": "" }
+      },
+      "identifierIsMixed": false,
+      "isPopular": false,
+      "description": "",
+      "guidelines": "",
+      "productDescriptionTemplate": "",
+      "children": [],
+      "_id": "6026e7b0397ee9002f080c1b",
+      "identifier": "food-and-drink",
+      "name": "Food & Drink",
+      "status": "Live",
+      "slug": "/food-and-drink",
+      "createdAt": "2021-02-12T20:40:16.476Z",
+      "updatedAt": "2021-02-23T04:01:00.068Z",
+      "path": "6026e7b0397ee9002f080c1b",
+      "__v": 0,
+      "keyword_arsenal_crawler_file_name": "Food & Drink - KW Arsenal Dev"
+    },
+    "createdAt": "2021-02-12T20:41:29.614Z",
+    "updatedAt": "2021-02-12T20:41:29.614Z",
+    "path": "6026e7b0397ee9002f080c1b#6026e7f9397ee9002f080c42",
+    "__v": 0
+  }
+]
