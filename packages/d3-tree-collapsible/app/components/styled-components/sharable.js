@@ -98,4 +98,5 @@ export {
   StyledNodeContainer,
   EntitySwitcher,
   IconChecked,
+  entityActiveColour,
 }
