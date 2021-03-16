@@ -5,41 +5,11 @@ import {
   ElementWrapper,
   SVGContainer,
   ParentContainer,
+  entityActiveColour,
+  EntitySwitcher,
+  StyledNodeContainer,
+  IconChecked,
 } from './styled-components/sharable'
-
-const entityActiveColour = '#ab56af'
-
-const EntitySwitcher = window.styled.button`
-  position: relative;
-
-  margin-left: 0.4rem;
-  padding: 0.2rem;
-  border-radius: 12.5%;
-  border: 2px solid ${props =>
-    props.checked ? entityActiveColour : '#808080'};
-  background: ${props => (props.checked ? entityActiveColour : '#fff')};
-
-  &:focus {
-    outline: none;
-  }
-`
-
-const StyledNodeContainer = window.styled.div`
-  position: relative;
-  box-sizing: border-box;
-
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-`
-
-const IconChecked = window.styled.svg`
-  fill: none;
-  stroke: white;
-  stroke-width: 2px;
-  width: 24px;
-  height: 24px;
-`
 
 // ============ D3TreeNodeSwitcher ====================
 function D3TreeNodeSwitcher({

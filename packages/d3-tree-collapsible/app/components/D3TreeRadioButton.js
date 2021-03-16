@@ -10,11 +10,9 @@ import D3TreeModeSwitcher from './D3TreeModeSwitcher'
 import {
   ElementWrapper,
   SVGContainer,
-  ParentContainer,
   StyledNodeContainer,
+  entityActiveColour,
 } from './styled-components/sharable'
-
-const entityActiveColour = '#ab56af'
 
 // ============ D3TreeRadioButton ====================
 function D3TreeRadioButton({
