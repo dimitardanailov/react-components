@@ -107,8 +107,8 @@ function D3TreeRadioButton({
     ElementWrapper,
     null,
     nodeContainer,
-    d3Container,
     debugContainer,
+    d3Container,
   )
 
   return Wrapper
