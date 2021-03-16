@@ -52,9 +52,9 @@ function D3TreeRadioButton({
   const [treeData, setTreeData] = React.useState(null)
   React.useEffect(() => {
     if (treeData !== null) {
-      childRef.current.draw(treeData, selectedEntity)
+      childRef.current.draw(treeData, selectedEntity, setSelectedEntity)
     }
-  }, [treeData, selectedEntity])
+  }, [treeData])
 
   let welcomeScreen = true
   const [nodes, setNodes] = React.useState(dbNodes)
@@ -150,13 +150,14 @@ class D3RadioSelectorTreeContainer extends React.Component {
     }
   }
 
-  draw(treeData, selectedEntity) {
+  draw(treeData, selectedEntity, setSelectedEntity) {
     const width = 800
 
     const node = loadRadioButtonTree(
       width,
       treeData,
       selectedEntity,
+      setSelectedEntity,
       this.machine,
       this.updateDatabaseMetaData,
     )
@@ -177,6 +178,7 @@ function loadRadioButtonTree(
   width,
   data,
   selectedEntity,
+  setSelectedEntity,
   machine,
   updateDatabaseMetaData,
 ) {
@@ -305,16 +307,29 @@ function loadRadioButtonTree(
     const loadEntityClickHandler = (event, d, element) => {
       event.preventDefault()
 
+      svg
+        .selectAll('.node-enter')
+        .select('circle')
+        .style('fill', d => {
+          d.entityActive = false
+
+          return d.originalColor
+        })
+
+      svg
+        .selectAll('.node-enter')
+        .select('text')
+        .style('fill', d => {
+          return d.originalColor
+        })
+
       d.entityActive = !d.entityActive
 
       // Update selected entities
       const entity = extractNodeData(d)
-      if (d.entityActive) {
-        machine.send('ADD_ENTITY', { data: entity })
-      } else {
-        machine.send('REMOVE_ENTITY', { data: entity })
-      }
+      machine.send('ADD_ENTITY', { data: entity })
 
+      setSelectedEntity(machine.state.context.dbSelectedEntity)
       updateDatabaseMetaData(machine.state.context.dbSelectedEntity)
 
       const colour = fill(d)
