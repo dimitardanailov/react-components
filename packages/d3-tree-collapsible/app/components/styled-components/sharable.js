@@ -89,6 +89,36 @@ const IconChecked = window.styled.svg`
   height: 24px;
 `
 
+const ZoomIn = window.styled.button`
+  position: relative;
+  margin-left: 0.4rem;
+  padding: 0.2rem;
+  border-radius: 12.5%;
+  background: rgb(255, 255, 255);
+  border: 2px solid rgb(128, 128, 128);
+  width: 34px;
+  height: 36px;
+
+  &:focus {
+    outline: none;
+  }
+`
+
+const ZoomOut = window.styled.button`
+  position: relative;
+  margin-left: 0.4rem;
+  padding: 0.2rem;
+  border-radius: 12.5%;
+  background: rgb(255, 255, 255);
+  border: 2px solid rgb(128, 128, 128);
+  width: 34px;
+  height: 36px;
+
+  &:focus {
+    outline: none;
+  }
+`
+
 export {
   ElementWrapper,
   SVGContainer,
@@ -99,4 +129,6 @@ export {
   EntitySwitcher,
   IconChecked,
   entityActiveColour,
+  ZoomIn,
+  ZoomOut,
 }
