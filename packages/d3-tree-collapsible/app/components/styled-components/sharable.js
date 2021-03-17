@@ -123,6 +123,28 @@ const ZoomOut = window.styled.button`
   }
 `
 
+const SimpleButton = window.styled.button`
+  position: relative;
+
+  margin-left: 0.4rem;
+  padding: 0.2rem;
+  border-radius: 12.5%;
+  border: 2px solid #808080;
+  background: #fff;
+
+  &:focus {
+    outline: none;
+  }
+`
+
+const StyledZoomContainer = window.styled.div`
+  position: relative;
+
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+`
+
 export {
   ElementWrapper,
   SVGContainer,
@@ -136,4 +158,6 @@ export {
   BasicFeatherIcon,
   ZoomIn,
   ZoomOut,
+  SimpleButton,
+  StyledZoomContainer,
 }
