@@ -4,6 +4,8 @@ import { useMachine } from '@xstate/react'
 
 import createTreeNodeSwitcher from './machines/TreeNodeSwitcher'
 
+import D3Toolbar from './D3Toolbar'
+
 import SelectorListItem from './SelectorListItem'
 import D3TreeModeSwitcher from './D3TreeModeSwitcher'
 import D3TreeZoomContainer, {
@@ -126,13 +128,14 @@ function D3TreeRadioButton({
     zoomOutIdentifier: zoomOutIdentifier,
   })
 
+  const toolbar = D3Toolbar(wrapperZoomButtons, treeModeSwitcher)
+
   const Wrapper = React.createElement(
     ElementWrapper,
     null,
     nodeContainer,
     debugContainer,
-    treeModeSwitcher,
-    wrapperZoomButtons,
+    toolbar,
     d3Container,
   )
 
