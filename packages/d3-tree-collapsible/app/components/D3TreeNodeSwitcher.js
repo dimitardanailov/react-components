@@ -12,8 +12,6 @@ import {
   EntitySwitcher,
   StyledNodeContainer,
   IconChecked,
-  StyledSelectorListItem,
-  StyledSelectorListTextItem,
 } from './styled-components/sharable'
 
 // ============ D3TreeNodeSwitcher ====================
