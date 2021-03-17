@@ -48,8 +48,6 @@ function RadioSelectorPage() {
     zoomOutIdentifier,
   }
 
-  console.log('params', params)
-
   return React.createElement(D3TreeRadioButton, params)
 }
 
