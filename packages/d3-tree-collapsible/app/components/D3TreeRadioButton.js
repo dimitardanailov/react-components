@@ -6,6 +6,11 @@ import createTreeNodeSwitcher from './machines/TreeNodeSwitcher'
 
 import SelectorListItem from './SelectorListItem'
 import D3TreeModeSwitcher from './D3TreeModeSwitcher'
+import D3TreeZoomContainer, {
+  zoomConfiguration,
+  zoomInFunction,
+  zoomOutFunction,
+} from './D3TreeZoomContainer'
 
 import {
   ElementWrapper,
@@ -21,6 +26,8 @@ function D3TreeRadioButton({
   debug,
   updateDatabaseMetaData,
   updateParentChildRelationship,
+  zoomInIdentifier,
+  zoomOutIdentifier,
 }) {
   // ============ State machines ====================
   const [stateSwitcher, sendSwitcher, serviceSwitcher] = useMachine(
@@ -50,7 +57,13 @@ function D3TreeRadioButton({
   const [treeData, setTreeData] = React.useState(null)
   React.useEffect(() => {
     if (treeData !== null) {
-      childRef.current.draw(treeData, selectedEntity, setSelectedEntity)
+      childRef.current.draw(
+        treeData,
+        selectedEntity,
+        setSelectedEntity,
+        zoomInIdentifier,
+        zoomOutIdentifier,
+      )
     }
   }, [treeData])
 
@@ -108,12 +121,18 @@ function D3TreeRadioButton({
     },
   })
 
+  const wrapperZoomButtons = React.createElement(D3TreeZoomContainer, {
+    zoomInIdentifier: zoomInIdentifier,
+    zoomOutIdentifier: zoomOutIdentifier,
+  })
+
   const Wrapper = React.createElement(
     ElementWrapper,
     null,
     nodeContainer,
     debugContainer,
     treeModeSwitcher,
+    wrapperZoomButtons,
     d3Container,
   )
 
@@ -148,7 +167,13 @@ class D3RadioSelectorTreeContainer extends React.Component {
     }
   }
 
-  draw(treeData, selectedEntity, setSelectedEntity) {
+  draw(
+    treeData,
+    selectedEntity,
+    setSelectedEntity,
+    zoomInIdentifier,
+    zoomOutIdentifier,
+  ) {
     const width = 800
 
     const node = loadRadioButtonTree(
@@ -156,6 +181,8 @@ class D3RadioSelectorTreeContainer extends React.Component {
       treeData,
       selectedEntity,
       setSelectedEntity,
+      zoomInIdentifier,
+      zoomOutIdentifier,
       this.machine,
       this.updateDatabaseMetaData,
     )
@@ -177,6 +204,8 @@ function loadRadioButtonTree(
   data,
   selectedEntity,
   setSelectedEntity,
+  zoomInIdentifier,
+  zoomOutIdentifier,
   machine,
   updateDatabaseMetaData,
 ) {
@@ -232,16 +261,23 @@ function loadRadioButtonTree(
     .style('font', '12px sans-serif')
     .style('user-select', 'none')
 
-  const gLink = svg
+  // Zoom setup
+  const { g, zoom } = zoomConfiguration(svg)
+  zoomInFunction(svg, zoom, zoomInIdentifier)
+  zoomOutFunction(svg, zoom, zoomOutIdentifier)
+
+  const gLink = g
     .append('g')
     .attr('fill', 'none')
     .attr('stroke-opacity', 0.25)
     .attr('stroke-width', 1.5)
+    .attr('transform', 'scale(0.8)')
 
-  const gNode = svg
+  const gNode = g
     .append('g')
     .attr('cursor', 'pointer')
     .attr('pointer-events', 'all')
+    .attr('transform', 'scale(0.8)')
 
   function update(source) {
     const duration = d3.event && d3.event.altKey ? 2500 : 250
