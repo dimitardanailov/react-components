@@ -39,6 +39,9 @@ function MultiSelectorPage() {
     console.log('ids .......', ids.join('#'))
   }
 
+  const zoomInIdentifier = 'multi-selector-button-zoom-in'
+  const zoomOutIdentifier = 'multi-selector-button-zoom-out'
+
   const params = {
     dbNodes,
     dbSelectedEntities,
@@ -47,6 +50,8 @@ function MultiSelectorPage() {
     update: update,
     updateParentChildRelationship,
     updateDatabaseMetaData,
+    zoomInIdentifier,
+    zoomOutIdentifier,
   }
 
   return React.createElement(D3TreeNodeSwitcher, params)
