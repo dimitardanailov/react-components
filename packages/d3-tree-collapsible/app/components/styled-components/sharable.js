@@ -81,12 +81,20 @@ const EntitySwitcher = window.styled.button`
   }
 `
 
-const IconChecked = window.styled.svg`
+// https://feathericons.com/
+const BasicFeatherIcon = window.styled.svg`
   fill: none;
-  stroke: white;
   stroke-width: 2px;
   width: 24px;
   height: 24px;
+`
+
+const IconChecked = window.styled(BasicFeatherIcon)`
+  stroke: #fff;
+`
+
+const StyledPlusIcon = window.styled(BasicFeatherIcon)`
+  stroke: #000;
 `
 
 const ZoomIn = window.styled.button`
@@ -127,8 +135,10 @@ export {
   StyledSelectorListTextItem,
   StyledNodeContainer,
   EntitySwitcher,
-  IconChecked,
   entityActiveColour,
+  IconChecked,
+  BasicFeatherIcon,
+  StyledPlusIcon,
   ZoomIn,
   ZoomOut,
 }
