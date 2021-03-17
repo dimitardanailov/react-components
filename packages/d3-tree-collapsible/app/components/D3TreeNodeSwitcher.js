@@ -3,15 +3,13 @@ import createTreeNodeSwitcher from './machines/TreeNodeSwitcher'
 import { useMachine } from '@xstate/react'
 
 import SelectorListItem from './SelectorListItem'
+import D3TreeModeSwitcher from './D3TreeModeSwitcher'
 
 import {
   ElementWrapper,
   SVGContainer,
-  ParentContainer,
   entityActiveColour,
-  EntitySwitcher,
   StyledNodeContainer,
-  IconChecked,
 } from './styled-components/sharable'
 
 // ============ D3TreeNodeSwitcher ====================
@@ -137,45 +135,13 @@ function D3TreeNodeSwitcher({
     nodeElements,
   )
 
-  // ============ Entity Switcher ====================
-  const entityInfoSwitcherLabel = React.createElement(
-    'span',
-    {
-      className: 'ml-2',
+  const treeModeSwitcher = React.createElement(D3TreeModeSwitcher, {
+    machine: {
+      state: stateMultiSelector,
+      send: sendMultiSelector,
+      service: serviceMultiSelector,
     },
-    `Entity ${entityType}: add or remove relationship`,
-  )
-
-  const polyline = React.createElement('polyline', {
-    points: '20 6 9 17 4 12',
   })
-  const checkedIcon = React.createElement(
-    IconChecked,
-    {
-      viewBox: '0 0 24 24',
-    },
-    polyline,
-  )
-  const switcherCollapseModeSelectEntityMode = React.createElement(
-    EntitySwitcher,
-    {
-      checked: stateMultiSelector.matches('select_entity'),
-      onClick: () => {
-        if (stateMultiSelector.matches('collapse')) {
-          sendMultiSelector('SELECT_ENTITY')
-        } else {
-          sendMultiSelector('COLLAPSE')
-        }
-      },
-    },
-    checkedIcon,
-  )
-  const entitySwitcherContainer = React.createElement(
-    ParentContainer,
-    null,
-    switcherCollapseModeSelectEntityMode,
-    entityInfoSwitcherLabel,
-  )
 
   const d3Container = React.createElement(D3MultiSelectorTreeContainer, {
     ref: childRef,
@@ -192,7 +158,7 @@ function D3TreeNodeSwitcher({
     null,
     nodeContainer,
     debugContainer,
-    entitySwitcherContainer,
+    treeModeSwitcher,
     d3Container,
   )
 
