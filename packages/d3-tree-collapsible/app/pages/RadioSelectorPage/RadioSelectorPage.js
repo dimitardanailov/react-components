@@ -35,13 +35,20 @@ function RadioSelectorPage() {
     console.log('updateDatabaseMetaData', entity)
   }
 
+  const zoomInIdentifier = 'radio-button-zoom-in'
+  const zoomOutIdentifier = 'radio-button-zoom-out'
+
   const params = {
     dbNodes,
     dbSelectedEntity,
     debug: true,
     updateDatabaseMetaData,
     updateParentChildRelationship,
+    zoomInIdentifier,
+    zoomOutIdentifier,
   }
+
+  console.log('params', params)
 
   return React.createElement(D3TreeRadioButton, params)
 }
