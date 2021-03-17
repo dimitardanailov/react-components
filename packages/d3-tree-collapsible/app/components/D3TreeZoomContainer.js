@@ -3,6 +3,14 @@ import FeatherMinusIcon from './icons/FeatherMinusIcon'
 
 import { SimpleButton, StyledZoomContainer } from './styled-components/sharable'
 
+const StyledD3ZoomDelimiter = window.styled.div`
+  positiona: relative;
+
+  display: inline-block;
+  width: 1px;
+  margin: 0 0.2rem;
+`
+
 function D3ZoomContainer({ zoomInIdentifier, zoomOutIdentifier }) {
   const zoomInContainer = React.createElement(
     SimpleButton,
@@ -20,10 +28,13 @@ function D3ZoomContainer({ zoomInIdentifier, zoomOutIdentifier }) {
     FeatherMinusIcon(),
   )
 
+  const delimiter = React.createElement(StyledD3ZoomDelimiter)
+
   const zoomContainer = React.createElement(
     StyledZoomContainer,
     {},
     zoomInContainer,
+    delimiter,
     zoomOutContainer,
   )
 
