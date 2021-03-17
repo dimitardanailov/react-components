@@ -2,8 +2,22 @@ import FeatherPlusIcon from './icons/FeatherPlusIcon'
 import FeatherMinusIcon from './icons/FeatherMinusIcon'
 
 function D3ZoomContainer({ zoomInIdentifier, zoomOutIdentifier }) {
+  const SimpleButton = window.styled.button`
+    position: relative;
+
+    margin-left: 0.4rem;
+    padding: 0.2rem;
+    border-radius: 12.5%;
+    border: 2px solid #808080;
+    background: #fff;
+
+    &:focus {
+      outline: none;
+    }
+  `
+
   const zoomInContainer = React.createElement(
-    'div',
+    SimpleButton,
     {
       id: zoomInIdentifier,
     },
@@ -11,15 +25,23 @@ function D3ZoomContainer({ zoomInIdentifier, zoomOutIdentifier }) {
   )
 
   const zoomOutContainer = React.createElement(
-    'div',
+    SimpleButton,
     {
       id: zoomOutIdentifier,
     },
     FeatherMinusIcon(),
   )
 
+  const StyledZoomContainer = window.styled.div`
+    position: relative;
+
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+  `
+
   const zoomContainer = React.createElement(
-    'div',
+    StyledZoomContainer,
     {},
     zoomInContainer,
     zoomOutContainer,
