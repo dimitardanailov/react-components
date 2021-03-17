@@ -12,6 +12,12 @@ import {
   StyledNodeContainer,
 } from './styled-components/sharable'
 
+import D3TreeZoomContainer, {
+  zoomConfiguration,
+  zoomInFunction,
+  zoomOutFunction,
+} from './D3TreeZoomContainer'
+
 // ============ D3TreeNodeSwitcher ====================
 function D3TreeNodeSwitcher({
   dbNodes,
@@ -20,6 +26,8 @@ function D3TreeNodeSwitcher({
   debug,
   updateParentChildRelationship,
   updateDatabaseMetaData,
+  zoomInIdentifier,
+  zoomOutIdentifier,
 }) {
   // ============ State machines ====================
   const machine = createTreeMultiSelectorStateMachine({
@@ -51,7 +59,12 @@ function D3TreeNodeSwitcher({
   const [treeData, setTreeData] = React.useState(null)
   React.useEffect(() => {
     if (treeData !== null) {
-      childRef.current.draw(treeData, selectedEntities)
+      childRef.current.draw(
+        treeData,
+        selectedEntities,
+        zoomInIdentifier,
+        zoomOutIdentifier,
+      )
     }
   }, [treeData, selectedEntities])
 
@@ -153,11 +166,17 @@ function D3TreeNodeSwitcher({
     },
   })
 
+  const wrapperZoomButtons = React.createElement(D3TreeZoomContainer, {
+    zoomInIdentifier: zoomInIdentifier,
+    zoomOutIdentifier: zoomOutIdentifier,
+  })
+
   const Wrapper = React.createElement(
     ElementWrapper,
     null,
     nodeContainer,
     debugContainer,
+    wrapperZoomButtons,
     treeModeSwitcher,
     d3Container,
   )
@@ -193,14 +212,18 @@ class D3MultiSelectorTreeContainer extends React.Component {
     }
   }
 
-  draw(treeData, selectedEntities) {
+  draw(treeData, selectedEntities, zoomInIdentifier, zoomOutIdentifier) {
     const width = 800
     const node = loadMultiSelectTree(
       width,
       treeData,
       selectedEntities,
+      zoomInIdentifier,
+      zoomOutIdentifier,
       this.machine,
       this.updateDatabaseMetaData,
+      zoomInIdentifier,
+      zoomOutIdentifier,
     )
 
     d3.select(this.container)
@@ -220,6 +243,8 @@ function loadMultiSelectTree(
   width,
   data,
   selectedEntities,
+  zoomInIdentifier,
+  zoomOutIdentifier,
   machine,
   updateDatabaseMetaData,
 ) {
@@ -288,13 +313,18 @@ function loadMultiSelectTree(
     .style('font', '12px sans-serif')
     .style('user-select', 'none')
 
-  const gLink = svg
+  // Zoom setup
+  const { g, zoom } = zoomConfiguration(svg)
+  zoomInFunction(svg, zoom, zoomInIdentifier)
+  zoomOutFunction(svg, zoom, zoomOutIdentifier)
+
+  const gLink = g
     .append('g')
     .attr('fill', 'none')
     .attr('stroke-opacity', 0.25)
     .attr('stroke-width', 1.5)
 
-  const gNode = svg
+  const gNode = g
     .append('g')
     .attr('cursor', 'pointer')
     .attr('pointer-events', 'all')
