@@ -1,37 +1,13 @@
-import { ZoomIn, ZoomOut, StyledPlusIcon } from './styled-components/sharable'
+import { ZoomOut } from './styled-components/sharable'
+import FeatherPlusIcon from './icons/FeatherPlusIcon'
 
 function D3ZoomContainer({ zoomInIdentifier, zoomOutIdentifier }) {
-  // <line x1="12" y1="5" x2="12" y2="19">
-  const plusIconLine1 = React.createElement('line', {
-    x1: 12,
-    y1: 5,
-    x2: 12,
-    y2: 19,
-  })
-
-  // <line x1="5" y1="12" x2="19" y2="12"></line>
-  const plusIconLine2 = React.createElement('line', {
-    x1: 5,
-    y1: 12,
-    x2: 19,
-    y2: 12,
-  })
-
-  const plusIcon = React.createElement(
-    StyledPlusIcon,
-    {
-      viewBox: '0 0 24 24',
-    },
-    plusIconLine1,
-    plusIconLine2,
-  )
-
   const zoomInContainer = React.createElement(
     'div',
     {
       id: zoomInIdentifier,
     },
-    plusIcon,
+    FeatherPlusIcon(),
   )
 
   const zoomOutIcon = React.createElement(
