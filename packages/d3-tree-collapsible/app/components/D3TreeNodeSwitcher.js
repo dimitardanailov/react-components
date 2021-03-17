@@ -4,6 +4,7 @@ import { useMachine } from '@xstate/react'
 
 import SelectorListItem from './SelectorListItem'
 import D3TreeModeSwitcher from './D3TreeModeSwitcher'
+import D3Toolbar from './D3Toolbar'
 
 import {
   ElementWrapper,
@@ -148,7 +149,9 @@ function D3TreeNodeSwitcher({
     nodeElements,
   )
 
-  const treeModeSwitcher = React.createElement(D3TreeModeSwitcher, {
+  const d3Container = React.createElement(D3MultiSelectorTreeContainer, {
+    ref: childRef,
+    updateDatabaseMetaData,
     machine: {
       state: stateMultiSelector,
       send: sendMultiSelector,
@@ -156,9 +159,7 @@ function D3TreeNodeSwitcher({
     },
   })
 
-  const d3Container = React.createElement(D3MultiSelectorTreeContainer, {
-    ref: childRef,
-    updateDatabaseMetaData,
+  const treeModeSwitcher = React.createElement(D3TreeModeSwitcher, {
     machine: {
       state: stateMultiSelector,
       send: sendMultiSelector,
@@ -171,13 +172,14 @@ function D3TreeNodeSwitcher({
     zoomOutIdentifier: zoomOutIdentifier,
   })
 
+  const toolbar = D3Toolbar(wrapperZoomButtons, treeModeSwitcher)
+
   const Wrapper = React.createElement(
     ElementWrapper,
     null,
     nodeContainer,
     debugContainer,
-    wrapperZoomButtons,
-    treeModeSwitcher,
+    toolbar,
     d3Container,
   )
 
