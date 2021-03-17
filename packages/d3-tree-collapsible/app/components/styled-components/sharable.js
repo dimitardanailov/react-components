@@ -93,10 +93,6 @@ const IconChecked = window.styled(BasicFeatherIcon)`
   stroke: #fff;
 `
 
-const StyledPlusIcon = window.styled(BasicFeatherIcon)`
-  stroke: #000;
-`
-
 const ZoomIn = window.styled.button`
   position: relative;
   margin-left: 0.4rem;
@@ -138,7 +134,6 @@ export {
   entityActiveColour,
   IconChecked,
   BasicFeatherIcon,
-  StyledPlusIcon,
   ZoomIn,
   ZoomOut,
 }
