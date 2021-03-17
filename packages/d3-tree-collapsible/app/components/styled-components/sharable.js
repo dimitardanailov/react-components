@@ -68,8 +68,7 @@ const StyledNodeContainer = window.styled.div`
 const entityActiveColour = '#ab56af'
 const EntitySwitcher = window.styled.button`
   position: relative;
-
-  margin-left: 0.4rem;
+  
   padding: 0.2rem;
   border-radius: 12.5%;
   border: 2px solid ${props =>
@@ -93,40 +92,9 @@ const IconChecked = window.styled(BasicFeatherIcon)`
   stroke: #fff;
 `
 
-const ZoomIn = window.styled.button`
-  position: relative;
-  margin-left: 0.4rem;
-  padding: 0.2rem;
-  border-radius: 12.5%;
-  background: rgb(255, 255, 255);
-  border: 2px solid rgb(128, 128, 128);
-  width: 34px;
-  height: 36px;
-
-  &:focus {
-    outline: none;
-  }
-`
-
-const ZoomOut = window.styled.button`
-  position: relative;
-  margin-left: 0.4rem;
-  padding: 0.2rem;
-  border-radius: 12.5%;
-  background: rgb(255, 255, 255);
-  border: 2px solid rgb(128, 128, 128);
-  width: 34px;
-  height: 36px;
-
-  &:focus {
-    outline: none;
-  }
-`
-
 const SimpleButton = window.styled.button`
   position: relative;
 
-  margin-left: 0.4rem;
   padding: 0.2rem;
   border-radius: 12.5%;
   border: 2px solid #808080;
@@ -156,8 +124,6 @@ export {
   entityActiveColour,
   IconChecked,
   BasicFeatherIcon,
-  ZoomIn,
-  ZoomOut,
   SimpleButton,
   StyledZoomContainer,
 }
