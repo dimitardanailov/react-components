@@ -1,5 +1,5 @@
-import { ZoomOut } from './styled-components/sharable'
 import FeatherPlusIcon from './icons/FeatherPlusIcon'
+import FeatherMinusIcon from './icons/FeatherMinusIcon'
 
 function D3ZoomContainer({ zoomInIdentifier, zoomOutIdentifier }) {
   const zoomInContainer = React.createElement(
@@ -10,20 +10,12 @@ function D3ZoomContainer({ zoomInIdentifier, zoomOutIdentifier }) {
     FeatherPlusIcon(),
   )
 
-  const zoomOutIcon = React.createElement(
-    'i',
-    {
-      className: 'fas fa-minus',
-    },
-    null,
-  )
-
   const zoomOutContainer = React.createElement(
-    ZoomOut,
+    'div',
     {
       id: zoomOutIdentifier,
     },
-    zoomOutIcon,
+    FeatherMinusIcon(),
   )
 
   const zoomContainer = React.createElement(
