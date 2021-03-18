@@ -46,7 +46,7 @@ const zoomConfiguration = svg => {
 
   const zoom = d3
     .zoom()
-    .scaleExtent([0.05, 3])
+    .scaleExtent([0.7, 1.5])
     .on('zoom', event => {
       return g.attr('transform', event.transform)
     })
@@ -58,6 +58,7 @@ const zoomConfiguration = svg => {
 
   return { g, zoom }
 }
+
 const zoomInFunction = (svg, zoom, zoomInIdentifier) => {
   d3.select('#' + zoomInIdentifier).on('click', () => {
     zoom.scaleBy(svg.transition().duration(700), 1.2)
