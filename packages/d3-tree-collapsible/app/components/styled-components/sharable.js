@@ -136,8 +136,15 @@ const FooterWrapper = window.styled.div`
   margin: 1rem 0;
 `
 
+const ListViewWrapper = window.styled.a`
+  color: var(--blue);
+  text-decoration: none;
+  cursor: pointer;
+`
+
 export {
   ElementWrapper,
+  ListViewWrapper,
   FooterWrapper,
   Button,
   ButtonWrapperStyled,

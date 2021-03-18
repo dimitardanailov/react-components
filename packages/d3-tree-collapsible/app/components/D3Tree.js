@@ -1,16 +1,6 @@
 import createTreeStateMachine from './machines/TreeStateMachine'
 const { useMachine } = XStateReact
 
-const ElementWrapper = window.styled.div`
-  margin: 1rem;
-`
-
-const ListViewWrapper = window.styled.a`
-  color: var(--blue);
-  text-decoration: none;
-  cursor: pointer;
-`
-
 const Switcher = window.styled.button`
   position: relative;
 
@@ -25,10 +15,12 @@ const Switcher = window.styled.button`
 `
 
 import {
+  ElementWrapper,
+  ListViewWrapper,
   ButtonWrapperStyled,
+  Button,
   SVGContainer,
   FooterWrapper,
-  Button,
   ParentContainer,
 } from './styled-components/sharable'
 
