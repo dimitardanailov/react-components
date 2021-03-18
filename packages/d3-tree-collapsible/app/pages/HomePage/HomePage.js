@@ -17,6 +17,9 @@ function HomePage() {
     return promise
   }
 
+  const zoomInIdentifier = 'collection-tree-zoom-in'
+  const zoomOutIdentifier = 'collection-tree-zoom-out'
+
   return React.createElement(D3Tree, {
     jsonData: data,
     jsonRecord: jsonRecord,
@@ -32,6 +35,8 @@ function HomePage() {
     showFormSuccessToast: () => {
       console.log('showFormSuccessToast')
     },
+    zoomInIdentifier,
+    zoomOutIdentifier,
   })
 }
 

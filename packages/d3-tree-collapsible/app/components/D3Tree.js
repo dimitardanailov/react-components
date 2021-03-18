@@ -1,6 +1,12 @@
 import createTreeStateMachine from './machines/TreeStateMachine'
 const { useMachine } = XStateReact
 
+import D3TreeZoomContainer, {
+  zoomConfiguration,
+  zoomInFunction,
+  zoomOutFunction,
+} from './D3TreeZoomContainer'
+
 const Switcher = window.styled.button`
   position: relative;
 
@@ -33,6 +39,8 @@ function D3Tree({
   navigateToParent,
   showFormSuccessToast,
   entityType,
+  zoomInIdentifier,
+  zoomOutIdentifier,
 }) {
   const machine = createTreeStateMachine({
     child: {
@@ -56,7 +64,7 @@ function D3Tree({
 
   React.useEffect(() => {
     send('COLLAPSE')
-    childRef.current.draw(data, record)
+    childRef.current.draw(data, record, zoomInIdentifier, zoomOutIdentifier)
   }, [data])
 
   const setButtonClassName = stateLabel => {
@@ -237,12 +245,18 @@ function D3Tree({
       : null,
   )
 
+  const wrapperZoomButtons = React.createElement(D3TreeZoomContainer, {
+    zoomInIdentifier: zoomInIdentifier,
+    zoomOutIdentifier: zoomOutIdentifier,
+  })
+
   const Wrapper = React.createElement(
     ElementWrapper,
     null,
     ButtonWrapper,
     debugContainer,
     parentEntityInfoContainer,
+    wrapperZoomButtons,
     listView,
     d3Container,
     footer,
@@ -274,12 +288,14 @@ class D3TreeContainer extends React.Component {
     }
   }
 
-  draw(data, record) {
+  draw(data, record, zoomInIdentifier, zoomOutIdentifier) {
     const width = 800
     const node = loadTree(
       width,
       data,
       record,
+      zoomInIdentifier,
+      zoomOutIdentifier,
       this.state,
       this.send,
       this.service,
@@ -305,7 +321,16 @@ D3TreeContainer.defaultProps = {
 
 D3TreeContainer.propTypes = {}
 
-function loadTree(width, data, record, state, send, service) {
+function loadTree(
+  width,
+  data,
+  record,
+  zoomInIdentifier,
+  zoomOutIdentifier,
+  state,
+  send,
+  service,
+) {
   const margin = { top: 20, right: 120, bottom: 20, left: 120 }
   const dx = 30
   const dy = Math.min(width / (3 + 2), dx * 10)
@@ -346,13 +371,18 @@ function loadTree(width, data, record, state, send, service) {
     .style('font', '12px sans-serif')
     .style('user-select', 'none')
 
-  const gLink = svg
+  // Zoom setup
+  const { g, zoom } = zoomConfiguration(svg)
+  zoomInFunction(svg, zoom, zoomInIdentifier)
+  zoomOutFunction(svg, zoom, zoomOutIdentifier)
+
+  const gLink = g
     .append('g')
     .attr('fill', 'none')
     .attr('stroke-opacity', 0.25)
     .attr('stroke-width', 1.5)
 
-  const gNode = svg
+  const gNode = g
     .append('g')
     .attr('cursor', 'pointer')
     .attr('pointer-events', 'all')
