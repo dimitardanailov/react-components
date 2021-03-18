@@ -11,7 +11,7 @@ const StyledD3ZoomDelimiter = window.styled.div`
   margin: 0 0.2rem;
 `
 
-function D3ZoomContainer({ zoomInIdentifier, zoomOutIdentifier }) {
+function D3TreeZoomContainer({ zoomInIdentifier, zoomOutIdentifier }) {
   const zoomInContainer = React.createElement(
     SimpleButton,
     {
@@ -70,5 +70,5 @@ const zoomOutFunction = (svg, zoom, zoomOutIdentifier) => {
   })
 }
 
-export default D3ZoomContainer
+export default D3TreeZoomContainer
 export { zoomConfiguration, zoomInFunction, zoomOutFunction }

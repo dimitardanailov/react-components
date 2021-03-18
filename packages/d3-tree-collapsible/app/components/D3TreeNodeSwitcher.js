@@ -224,8 +224,6 @@ class D3MultiSelectorTreeContainer extends React.Component {
       zoomOutIdentifier,
       this.machine,
       this.updateDatabaseMetaData,
-      zoomInIdentifier,
-      zoomOutIdentifier,
     )
 
     d3.select(this.container)
