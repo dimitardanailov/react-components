@@ -137,6 +137,11 @@ const FooterWrapper = window.styled.div`
 `
 
 const ListViewWrapper = window.styled.a`
+  positon: relative;
+
+  display: block;
+  margin: 0.25rem 0;
+
   color: var(--blue);
   text-decoration: none;
   cursor: pointer;
