@@ -21,7 +21,7 @@ const updateRelationShipConf = {
   cond: dataIsValid,
 }
 
-function createTreeStateMachine({ child }) {
+function createCollectionTreeStateMachine({ child }) {
   return Machine(
     {
       id: 'D3CollectionTreeMachine',
@@ -101,4 +101,4 @@ function createTreeStateMachine({ child }) {
   )
 }
 
-export default createTreeStateMachine
+export default createCollectionTreeStateMachine

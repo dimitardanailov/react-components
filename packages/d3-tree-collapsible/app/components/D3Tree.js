@@ -1,4 +1,4 @@
-import createTreeStateMachine from './machines/TreeCollectionStateMachine'
+import createCollectionTreeStateMachine from './machines/TreeCollectionStateMachine'
 const { useMachine } = XStateReact
 
 import D3TreeZoomContainer, {
@@ -44,7 +44,7 @@ function D3Tree({
   zoomInIdentifier,
   zoomOutIdentifier,
 }) {
-  const machine = createTreeStateMachine({
+  const machine = createCollectionTreeStateMachine({
     child: {
       _id: jsonRecord._id,
       name: jsonRecord.name,
