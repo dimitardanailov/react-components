@@ -1,4 +1,4 @@
-import createTreeStateMachine from './machines/TreeStateMachine'
+import createTreeStateMachine from './machines/TreeCollectionStateMachine'
 const { useMachine } = XStateReact
 
 import D3TreeZoomContainer, {

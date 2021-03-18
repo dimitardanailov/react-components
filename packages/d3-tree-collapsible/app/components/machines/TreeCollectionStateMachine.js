@@ -24,7 +24,7 @@ const updateRelationShipConf = {
 function createTreeStateMachine({ child }) {
   return Machine(
     {
-      id: 'D3TreeMachine',
+      id: 'D3CollectionTreeMachine',
       initial: 'collapse',
       context: {
         child: child,
