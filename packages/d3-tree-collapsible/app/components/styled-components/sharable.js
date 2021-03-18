@@ -140,7 +140,7 @@ const ListViewWrapper = window.styled.a`
   positon: relative;
 
   display: block;
-  margin: 0.25rem 0;
+  margin: ${props => props.margin};
 
   color: var(--blue);
   text-decoration: none;

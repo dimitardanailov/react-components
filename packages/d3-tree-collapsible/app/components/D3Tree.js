@@ -7,18 +7,7 @@ import D3TreeZoomContainer, {
   zoomOutFunction,
 } from './D3TreeZoomContainer'
 
-const Switcher = window.styled.button`
-  position: relative;
-
-  padding: 0.8rem;
-  border-radius: 12.5%;
-  border: 2px solid ${props => (props.checked ? 'orange' : '#808080')};
-  background: ${props => (props.checked ? 'orange' : '#fff')};
-
-  &:focus {
-    outline: none;
-  }
-`
+import D3Toolbar from './D3Toolbar'
 
 import {
   ElementWrapper,
@@ -29,6 +18,19 @@ import {
   FooterWrapper,
   ParentContainer,
 } from './styled-components/sharable'
+
+const Switcher = window.styled.button`
+  position: relative;
+
+  padding: 0.95rem;
+  border-radius: 12.5%;
+  border: 2px solid ${props => (props.checked ? 'orange' : '#808080')};
+  background: ${props => (props.checked ? 'orange' : '#fff')};
+
+  &:focus {
+    outline: none;
+  }
+`
 
 function D3Tree({
   jsonData,
@@ -201,6 +203,7 @@ function D3Tree({
       onClick: () => {
         navigateToListView()
       },
+      margin: '0.25rem 0.4rem',
     },
     'List view >>',
   )
@@ -250,13 +253,14 @@ function D3Tree({
     zoomOutIdentifier: zoomOutIdentifier,
   })
 
+  const toolbar = D3Toolbar(wrapperZoomButtons, parentEntityInfoContainer)
+
   const Wrapper = React.createElement(
     ElementWrapper,
     null,
     ButtonWrapper,
     debugContainer,
-    parentEntityInfoContainer,
-    wrapperZoomButtons,
+    toolbar,
     listView,
     d3Container,
     footer,
