@@ -1,8 +1,10 @@
-const ToolbarWrapper = window.styled.nav`
+const StyledToolbarWrapper = window.styled.nav`
   positon: relative;
 
   display: flex;
   flex-direction: row;
+
+  margin-left: 0.4rem;
 `
 
 const StyledD3ToolbarDelimiter = window.styled.div`
@@ -18,7 +20,7 @@ function D3Toolbar(wrapperZoomButtons, treeModeSwitcher) {
   const delimiter = React.createElement(StyledD3ToolbarDelimiter)
 
   return React.createElement(
-    ToolbarWrapper,
+    StyledToolbarWrapper,
     null,
     wrapperZoomButtons,
     delimiter,
