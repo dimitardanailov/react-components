@@ -11,44 +11,6 @@ const ListViewWrapper = window.styled.a`
   cursor: pointer;
 `
 
-const ParentContainer = window.styled.div`
-  position: relative;
-
-  display: flex;
-  flex-direction row;
-  justify-content: flex-start;
-  align-items: center;
-`
-
-const ButtonWrapperStyled = window.styled.div`
-  position: relative;
-
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 0.5rem;
-`
-
-const Button = window.styled.button`
-  position: relative;
-
-  margin-right: 0.25rem;
-`
-
-const FooterWrapper = window.styled.div`
-  position: relative;
-  
-  display: flex;
-  justify-content: flex-end;
-
-  margin: 1rem 0;
-`
-
-const SVGContainer = window.styled.div`
-  position: relative;
-
-  border: 2px solid #808080;
-`
-
 const Switcher = window.styled.button`
   position: relative;
 
@@ -61,6 +23,14 @@ const Switcher = window.styled.button`
     outline: none;
   }
 `
+
+import {
+  ButtonWrapperStyled,
+  SVGContainer,
+  FooterWrapper,
+  Button,
+  ParentContainer,
+} from './styled-components/sharable'
 
 function D3Tree({
   jsonData,

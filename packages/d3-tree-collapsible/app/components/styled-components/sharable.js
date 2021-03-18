@@ -92,6 +92,20 @@ const IconChecked = window.styled(BasicFeatherIcon)`
   stroke: #fff;
 `
 
+const ButtonWrapperStyled = window.styled.div`
+  position: relative;
+
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 0.5rem;
+`
+
+const Button = window.styled.button`
+  position: relative;
+
+  margin-right: 0.25rem;
+`
+
 const SimpleButton = window.styled.button`
   position: relative;
 
@@ -113,8 +127,21 @@ const StyledZoomContainer = window.styled.div`
   justify-content: space-between;
 `
 
+const FooterWrapper = window.styled.div`
+  position: relative;
+  
+  display: flex;
+  justify-content: flex-end;
+
+  margin: 1rem 0;
+`
+
 export {
   ElementWrapper,
+  FooterWrapper,
+  Button,
+  ButtonWrapperStyled,
+  SimpleButton,
   SVGContainer,
   ParentContainer,
   StyledSelectorListItem,
@@ -124,6 +151,5 @@ export {
   entityActiveColour,
   IconChecked,
   BasicFeatherIcon,
-  SimpleButton,
   StyledZoomContainer,
 }
