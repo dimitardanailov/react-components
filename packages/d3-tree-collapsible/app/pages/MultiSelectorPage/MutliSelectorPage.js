@@ -42,14 +42,22 @@ function MultiSelectorPage() {
   const zoomInIdentifier = 'multi-selector-button-zoom-in'
   const zoomOutIdentifier = 'multi-selector-button-zoom-out'
 
+  const parentUpdateDBSelectedEntities = function() {
+    const promise = new Promise(resolve => {
+      resolve(dbSelectedEntities)
+    })
+
+    return promise
+  }
+
   const params = {
     dbNodes,
-    dbSelectedEntities,
     entityType: 'entity',
     debug: true,
     update: update,
     updateParentChildRelationship,
     updateDatabaseMetaData,
+    parentUpdateDBSelectedEntities: parentUpdateDBSelectedEntities(),
     zoomInIdentifier,
     zoomOutIdentifier,
   }
