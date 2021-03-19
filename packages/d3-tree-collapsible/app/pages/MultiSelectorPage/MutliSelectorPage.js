@@ -57,7 +57,7 @@ function MultiSelectorPage() {
     update: update,
     updateParentChildRelationship,
     updateDatabaseMetaData,
-    parentUpdateDBSelectedEntities: parentUpdateDBSelectedEntities(),
+    parentUpdateDBSelectedEntities: parentUpdateDBSelectedEntities,
     zoomInIdentifier,
     zoomOutIdentifier,
   }

@@ -58,7 +58,7 @@ function D3TreeNodeSwitcher({
 
   if (parentUpdateDBSelectedEntities != null) {
     const updateDBSelectedEntities = () => {
-      parentUpdateDBSelectedEntities.then(entities => {
+      parentUpdateDBSelectedEntities().then(entities => {
         setSelectedEntities(entities)
         sendMultiSelector('SET_DB_SELECTED_ENTITIES', { data: entities })
         sendMultiSelector('COLLAPSE')
