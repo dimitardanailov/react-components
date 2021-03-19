@@ -22,17 +22,17 @@ import D3TreeZoomContainer, {
 // ============ D3TreeNodeSwitcher ====================
 function D3TreeNodeSwitcher({
   dbNodes,
-  dbSelectedEntities,
   entityType,
   debug,
   updateParentChildRelationship,
   updateDatabaseMetaData,
+  parentUpdateDBSelectedEntities,
   zoomInIdentifier,
   zoomOutIdentifier,
 }) {
   // ============ State machines ====================
   const machine = createTreeMultiSelectorStateMachine({
-    dbSelectedEntities,
+    dbSelectedEntities: [],
   })
   const [
     stateMultiSelector,
@@ -54,9 +54,22 @@ function D3TreeNodeSwitcher({
   const childRef = React.useRef()
 
   // ============ hooks ====================
-  const [selectedEntities, setSelectedEntities] = React.useState(
-    dbSelectedEntities,
-  )
+  const [selectedEntities, setSelectedEntities] = React.useState([])
+
+  if (parentUpdateDBSelectedEntities != null) {
+    const updateDBSelectedEntities = () => {
+      parentUpdateDBSelectedEntities.then(entities => {
+        setSelectedEntities(entities)
+        sendMultiSelector('SET_DB_SELECTED_ENTITIES', { data: entities })
+        sendMultiSelector('COLLAPSE')
+      })
+    }
+
+    if (selectedEntities.length === 0) {
+      updateDBSelectedEntities()
+    }
+  }
+
   const [treeData, setTreeData] = React.useState(null)
   React.useEffect(() => {
     if (treeData !== null) {
