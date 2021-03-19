@@ -24,7 +24,7 @@ import {
 // ============ D3TreeRadioButton ====================
 function D3TreeRadioButton({
   dbNodes,
-  dbSelectedEntity,
+  parentUpdateDBSelectedEntity,
   debug,
   updateDatabaseMetaData,
   updateParentChildRelationship,
@@ -37,7 +37,7 @@ function D3TreeRadioButton({
   )
 
   const machine = createTreeRadioButtonStateMachine({
-    dbSelectedEntity,
+    dbSelectedEntity: null,
   })
   const [stateRadioButton, sendRadioButton, serviceRadioButton] = useMachine(
     machine,
@@ -55,7 +55,21 @@ function D3TreeRadioButton({
   }
 
   // ============ hooks ====================
-  const [selectedEntity, setSelectedEntity] = React.useState(dbSelectedEntity)
+  const [selectedEntity, setSelectedEntity] = React.useState(null)
+  if (parentUpdateDBSelectedEntity != null) {
+    const updateDBSelectedEntity = () => {
+      parentUpdateDBSelectedEntity().then(entity => {
+        setSelectedEntity(entity)
+        sendRadioButton('ADD_ENTITY', { data: entity })
+        sendRadioButton('COLLAPSE')
+      })
+    }
+
+    if (selectedEntity == null) {
+      updateDBSelectedEntity()
+    }
+  }
+
   const [treeData, setTreeData] = React.useState(null)
   React.useEffect(() => {
     if (treeData !== null) {
