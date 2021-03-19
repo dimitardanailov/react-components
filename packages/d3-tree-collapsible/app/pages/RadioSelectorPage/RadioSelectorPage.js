@@ -38,9 +38,17 @@ function RadioSelectorPage() {
   const zoomInIdentifier = 'radio-button-zoom-in'
   const zoomOutIdentifier = 'radio-button-zoom-out'
 
+  const parentUpdateDBSelectedEntity = function() {
+    const promise = new Promise(resolve => {
+      resolve(dbSelectedEntity)
+    })
+
+    return promise
+  }
+
   const params = {
     dbNodes,
-    dbSelectedEntity,
+    parentUpdateDBSelectedEntity,
     debug: true,
     updateDatabaseMetaData,
     updateParentChildRelationship,
