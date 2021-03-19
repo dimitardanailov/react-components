@@ -11,6 +11,19 @@ function createTreeMultiSelectorStateMachine({ dbSelectedEntities }) {
       collapse: {
         on: {
           SELECT_ENTITY: 'select_entity',
+          SET_DB_SELECTED_ENTITIES: {
+            target: 'setDbSelectedEntities',
+            actions: assign((context, event) => {
+              event.data.forEach(element => {
+                context.dbSelectedEntities.push(element)
+              })
+            }),
+          },
+        },
+      },
+      setDbSelectedEntities: {
+        on: {
+          COLLAPSE: 'collapse',
         },
       },
       select_entity: {
