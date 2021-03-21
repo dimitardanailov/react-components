@@ -1,6 +1,6 @@
 import { BasicFeatherIcon } from '../styled-components/sharable'
 
-function FeatherSelectionIcon() {
+function FeatherSelectionIcon({ stroke }) {
   // <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
   const leftSide = React.createElement('path', {
     d: 'M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71',
@@ -12,7 +12,7 @@ function FeatherSelectionIcon() {
   })
 
   const Icon = window.styled(BasicFeatherIcon)`
-    stroke: #000;
+    stroke: ${stroke};
   `
 
   const icon = React.createElement(
