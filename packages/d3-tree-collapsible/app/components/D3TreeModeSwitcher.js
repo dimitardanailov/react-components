@@ -13,7 +13,9 @@ function D3TreeModeSwitcher({ machine }) {
   )
 
   const collapseModeIcon = FeatherCollapsibleTreeModeIcon()
-  const selectionModeIcon = FeatherSelectionIcon()
+  const selectionModeIcon = FeatherSelectionIcon({
+    stroke: '#fff',
+  })
 
   const switcherCollapseModeSelectEntityMode = React.createElement(
     EntitySwitcher,
