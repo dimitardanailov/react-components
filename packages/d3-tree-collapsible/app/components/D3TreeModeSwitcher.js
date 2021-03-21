@@ -1,8 +1,7 @@
-import {
-  ParentContainer,
-  EntitySwitcher,
-  IconChecked,
-} from './styled-components/sharable'
+import { ParentContainer, EntitySwitcher } from './styled-components/sharable'
+
+import FeatherCollapsibleTreeModeIcon from './icons/FeatherCollapsibleTree'
+import FeatherCheckedIcon from './icons/FeatherCheckedIcon'
 
 function D3TreeModeSwitcher({ machine }) {
   const entityInfoSwitcherLabel = React.createElement(
@@ -13,16 +12,7 @@ function D3TreeModeSwitcher({ machine }) {
     `Change collapsible tree mode`,
   )
 
-  const polyline = React.createElement('polyline', {
-    points: '20 6 9 17 4 12',
-  })
-  const checkedIcon = React.createElement(
-    IconChecked,
-    {
-      viewBox: '0 0 24 24',
-    },
-    polyline,
-  )
+  const collapseModeIcon = FeatherCollapsibleTreeModeIcon()
 
   const switcherCollapseModeSelectEntityMode = React.createElement(
     EntitySwitcher,
@@ -36,7 +26,7 @@ function D3TreeModeSwitcher({ machine }) {
         }
       },
     },
-    checkedIcon,
+    collapseModeIcon,
   )
 
   const entitySwitcherContainer = React.createElement(
