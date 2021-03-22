@@ -202,6 +202,45 @@ function D3Tree({
     'List view >>',
   )
 
+  const wrapperZoomButtons = React.createElement(D3TreeZoomContainer, {
+    zoomInIdentifier: zoomInIdentifier,
+    zoomOutIdentifier: zoomOutIdentifier,
+  })
+
+  const toolbar = D3Toolbar(wrapperZoomButtons, parentEntityInfoContainer)
+
+  const footer = footerCollectionTree(
+    state,
+    navigateToParent,
+    updateRelationshipBtnClickHandler,
+  )
+
+  const Wrapper = React.createElement(
+    ElementWrapper,
+    null,
+    ButtonWrapper,
+    debugContainer,
+    toolbar,
+    listView,
+    d3Container,
+    footer,
+  )
+
+  return Wrapper
+}
+
+function debugCollectionTree(state) {
+  const info = React.createElement('div', null, `Active mode: ${state.value}`)
+  const debug = React.createElement('div', null, JSON.stringify(state.context))
+
+  return React.createElement('div', null, info, debug)
+}
+
+function footerCollectionTree(
+  state,
+  navigateToParent,
+  updateRelationshipBtnClickHandler,
+) {
   const ButtonDismissChanges = React.createElement(
     'button',
     {
@@ -228,7 +267,8 @@ function D3Tree({
     },
     'Done and exit',
   )
-  const footer = React.createElement(
+
+  const container = React.createElement(
     FooterWrapper,
     null,
     ButtonDismissChanges,
@@ -242,32 +282,7 @@ function D3Tree({
       : null,
   )
 
-  const wrapperZoomButtons = React.createElement(D3TreeZoomContainer, {
-    zoomInIdentifier: zoomInIdentifier,
-    zoomOutIdentifier: zoomOutIdentifier,
-  })
-
-  const toolbar = D3Toolbar(wrapperZoomButtons, parentEntityInfoContainer)
-
-  const Wrapper = React.createElement(
-    ElementWrapper,
-    null,
-    ButtonWrapper,
-    debugContainer,
-    toolbar,
-    listView,
-    d3Container,
-    footer,
-  )
-
-  return Wrapper
-}
-
-function debugCollectionTree(state) {
-  const info = React.createElement('div', null, `Active mode: ${state.value}`)
-  const debug = React.createElement('div', null, JSON.stringify(state.context))
-
-  return React.createElement('div', null, info, debug)
+  return container
 }
 
 D3Tree.defaultProps = {
