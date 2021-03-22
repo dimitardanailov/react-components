@@ -188,13 +188,7 @@ function D3Tree({
 
   let debugContainer = null
   if (debug) {
-    const info = React.createElement('div', null, `Active mode: ${state.value}`)
-    const debug = React.createElement(
-      'div',
-      null,
-      JSON.stringify(state.context),
-    )
-    debugContainer = React.createElement('div', null, info, debug)
+    debugCollectionTree(state)
   }
 
   const listView = React.createElement(
@@ -267,6 +261,13 @@ function D3Tree({
   )
 
   return Wrapper
+}
+
+function debugCollectionTree(state) {
+  const info = React.createElement('div', null, `Active mode: ${state.value}`)
+  const debug = React.createElement('div', null, JSON.stringify(state.context))
+
+  return React.createElement('div', null, info, debug)
 }
 
 D3Tree.defaultProps = {
