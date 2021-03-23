@@ -21,6 +21,8 @@ import {
   entityActiveColour,
 } from './styled-components/sharable'
 
+import { d3TreeGroupColors } from './colors/_colors'
+
 // ============ D3TreeRadioButton ====================
 function D3TreeRadioButton({
   dbNodes,
@@ -348,8 +350,8 @@ function loadRadioButtonTree(
       }
 
       if (d.entityActive) {
-        colors.hasChildren = entityActiveColour
-        colors.default = '#d500f9'
+        colors.hasChildren = d3TreeGroupColors.hasChildren
+        colors.default = d3TreeGroupColors.default
       }
 
       return d._children ? colors.hasChildren : colors.default
