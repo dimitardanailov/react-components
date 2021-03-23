@@ -9,9 +9,10 @@ import D3Toolbar from './D3Toolbar'
 import {
   ElementWrapper,
   SVGContainer,
-  entityActiveColour,
   StyledNodeContainer,
 } from './styled-components/sharable'
+
+import { d3TreeGroupColors } from './colors/_colors'
 
 import D3TreeZoomContainer, {
   zoomConfiguration,
@@ -178,6 +179,7 @@ function D3TreeNodeSwitcher({
       send: sendMultiSelector,
       service: serviceMultiSelector,
     },
+    activeColor: d3TreeGroupColors.hasChildren,
   })
 
   const wrapperZoomButtons = React.createElement(D3TreeZoomContainer, {
@@ -394,8 +396,8 @@ function loadMultiSelectTree(
       }
 
       if (d.entityActive) {
-        colors.hasChildren = entityActiveColour
-        colors.default = '#d500f9'
+        colors.hasChildren = d3TreeGroupColors.hasChildren
+        colors.default = d3TreeGroupColors.default
       }
 
       return d._children ? colors.hasChildren : colors.default
