@@ -65,19 +65,22 @@ const StyledNodeContainer = window.styled.div`
   justify-content: flex-start;
 `
 
-const entityActiveColour = '#ab56af'
-const EntitySwitcher = window.styled.button`
+const TreeModeSwitcher = window.styled.button`
   position: relative;
-  
+
   padding: 0.2rem;
   border-radius: 12.5%;
-  border: 2px solid ${props =>
-    props.checked ? entityActiveColour : '#808080'};
-  background: ${props => (props.checked ? entityActiveColour : '#fff')};
 
   &:focus {
     outline: none;
   }
+`
+
+const entityActiveColour = '#ab56af'
+const EntitySwitcher = window.styled(TreeModeSwitcher)`
+  border: 2px solid ${props =>
+    props.checked ? entityActiveColour : '#808080'};
+  background: ${props => (props.checked ? entityActiveColour : '#fff')};
 `
 
 // https://feathericons.com/
