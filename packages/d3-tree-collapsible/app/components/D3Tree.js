@@ -191,16 +191,7 @@ function D3Tree({
     debugCollectionTree(state)
   }
 
-  const listView = React.createElement(
-    ListViewWrapper,
-    {
-      onClick: () => {
-        navigateToListView()
-      },
-      margin: '0.25rem 0.4rem',
-    },
-    'List view >>',
-  )
+  const listView = listViewD3Tree(navigateToListView)
 
   const wrapperZoomButtons = React.createElement(D3TreeZoomContainer, {
     zoomInIdentifier: zoomInIdentifier,
@@ -234,6 +225,19 @@ function debugCollectionTree(state) {
   const debug = React.createElement('div', null, JSON.stringify(state.context))
 
   return React.createElement('div', null, info, debug)
+}
+
+function listViewD3Tree(navigateToListView) {
+  return React.createElement(
+    ListViewWrapper,
+    {
+      onClick: () => {
+        navigateToListView()
+      },
+      margin: '0.25rem 0.4rem',
+    },
+    'List view >>',
+  )
 }
 
 function footerCollectionTree(
