@@ -18,7 +18,6 @@ import {
   ElementWrapper,
   SVGContainer,
   StyledNodeContainer,
-  entityActiveColour,
 } from './styled-components/sharable'
 
 import { d3TreeGroupColors } from './colors/_colors'
@@ -137,6 +136,7 @@ function D3TreeRadioButton({
       send: sendRadioButton,
       service: serviceRadioButton,
     },
+    activeColor: d3TreeGroupColors.hasChildren,
   })
 
   const wrapperZoomButtons = React.createElement(D3TreeZoomContainer, {
