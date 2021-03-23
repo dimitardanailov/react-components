@@ -65,22 +65,18 @@ const StyledNodeContainer = window.styled.div`
   justify-content: flex-start;
 `
 
-const TreeModeSwitcher = window.styled.button`
+const StyledTreeModeSwitcher = window.styled.button`
   position: relative;
 
   padding: 0.2rem;
   border-radius: 12.5%;
 
+  border: 2px solid ${props => (props.checked ? props.activeColor : '#808080')};
+  background: ${props => (props.checked ? props.activeColor : '#fff')};
+
   &:focus {
     outline: none;
   }
-`
-
-const entityActiveColour = '#ab56af'
-const EntitySwitcher = window.styled(TreeModeSwitcher)`
-  border: 2px solid ${props =>
-    props.checked ? entityActiveColour : '#808080'};
-  background: ${props => (props.checked ? entityActiveColour : '#fff')};
 `
 
 // https://feathericons.com/
@@ -162,8 +158,7 @@ export {
   StyledSelectorListItem,
   StyledSelectorListTextItem,
   StyledNodeContainer,
-  EntitySwitcher,
-  entityActiveColour,
+  StyledTreeModeSwitcher,
   IconChecked,
   BasicFeatherIcon,
   StyledZoomContainer,
