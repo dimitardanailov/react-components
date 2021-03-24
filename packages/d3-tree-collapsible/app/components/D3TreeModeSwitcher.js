@@ -1,9 +1,12 @@
-import { ParentContainer, EntitySwitcher } from './styled-components/sharable'
+import {
+  ParentContainer,
+  StyledTreeModeSwitcher,
+} from './styled-components/sharable'
 
 import FeatherCollapsibleTreeModeIcon from './icons/FeatherCollapsibleTree'
 import FeatherSelectionIcon from './icons/FeatherSelectionIcon'
 
-function D3TreeModeSwitcher({ machine, label }) {
+function D3TreeModeSwitcher({ machine, label, activeColor }) {
   const entityInfoSwitcherLabel = React.createElement(
     'span',
     {
@@ -18,9 +21,10 @@ function D3TreeModeSwitcher({ machine, label }) {
   })
 
   const switcherCollapseModeSelectEntityMode = React.createElement(
-    EntitySwitcher,
+    StyledTreeModeSwitcher,
     {
       checked: machine.state.matches('select_entity'),
+      activeColor,
       onClick: () => {
         if (machine.state.matches('collapse')) {
           machine.send('SELECT_ENTITY')
@@ -43,11 +47,13 @@ function D3TreeModeSwitcher({ machine, label }) {
 }
 
 D3TreeModeSwitcher.defaultProps = {
+  activeColor: 'red',
   label: 'Change collapsible tree mode',
 }
 
 D3TreeModeSwitcher.propTypes = {
   label: window.PropTypes.string,
+  activeColor: window.PropTypes.string,
 }
 
 export default D3TreeModeSwitcher
