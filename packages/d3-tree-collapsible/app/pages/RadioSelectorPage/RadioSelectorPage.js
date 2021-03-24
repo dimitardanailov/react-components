@@ -40,7 +40,11 @@ function RadioSelectorPage() {
 
   const parentUpdateDBSelectedEntity = function() {
     const promise = new Promise(resolve => {
-      resolve(dbSelectedEntity)
+      const response = {
+        entity: dbSelectedEntity,
+        parentId: '6026e7b0397ee9002f080c1b',
+      }
+      resolve(response)
     })
 
     return promise
