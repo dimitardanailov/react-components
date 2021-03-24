@@ -48,21 +48,26 @@ function D3TreeRadioButton({
   const childRef = React.useRef()
 
   // Callbacks
-  const stateSwitcherCallback = async node => {
-    const _treeData = await updateParentChildRelationship(node._id)
-    setTreeData(_treeData)
-    sendSwitcher('MAIN_NODE_IS_SELECTED', { id: node._id })
-    sendRadioButton('COLLAPSE')
+  const stateSwitcherCallback = async id => {
+    const _treeData = await updateParentChildRelationship(id)
+    if (_treeData != undefined) {
+      setTreeData(_treeData)
+      sendSwitcher('MAIN_NODE_IS_SELECTED', { id })
+      sendRadioButton('COLLAPSE')
+    }
   }
 
   // ============ hooks ====================
   const [selectedEntity, setSelectedEntity] = React.useState(null)
   if (parentUpdateDBSelectedEntity != null) {
     const updateDBSelectedEntity = () => {
-      parentUpdateDBSelectedEntity().then(entity => {
+      parentUpdateDBSelectedEntity().then(response => {
+        const { entity, parentId } = response
         setSelectedEntity(entity)
         sendRadioButton('ADD_ENTITY', { data: entity })
         sendRadioButton('COLLAPSE')
+        // parentId is the main node of the tree
+        stateSwitcherCallback(parentId)
       })
     }
 
@@ -90,7 +95,7 @@ function D3TreeRadioButton({
     if (welcomeScreen && nodes.length > 0) {
       welcomeScreen = false
       const node = nodes[0]
-      stateSwitcherCallback(node)
+      // stateSwitcherCallback(node._id)
     }
   }, [nodes])
 
