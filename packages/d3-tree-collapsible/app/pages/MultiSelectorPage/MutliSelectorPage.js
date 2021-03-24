@@ -44,7 +44,11 @@ function MultiSelectorPage() {
 
   const parentUpdateDBSelectedEntities = function() {
     const promise = new Promise(resolve => {
-      resolve(dbSelectedEntities)
+      const response = {
+        entities: dbSelectedEntities,
+        parentId: '6026e7b0397ee9002f080c1b',
+      }
+      resolve(response)
     })
 
     return promise
