@@ -1,12 +1,12 @@
 [
   {
-    "_id": "6026e7b0397ee9002f080c1b",
-    "name": "Food & Drink",
-    "identifier": "food-and-drink"
-  },
-  {
     "_id": "6026e7b0397ee9002f080c1c",
     "name": "Animals",
     "identifier": "animals"
+  },
+  {
+    "_id": "6026e7b0397ee9002f080c1b",
+    "name": "Food & Drink",
+    "identifier": "food-and-drink"
   }
 ]
