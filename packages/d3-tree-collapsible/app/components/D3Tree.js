@@ -17,20 +17,11 @@ import {
   SVGContainer,
   FooterWrapper,
   ParentContainer,
+  StyledTreeModeSwitcher,
 } from './styled-components/sharable'
 
-const Switcher = window.styled.button`
-  position: relative;
-
-  padding: 0.95rem;
-  border-radius: 12.5%;
-  border: 2px solid ${props => (props.checked ? 'orange' : '#808080')};
-  background: ${props => (props.checked ? 'orange' : '#fff')};
-
-  &:focus {
-    outline: none;
-  }
-`
+import FeatherCollapsibleTreeModeIcon from './icons/FeatherCollapsibleTree'
+import FeatherSelectionIcon from './icons/FeatherSelectionIcon'
 
 function D3Tree({
   jsonData,
@@ -165,10 +156,17 @@ function D3Tree({
       ? `Parent ${entityType}: ${state.context.parent.name}`
       : `Parent ${entityType}: {name of selected ${entityType}}`,
   )
+
+  const collapseModeIcon = FeatherCollapsibleTreeModeIcon()
+  const selectionModeIcon = FeatherSelectionIcon({
+    stroke: '#fff',
+  })
+
   const switcherCollapseModeSelectEntityMode = React.createElement(
-    Switcher,
+    StyledTreeModeSwitcher,
     {
       checked: state.matches('select_parent'),
+      activeColor: 'orange',
       onClick: () => {
         if (state.matches('collapse')) {
           send('SELECT_PARENT')
@@ -177,9 +175,10 @@ function D3Tree({
         }
       },
     },
-    '',
+    state.matches('collapse') ? collapseModeIcon : selectionModeIcon,
   )
-  const parentEntityInfoContainer = React.createElement(
+
+  const entitySwitcherContainer = React.createElement(
     ParentContainer,
     null,
     switcherCollapseModeSelectEntityMode,
@@ -198,7 +197,7 @@ function D3Tree({
     zoomOutIdentifier: zoomOutIdentifier,
   })
 
-  const toolbar = D3Toolbar(wrapperZoomButtons, parentEntityInfoContainer)
+  const toolbar = D3Toolbar(wrapperZoomButtons, entitySwitcherContainer)
 
   const footer = footerCollectionTree(
     state,
