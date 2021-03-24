@@ -5,7 +5,7 @@ import {
 
 function SelectorListItem({ node, stateSwitcherCallback, machine }) {
   const clickListener = () => {
-    stateSwitcherCallback(node)
+    stateSwitcherCallback(node._id)
   }
 
   const TextItem = React.createElement(
