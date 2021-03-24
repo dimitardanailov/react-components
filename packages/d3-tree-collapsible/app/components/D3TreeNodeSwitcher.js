@@ -44,10 +44,10 @@ function D3TreeNodeSwitcher({
   const [stateSwitcher, sendSwitcher, serviceSwitcher] = useMachine(
     createTreeNodeSwitcher(),
   )
-  const stateSwitcherCallback = async node => {
-    const _treeData = await updateParentChildRelationship(node._id)
+  const stateSwitcherCallback = async id => {
+    const _treeData = await updateParentChildRelationship(id)
     setTreeData(_treeData)
-    sendSwitcher('MAIN_NODE_IS_SELECTED', { id: node._id })
+    sendSwitcher('MAIN_NODE_IS_SELECTED', { id })
     sendMultiSelector('COLLAPSE')
   }
 
@@ -59,10 +59,13 @@ function D3TreeNodeSwitcher({
 
   if (parentUpdateDBSelectedEntities != null) {
     const updateDBSelectedEntities = () => {
-      parentUpdateDBSelectedEntities().then(entities => {
+      parentUpdateDBSelectedEntities().then(response => {
+        const { entities, parentId } = response
         setSelectedEntities(entities)
         sendMultiSelector('SET_DB_SELECTED_ENTITIES', { data: entities })
         sendMultiSelector('COLLAPSE')
+        // parentId is the main node of the tree
+        stateSwitcherCallback(parentId)
       })
     }
 
@@ -89,7 +92,7 @@ function D3TreeNodeSwitcher({
     if (welcomeScreen && nodes.length > 0) {
       welcomeScreen = false
       const node = nodes[0]
-      stateSwitcherCallback(node)
+      stateSwitcherCallback(node._id)
     }
   }, [nodes])
 
