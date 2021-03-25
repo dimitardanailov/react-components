@@ -86,7 +86,7 @@ function D3TreeNodeSwitcher({
     }
   }, [treeData, selectedEntities])
 
-  let welcomeScreen = parentUpdateDBSelectedEntity === null
+  let welcomeScreen = parentUpdateDBSelectedEntities === null
   const [nodes, setNodes] = React.useState(dbNodes)
   React.useEffect(() => {
     if (welcomeScreen && nodes.length > 0) {
