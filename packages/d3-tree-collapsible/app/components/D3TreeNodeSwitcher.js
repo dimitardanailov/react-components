@@ -54,36 +54,33 @@ function D3TreeNodeSwitcher({
   // ============ referiencies ====================
   const childRef = React.useRef()
 
-  // ============ hooks ====================
-  const [selectedEntities, setSelectedEntities] = React.useState([])
-
   if (parentUpdateDBSelectedEntities != null) {
     const updateDBSelectedEntities = () => {
       parentUpdateDBSelectedEntities().then(response => {
         const { entities, mainCollectionId } = response
-        setSelectedEntities(entities)
         sendMultiSelector('SET_DB_SELECTED_ENTITIES', { data: entities })
         sendMultiSelector('COLLAPSE')
         stateSwitcherCallback(mainCollectionId)
       })
     }
 
-    if (selectedEntities.length === 0) {
+    if (stateMultiSelector.context.dbSelectedEntities.length === 0) {
       updateDBSelectedEntities()
     }
   }
 
+  // ============ hooks ====================
   const [treeData, setTreeData] = React.useState(null)
   React.useEffect(() => {
     if (treeData !== null) {
       childRef.current.draw(
         treeData,
-        selectedEntities,
+        stateMultiSelector.context.dbSelectedEntities,
         zoomInIdentifier,
         zoomOutIdentifier,
       )
     }
-  }, [treeData, selectedEntities])
+  }, [treeData])
 
   let welcomeScreen = parentUpdateDBSelectedEntities === null
   const [nodes, setNodes] = React.useState(dbNodes)
