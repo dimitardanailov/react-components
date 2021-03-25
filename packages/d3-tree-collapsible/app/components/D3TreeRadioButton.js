@@ -95,7 +95,7 @@ function D3TreeRadioButton({
     if (welcomeScreen && nodes.length > 0) {
       welcomeScreen = false
       const node = nodes[0]
-      // stateSwitcherCallback(node._id)
+      stateSwitcherCallback(node._id)
     }
   }, [nodes])
 
