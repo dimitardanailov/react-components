@@ -46,7 +46,7 @@ function MultiSelectorPage() {
     const promise = new Promise(resolve => {
       const response = {
         entities: dbSelectedEntities,
-        parentId: '6026e7b0397ee9002f080c1b',
+        mainCollectionId: '6026e7b0397ee9002f080c1b',
       }
       resolve(response)
     })

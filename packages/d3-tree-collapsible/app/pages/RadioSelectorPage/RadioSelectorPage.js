@@ -42,7 +42,7 @@ function RadioSelectorPage() {
     const promise = new Promise(resolve => {
       const response = {
         entity: dbSelectedEntity,
-        parentId: '6026e7b0397ee9002f080c1b',
+        mainCollectionId: '6026e7b0397ee9002f080c1b',
       }
       resolve(response)
     })

@@ -62,12 +62,11 @@ function D3TreeRadioButton({
   if (parentUpdateDBSelectedEntity != null) {
     const updateDBSelectedEntity = () => {
       parentUpdateDBSelectedEntity().then(response => {
-        const { entity, parentId } = response
+        const { entity, mainCollectionId } = response
         setSelectedEntity(entity)
         sendRadioButton('ADD_ENTITY', { data: entity })
         sendRadioButton('COLLAPSE')
-        // parentId is the main node of the tree
-        stateSwitcherCallback(parentId)
+        stateSwitcherCallback(mainCollectionId)
       })
     }
 

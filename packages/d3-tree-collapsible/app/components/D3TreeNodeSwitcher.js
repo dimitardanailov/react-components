@@ -60,12 +60,11 @@ function D3TreeNodeSwitcher({
   if (parentUpdateDBSelectedEntities != null) {
     const updateDBSelectedEntities = () => {
       parentUpdateDBSelectedEntities().then(response => {
-        const { entities, parentId } = response
+        const { entities, mainCollectionId } = response
         setSelectedEntities(entities)
         sendMultiSelector('SET_DB_SELECTED_ENTITIES', { data: entities })
         sendMultiSelector('COLLAPSE')
-        // parentId is the main node of the tree
-        stateSwitcherCallback(parentId)
+        stateSwitcherCallback(mainCollectionId)
       })
     }
 
