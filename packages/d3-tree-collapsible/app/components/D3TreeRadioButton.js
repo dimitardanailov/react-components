@@ -89,7 +89,7 @@ function D3TreeRadioButton({
     }
   }, [treeData])
 
-  let welcomeScreen = true
+  let welcomeScreen = parentUpdateDBSelectedEntity === null
   const [nodes, setNodes] = React.useState(dbNodes)
   React.useEffect(() => {
     if (welcomeScreen && nodes.length > 0) {
