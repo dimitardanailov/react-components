@@ -254,7 +254,7 @@ function loadRadioButtonTree(
   root.y0 = 0
 
   const entityIsActive = (d, selectedEntity) => {
-    if (selectedEntity == null) return false
+    if (selectedEntity == null || !selectedEntity.length) return true
 
     return selectedEntity._id === d.data._id
   }
