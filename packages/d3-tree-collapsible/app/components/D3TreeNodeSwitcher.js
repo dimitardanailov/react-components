@@ -292,7 +292,6 @@ function loadMultiSelectTree(
       entityActive = entitityId === selectedEntityId
 
       if (entityActive) {
-        console.log('name', d.data.name)
         break
       }
     }
