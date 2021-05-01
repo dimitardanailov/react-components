@@ -262,6 +262,9 @@ function loadRadioButtonTree(
   const childNodeIsEmpty = (d, selectedEntity) => {
     if (d.depth && d.depth >= 1) {
       if (selectedEntity == null) return true
+      if (typeof selectedEntity != 'object') return true
+      if (!selectedEntity.hasOwnProperty('path')) return true
+      if (typeof selectedEntity.path != 'string') return true
 
       return !selectedEntity.path.includes(d.data.path)
     }
