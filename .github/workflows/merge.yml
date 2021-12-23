@@ -16,7 +16,7 @@ jobs:
       - name: git checkout
         uses: actions/checkout@v2
         with:
-          token: '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'
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           ref: ${{ github.event.pull_request.head.ref }}
           fetch-depth: 0
 
