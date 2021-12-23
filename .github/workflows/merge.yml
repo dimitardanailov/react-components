@@ -23,7 +23,7 @@ jobs:
       - name: perform merge
         run: |
           git config --global user.email "dimityr.danailov@gmail.com"
-          git config --global user.name "Dimitar Danailov"
+          git config --global user.name "dimitardanailov"
           git status
           git pull
           git checkout "$DEFAULT_BRANCH"
