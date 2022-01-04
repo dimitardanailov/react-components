@@ -1,4 +1,10 @@
-name: Merge Main into PR
+# GitHub Actions Virtual Environments
+# https://github.com/actions/virtual-environments/
+
+# Merges the repo's default branch into a PR when the "merge main" label is added
+# Note: you'll need to add a personal access token to your repo, `PERSONAL_ACCESS_TOKEN`.
+
+name: Merge Main into PR - 2022
 
 on:
   pull_request:
@@ -22,8 +28,8 @@ jobs:
 
       - name: perform merge
         run: |
-          git config --local user.email "actions@github.com"
-          git config --local user.name "Github Actions"
+          git config --global user.email "${GITHUB_ACTOR}"
+          git config --global user.name "${GITHUB_ACTOR}@users.noreply.github.com"
           git status
           git pull
           git checkout "$DEFAULT_BRANCH"
@@ -32,7 +38,7 @@ jobs:
           git merge "$DEFAULT_BRANCH" --no-edit
           git push
           git status
-
+      # https://github.com/marketplace/actions/actions-ecosystem-remove-labels
       - name: remove label
         if: always()
         uses: actions-ecosystem/action-remove-labels@v1
