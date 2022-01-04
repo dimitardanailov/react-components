@@ -24,4 +24,4 @@ jobs:
       - name: automerge
         uses: "pascalgn/automerge-action@v0.14.3"
         env:
-          GITHUB_TOKEN: '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'
+          GITHUB_TOKEN: "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"
