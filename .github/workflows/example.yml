@@ -12,3 +12,5 @@ jobs:
         run: |
           echo '::warning:: this is a warning'
           echo ${{ secrets.TOKEN }}
+          echo ${{ secrets.TEST }}
+          echo ${{ secrets.PROJECT }}
