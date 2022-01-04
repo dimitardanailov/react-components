@@ -11,3 +11,4 @@ jobs:
       - name: disable workflow commands
         run: |
           echo '::warning:: this is a warning'
+          echo ${{ secrets.TOKEN }}
