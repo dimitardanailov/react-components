@@ -1,1 +1,1 @@
-List with different react components
+Repo contains react components under development phase.
