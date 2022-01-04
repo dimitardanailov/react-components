@@ -1,0 +1,14 @@
+name: Example
+
+on:
+  push: 
+    branches: [main, master]
+
+jobs:
+  secrets:
+    runs-on: ubuntu-latest
+      steps: 
+          -name: Step 1
+          run: 
+            echo: "Token"
+            echo: ${{ secrets.TOKEN }}
