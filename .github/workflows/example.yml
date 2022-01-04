@@ -5,10 +5,9 @@ on:
     branches: [main, master]
 
 jobs:
-  secrets:
+  workflow-command-job:
     runs-on: ubuntu-latest
-      steps: 
-          -name: Step 1
-          run: 
-            echo: "Token"
-            echo: ${{ secrets.TOKEN }}
+    steps:
+      - name: disable workflow commands
+        run: |
+          echo '::warning:: this is a warning'
